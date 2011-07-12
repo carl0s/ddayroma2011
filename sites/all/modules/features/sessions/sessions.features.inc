@@ -1,0 +1,101 @@
+<?php
+/**
+ * @file
+ * sessions.features.inc
+ */
+
+/**
+ * Implementation of hook_ctools_plugin_api().
+ */
+function sessions_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
+ * Implementation of hook_views_api().
+ */
+function sessions_views_api() {
+  list($module, $api) = func_get_args();
+  if ($module == "views" && $api == "views_default") {
+    return array("version" => "3.0");
+  }
+}
+
+/**
+ * Implementation of hook_flag_default_flags().
+ */
+function sessions_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Schedule".
+  $flags['session_schedule'] = array(
+    'content_type' => 'node',
+    'title' => 'Schedule',
+    'global' => '0',
+    'types' => array(
+      0 => 'session',
+    ),
+    'flag_short' => 'Add to your schedule',
+    'flag_long' => 'Add this session to your personal session attendance.',
+    'flag_message' => 'This session has been added to your personal session attendance.',
+    'unflag_short' => 'Remove from your schedule',
+    'unflag_long' => 'Remove this session from your personal session attendance.',
+    'unflag_message' => 'This session has been removed from your personal session attendance.',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'roles' => array(
+      'flag' => array(
+        0 => '2',
+      ),
+      'unflag' => array(
+        0 => '2',
+      ),
+    ),
+    'show_on_page' => 1,
+    'show_on_teaser' => 1,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'i18n' => 0,
+    'api_version' => 2,
+    'module' => 'sessions',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+}
+
+/**
+ * Implementation of hook_node_info().
+ */
+function sessions_node_info() {
+  $items = array(
+    'room' => array(
+      'name' => t('Room'),
+      'base' => 'node_content',
+      'description' => t('Conference Room'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'session' => array(
+      'name' => t('Session'),
+      'base' => 'node_content',
+      'description' => t('Session'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'time_slot' => array(
+      'name' => t('Time Slot'),
+      'base' => 'node_content',
+      'description' => t('Time Slot for Sessions'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
+}
