@@ -1,0 +1,63 @@
+diff --git a/handlers/views_handler_area_text.inc b/handlers/views_handler_area_text.inc
+index 6294a21..da6b22e 100644
+--- a/handlers/views_handler_area_text.inc
++++ b/handlers/views_handler_area_text.inc
+@@ -14,7 +14,7 @@ class views_handler_area_text extends views_handler_area {
+   function option_definition() {
+     $options = parent::option_definition();
+     $options['content'] = array('default' => '', 'translatable' => TRUE, 'format_key' => 'format');
+-    $options['format'] = array('default' => filter_default_format());
++    $options['format'] = array('default' => NULL);
+     $options['tokenize'] = array('default' => FALSE);
+     return $options;
+   }
+@@ -26,7 +26,7 @@ class views_handler_area_text extends views_handler_area {
+       '#type' => 'text_format',
+       '#default_value' => $this->options['content'],
+       '#rows' => 6,
+-      '#format' => $this->options['format'],
++      '#format' => isset($this->options['format']) ? $this->options['format'] : filter_default_format(),
+       '#wysiwyg' => FALSE,
+     );
+ 
+@@ -98,18 +98,6 @@ class views_handler_area_text extends views_handler_area {
+    * Render a text area, using the proper format.
+    */
+   function render_textarea($value, $format) {
+-    static $formats = array();
+-
+-    if (!array_key_exists($format, $formats)) {
+-      if ($filter = filter_format_load($format)) {
+-        $formats[$format] = $filter->name;
+-      }
+-    }
+-
+-    if (!isset($formats[$format])) {
+-      return;
+-    }
+-
+     if ($value) {
+       $value = $this->view->style_plugin->tokenize_value($value, 0);
+       return check_markup($value, $format, '', FALSE);
+diff --git a/plugins/views_plugin_exposed_form_input_required.inc b/plugins/views_plugin_exposed_form_input_required.inc
+index b155052..915a3d2 100644
+--- a/plugins/views_plugin_exposed_form_input_required.inc
++++ b/plugins/views_plugin_exposed_form_input_required.inc
+@@ -9,7 +9,7 @@ class views_plugin_exposed_form_input_required extends views_plugin_exposed_form
+     $options = parent::option_definition();
+ 
+     $options['text_input_required'] = array('default' => t('Select any filter and click on Apply to see results'), 'translatable' => TRUE);
+-    $options['text_input_required_format'] = array('default' => filter_default_format());
++    $options['text_input_required_format'] = array('default' => NULL);
+     return $options;
+   }
+ 
+@@ -21,7 +21,7 @@ class views_plugin_exposed_form_input_required extends views_plugin_exposed_form
+       '#title' => t('Text on demand'),
+       '#description' => t('Text to display instead of results until the user selects and applies an exposed filter.'),
+       '#default_value' => $this->options['text_input_required'],
+-      '#format' => $this->options['text_input_required_format'],
++      '#format' => isset($this->options['text_input_required_format']) ? $this->options['text_input_required_format'] : filter_default_format(),
+       '#wysiwyg' => FALSE,
+     );
+   }
