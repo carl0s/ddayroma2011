@@ -156,7 +156,7 @@ function drupalday_system_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'update_last_check';
-  $strongarm->value = 1310419597;
+  $strongarm->value = 1310516640;
   $export['update_last_check'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -338,7 +338,7 @@ password: Your password
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_status_activated_notify';
-  $strongarm->value = 1;
+  $strongarm->value = '1';
   $export['user_mail_status_activated_notify'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -451,7 +451,7 @@ Your account on [site:name] has been canceled.
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['user_register'] = $strongarm;
 
   $strongarm = new stdClass;
