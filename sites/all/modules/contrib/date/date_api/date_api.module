@@ -118,7 +118,8 @@ class DateObject extends DateTime {
         $date->setTimezone($tz);
       }
       $time = $date->format(DATE_FORMAT_DATETIME);
-      $format = DATE_FORMAT_DATETIME; 
+      $format = DATE_FORMAT_DATETIME;
+      $this->addGranularity('timezone');
     }
 
     if (is_array($time)) {
@@ -162,7 +163,9 @@ class DateObject extends DateTime {
         $this->errors['date'] = $e;
         return;
       }
-      $this->setGranularityFromTime($time, $tz);
+      if (empty($this->granularity)) {
+        $this->setGranularityFromTime($time, $tz);
+      }
     }
     // This tz was given as just an offset, which causes problems,
     // or the timezone was invalid.
@@ -288,7 +291,15 @@ class DateObject extends DateTime {
 
   // whether a date is valid for a given $granularity array, depending on if it's allowed to be flexible.
   public function validGranularity($granularity = NULL, $flexible = FALSE) {
-    return $this->hasGranularity() && (!$granularity || $flexible || $this->hasGranularity($granularity));
+    $true = $this->hasGranularity() && (!$granularity || $flexible || $this->hasGranularity($granularity));
+    if (!$true && $granularity) {
+      foreach ((array) $granularity as $part) {
+        if (!$this->hasGranularity($part)) {
+          $this->errors[$part] = t("The @part is missing.", array('@part' => $part));
+        }
+      }
+    }
+    return $true;
   }
 
   /**
@@ -369,6 +380,7 @@ class DateObject extends DateTime {
     array_shift($values);
     // if we did not find all the values for the patterns in the format, abort
     if (count($letters) != count($values)) {
+      $this->errors['invalid'] = t("The value @date does not match the expected format.", array('@date' => $date));
       return FALSE;
     }
     $this->granularity = array();
@@ -608,13 +620,18 @@ class DateObject extends DateTime {
   public function arrayErrors($arr) {
     $errors = array();
     $now = date_now();
-	$default_month = !empty($arr['month']) ? $arr['month'] : $now->format('n');
+	  $default_month = !empty($arr['month']) ? $arr['month'] : $now->format('n');
     $default_year = !empty($arr['year']) ? $arr['year'] : $now->format('Y');
-
+    
+    $this->granularity = array();
     foreach ($arr as $part => $value) {
+      // Explicitly set the granularity to the values in the input array.
+      if (is_numeric($value)) {
+        $this->addGranularity($part);
+      }
       // Avoid false errors when a numeric value is input as a string by forcing it numeric.
-      $value = intval($value);
-	  if (!empty($value) && $this->forceValid($part, $value, 'now', $default_month, $default_year) != $value) {
+	    $value = intval($value);
+      if (!empty($value) && $this->forceValid($part, $value, 'now', $default_month, $default_year) != $value) {
         // Use a switchcase to make translation easier by providing a different message for each part.
         switch($part) {
           case 'year':
@@ -637,6 +654,9 @@ class DateObject extends DateTime {
             break;
         }
       }
+    }
+    if ($this->hasTime()) {
+      $this->addGranularity('timezone');
     }
     return $errors;
   }
@@ -743,13 +763,6 @@ function date_type_format($type) {
     case DATE_ICAL:
       return DATE_FORMAT_ICAL;
   }
-}
-
-/**
- * Implement hook_init().
- */
-function date_api_init() {
-  drupal_add_css(drupal_get_path('module', 'date_api') . '/date.css', array('weight' => CSS_THEME));
 }
 
 /**
@@ -1088,7 +1101,7 @@ function date_granularity_array_from_precision($precision) {
  * Give a granularity array, return the highest precision.
  */
 function date_granularity_precision($granularity_array) {
-  $input = clone($granularity_array);
+  $input = date_granularity_sorted($granularity_array);
   return array_pop($input);
 }
 
@@ -1763,7 +1776,7 @@ function date_api_theme() {
     'date_text' => $base + array('render element' => 'element'),
     'date_select_element' => $base + array('render element' => 'element'),
     'date_textfield_element' => $base + array('render element' => 'element'),
-    'date_date_part_hour_prefix' => $base + array('render element' => 'element'),
+    'date_part_hour_prefix' => $base + array('render element' => 'element'),
     'date_part_minsec_prefix' => $base + array('render element' => 'element'),
     'date_part_label_year' => $base + array('variables' => array('date_part' => NULL, 'element' => NULL)),
     'date_part_label_month' => $base + array('variables' => array('date_part' => NULL, 'element' => NULL)),
@@ -1965,7 +1978,7 @@ function date_format_type_options() {
   $format_types = system_get_date_types();
   if (!empty($format_types)) {
     foreach ($format_types as $type => $type_info) {
-      $options[$type] = $type_info['title'];
+      $options[$type] = $type_info['title'] . ' (' . format_date(REQUEST_TIME, $type) . ')';
     }
   }
   return $options;

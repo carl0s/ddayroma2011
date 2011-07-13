@@ -132,7 +132,7 @@ class date_sql_handler {
         case 'pgsql':
           db_query("SET TIME ZONE INTERVAL '$offset' HOUR TO MINUTE");
           break;
-        case 'sqlsvr':
+        case 'sqlsrv':
           db_query('TimeZone.setDefault(TimeZone.getTimeZone("GMT"))');
           break;
       }
@@ -192,11 +192,12 @@ class date_sql_handler {
             $field = "$field::ABSTIME";
             break;
           case DATE_ISO:
-            $field = "TO_DATE($field, 'FMYYYY-FMMM-FMDDTFMHH:FMMI:FMSS')";
+            $field = "TO_DATE($field, 'FMYYYY-FMMM-FMDDTFMHH24:FMMI:FMSS')";
             break;
           case DATE_DATETIME:
             break;
         }
+        break;
       case 'sqlite':
         switch ($this->date_type) {
           case DATE_UNIX:
@@ -420,7 +421,7 @@ class date_sql_handler {
           );
         $format = strtr($format, $replace);
         return "strftime('$format', $field)";
-      case 'sqlsvr':
+      case 'sqlsrv':
         $replace = array(
           'Y' => 'yyyy', // 4 digit year number
           'y' => 'yy', // 2 digit year number

@@ -5,3 +5,13 @@
  */
 
 include_once('sessions.features.inc');
+
+function sessions_theme($existing, $type, $theme, $path) {
+  $items['views_view_unformatted__sessions_schedule'] = array(
+    'template'  => 'views-view-unformatted--sessions-schedule',
+    'base hook' => 'views_view_unformatted',
+    'variables' => array('view' => NULL, 'options' => NULL, 'rows' => NULL, 'title' => NULL),
+    'path' => drupal_get_path('module', 'sessions').'/templates'
+  );  
+  return $items;
+}
