@@ -1,0 +1,20 @@
+body {background:#e2e2e2;font-family:Georgia, serif;font-weight:bold;font-size:13px;color:#555555;}
+h1 {font-style:italic;font-size:28px;line-height:40px;}
+h2 {font-style:italic;font-size:24px;margin-bottom:10px;}
+a, a:link, a:active, a:visited {color:#ffffff;text-decoration:none;}
+input[type=text] {height:20px;padding:2px 5px 2px 5px;vertical-align:bottom;color:#a8a8a8;font-weight:normal;border:1px solid #a1a1a1;}
+input[type=submit] {height:26px;padding:0 5px;margin-left:5px;vertical-align:bottom;border:1px solid #e6e6e6;color:#ffffff;font-weight:normal;background:#555555;cursor:pointer;}
+
+#container {margin:auto;width:940px;padding:7px 0;}
+#content {padding:45px 65px;background:#ffffff;}
+#footer {padding:20px 20px 20px 105px;background:#c0c0c0;}
+#mailinglist {margin-top:15px;}
+#info {margin-top:20px;}
+
+.quotes {padding:14px 0 0 40px;background:url('../img/quote.png') no-repeat;}
+.yellow {color:#eea200;}
+.red {color:#de1d43;}
+.blue {color:#1787c1;}
+.logo {margin-top:25px;margin-left:40px;}
+
+.clear {clear:both;}
