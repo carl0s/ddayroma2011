@@ -83,11 +83,16 @@
 
 <script type="text/javascript">
  $(document).ready(function() {
+   $("input#mce-EMAIL").val("your@email");
+   
    $("input#mce-EMAIL").focus(function() {
- 		  $(this).val("");
+     if ($(this).val() == 'your@email') {
+       $(this).val("");
+     }
  	 });
+ 	 
    $("input#mce-EMAIL").blur(function() {
-     if ($this.val() == '') {
+     if ($(this).val() == '') {
        $(this).val("your@email"); 
      }
  	 });

@@ -3,6 +3,6 @@
 <label>
   <span style="font-size:16px;">STAY TUNED!&nbsp</span>Iscriviti alla newsletter per essere subito informato su tutte le novità:
 </label>&nbsp;
-<input type="text" value="your@email" name="EMAIL" class="required email" id="mce-EMAIL">
+<input type="text" value="" name="EMAIL" class="required email" id="mce-EMAIL">
 <input type="submit" value="Invia" name="subscribe" id="mc-embedded-subscribe" class="btn">
 </form>
