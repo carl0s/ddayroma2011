@@ -87,7 +87,9 @@
  		  $(this).val("");
  	 });
    $("input#mce-EMAIL").blur(function() {
- 	   $(this).val("your@email");
+     if ($this.val() == '') {
+       $(this).val("your@email"); 
+     }
  	 });
   });
 </script>
