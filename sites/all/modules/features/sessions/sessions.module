@@ -15,3 +15,42 @@ function sessions_theme($existing, $type, $theme, $path) {
   );  
   return $items;
 }
+
+/**
+ *  Implements hook_form_alter()
+ */
+function sessions_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  if ($form_id == 'session_node_form') {
+    // hide some fields for authenticated users
+    if (!user_access('administer content')) {
+      $language = $form_state['node']->language;
+      
+      $form['field_session_room']['#access'] = false;
+      $form['field_session_timeslot']['#access'] = false;
+      $form['field_session_track']['#access'] = false;
+      
+      // sesssion status (force to Proposed for authenticated users)
+      // multilanguage fields alter: http://timonweb.com/how-remove-format-options-guideliness-comments-textarea-drupal-7#comment-4611
+      $form['field_session_status'][$form['field_session_status']['#language']]['#type'] = 'hidden';
+      $form['field_session_status'][$form['field_session_status']['#language']]['#value'] = '0';
+    }
+  }
+}
+
+
+function sessions_preprocess_node(&$vars) {
+ if (!user_access('administer content')) {
+   $node = $vars['node'];
+   
+   // hide status to users
+   hide($vars['content']['field_session_status']);
+   
+   // deny access to non promoted sessions by normal users
+   if ($node->field_session_status[$node->language][0]['value'] != 1) {
+     // return to homepage (@todo make a better access rules or manage this with Rules module)
+     drupal_goto('<front>');
+   }
+ }
+}
+

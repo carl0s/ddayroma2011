@@ -1,0 +1,963 @@
+diff --git flag.inc flag.inc
+index 1eb474b..6d1da1c 100644
+--- flag.inc
++++ flag.inc
+@@ -913,31 +913,6 @@ class flag_flag {
+    */
+ 
+   /**
+-   * Methods that can be overridden to support the Rules module.
+-   *
+-   * @addtogroup rules
+-   * @{
+-   */
+-
+-  /**
+-   * Defines the Rules arguments involved in a flag event.
+-   */
+-  function rules_get_event_arguments_definition() {
+-    return array();
+-  }
+-
+-  /**
+-   * Defines the Rules argument for flag actions or conditions
+-   */
+-  function rules_get_element_argument_definition() {
+-    return array();
+-  }
+-
+-  /**
+-   * @} End of "addtogroup rules".
+-   */
+-
+-  /**
+    * @addtogroup views
+    * @{
+    * Methods that can be overridden to support the Views module.
+@@ -1369,20 +1344,6 @@ class flag_node extends flag_flag {
+     );
+   }
+ 
+-  function rules_get_event_arguments_definition() {
+-    return array(
+-      'node' => array(
+-        'type' => 'node',
+-        'label' => t('flagged content'),
+-        'handler' => 'flag_rules_get_event_argument',
+-      ),
+-    );
+-  }
+-
+-  function rules_get_element_argument_definition() {
+-    return array('type' => 'node', 'label' => t('Flagged content'));
+-  }
+-
+   function get_views_info() {
+     return array(
+       'views table' => 'node',
+@@ -1506,25 +1467,6 @@ class flag_comment extends flag_flag {
+     );
+   }
+ 
+-  function rules_get_event_arguments_definition() {
+-    return array(
+-      'comment' => array(
+-        'type' => 'comment',
+-        'label' => t('flagged comment'),
+-        'handler' => 'flag_rules_get_event_argument',
+-      ),
+-      'node' => array(
+-        'type' => 'node',
+-        'label' => t("the flagged comment's content"),
+-        'handler' => 'flag_rules_get_comment_content',
+-      ),
+-    );
+-  }
+-
+-  function rules_get_element_argument_definition() {
+-    return array('type' => 'comment', 'label' => t('Flagged comment'));
+-  }
+-
+   function get_views_info() {
+     return array(
+       'views table' => 'comment',
+@@ -1658,20 +1600,6 @@ class flag_user extends flag_flag {
+     );
+   }
+ 
+-  function rules_get_event_arguments_definition() {
+-    return array(
+-      'account' => array(
+-        'type' => 'user',
+-        'label' => t('flagged user'),
+-        'handler' => 'flag_rules_get_event_argument',
+-      ),
+-    );
+-  }
+-
+-  function rules_get_element_argument_definition() {
+-    return array('type' => 'user', 'label' => t('Flagged user'));
+-  }
+-
+   function get_views_info() {
+     return array(
+       'views table' => 'users',
+diff --git flag.info flag.info
+index cef3ade..6933238 100644
+--- flag.info
++++ flag.info
+@@ -6,7 +6,7 @@ configure = admin/structure/flags
+ 
+ ; Files that contain classes.
+ files[] = flag.inc
+-files[] = includes/flag.rules.inc
++files[] = flag.rules.inc
+ files[] = includes/flag_handler_argument_content_id.inc
+ files[] = includes/flag_handler_field_ops.inc
+ files[] = includes/flag_handler_filter_flagged.inc
+diff --git flag.module flag.module
+index a4a9fdf..b0728e8 100644
+--- flag.module
++++ flag.module
+@@ -837,8 +837,11 @@ function flag_flag($action, $flag, $content_id, $account) {
+ 
+   if (module_exists('rules')) {
+     $event_name = ($action == 'flag' ? 'flag_flagged_' : 'flag_unflagged_') . $flag->name;
+-    $arguments = array('flag' => $flag, 'flag_content_id' => $content_id, 'flagging_user' => $account);
+-    rules_invoke_event($event_name, $arguments);
++    // We only support flags on entities.
++    if (entity_get_info($flag->content_type)) {
++      $variables = array('flag' => $flag, 'flagged_' . $flag->content_type => $content_id, 'flagging_user' => $account);
++      rules_invoke_event_by_args($event_name, $variables);
++    }
+   }
+ }
+ 
+@@ -1195,7 +1198,7 @@ function flag_theme() {
+     ),
+     'flag_rules_radios' => array(
+       'render element' => 'element',
+-      'file' => 'includes/flag.rules_forms.inc',
++      'file' => 'flag.rules.inc',
+     ),
+   );
+ }
+diff --git flag.rules.inc flag.rules.inc
+new file mode 100644
+index 0000000..ffb8c53
+--- /dev/null
++++ flag.rules.inc
+@@ -0,0 +1,358 @@
++<?php
++
++/**
++ * @file flag.rules.inc
++ * Rules integration for the Flag module.
++ */
++
++/**
++ * Implements hook_rules_data_info().
++ * @ingroup rules
++ */
++function flag_rules_data_info() {
++  return array(
++    'flag' => array(
++      'label' => t('flag'),
++      'ui class' => 'FlagRulesUIClass',
++      'wrapper class' => 'FlagRulesDataWrapper',
++      'wrap' => TRUE,
++    ),
++  );
++}
++
++/**
++ * A custom wrapper class for flags to be used with Rules.
++ * @ingroup rules
++ */
++class FlagRulesDataWrapper extends RulesIdentifiableDataWrapper implements RulesDataWrapperSavableInterface {
++
++  protected function extractIdentifier($flag) {
++    return $flag->name;
++  }
++
++  protected function load($name) {
++    return flag_get_flag($name);
++  }
++
++  public function save() {
++    $flag = $this->value();
++    $flag->save();
++  }
++}
++
++/**
++ * UI for inputing flags.
++ * @ingroup rules
++ */
++class FlagRulesUIClass extends RulesDataUI implements RulesDataDirectInputFormInterface {
++
++  public static function getDefaultMode() {
++    return 'input';
++  }
++
++  public static function inputForm($name, $info, $settings, RulesPlugin $element) {
++    $options = _flag_rules_flags_options(isset($info['flag_type']) ? $info['flag_type'] : NULL);
++    $header  = array(
++      'title' => t('Flag:'),
++      'type' => t('The flag type'),
++      'global' => t('Is the flag global?'),
++    );
++    $settings += array($name => isset($info['default value']) ? $info['default value'] : '');
++
++    $form[$name] = array(
++      '#type' => 'tableselect',
++      '#header' => $header,
++      '#options' => $options,
++      '#required' => empty($info['optional']),
++      '#multiple' => FALSE,
++      '#default_value' => $settings[$name],
++      '#emtpy' => t('There is no suiting flag available.')
++    );
++    return $form;
++  }
++
++  public static function render($value) {
++    $flag = flag_get_flag($value);
++    return array(
++      'content' => array('#markup' => check_plain($flag->get_title())),
++      '#attributes' => array('class' => array('rules-parameter-flag')),
++    );
++  }
++}
++
++function _flag_rules_flags_options($flag_type = NULL) {
++  $flags = flag_get_flags();
++  $options = array();
++  foreach ($flags as $flag) {
++    if (!isset($flag_type) || $flag->content_type == $flag_type) {
++      $options[$flag->name] = array(
++        'title' => $flag->get_title(),
++        'type' => $flag->content_type,
++        'global' => $flag->global ? t('Yes') : t('No'),
++      );
++    }
++  }
++  return $options;
++}
++
++/**
++ * Implements hook_rules_event_info().
++ */
++function flag_rules_event_info() {
++  $items = array();
++
++  $flags = flag_get_flags();
++  foreach ($flags as $flag) {
++    // We only support flags on entities.
++    if ($info = entity_get_info($flag->content_type)) {
++      $variables = array(
++        'flag' => array(
++          'type' => 'flag',
++          'label' => t('flag'),
++          'flag_type' => $flag->content_type,
++        ),
++        'flagged_' . $flag->content_type => array(
++          'type' => $flag->content_type,
++          'label' => $info['label'],
++        ),
++        'flagging_user' => array(
++          'type' => 'user',
++          'label' => t('flagging user'),
++        ),
++      );
++
++      // For each flag we define two events.
++      $items['flag_flagged_' . $flag->name] = array(
++        'group' => t('Flag'),
++        'label' => t('A @flag-type has been flagged, under "@flag-title"', array('@flag-title' => $flag->get_title(), '@flag-type' => t($flag->content_type))),
++        'variables' => $variables,
++        'access callback' => 'flag_rules_integration_access',
++      );
++      $items['flag_unflagged_' . $flag->name] = array(
++        'group' => t('Flag'),
++        'label' => t('A @flag-type has been unflagged, under "@flag-title"', array('@flag-title' => $flag->get_title(), '@flag-type' => t($flag->content_type))),
++        'variables' => $variables,
++        'access callback' => 'flag_rules_integration_access',
++      );
++    }
++  }
++  return $items;
++}
++
++/**
++ * Implements hook_rules_action_info().
++ */
++function flag_rules_action_info() {
++  $items = array(
++    'flag_trim' => array(
++      'label' => t('Trim a flag'),
++      'base' => 'flag_rules_action_trim',
++      'parameter' => array(
++        'flag' => array(
++          'type' => 'flag',
++          'label' => t('Flag'),
++        ),
++        'flagging_user' => array(
++          'type' => 'user',
++          'label' => t('User whose flag to trim'),
++          'description' => t('For non-global flags, this is the user whose flag to trim. (For global flags, this argument is ignored.)'),
++        ),
++        'cutoff_size' => array(
++          'type' => 'integer',
++          'label' => t('Flag queue size'),
++          'description' => t('The maximum number of objects to keep in the queue. Newly flagged objects will be kept; older ones will be removed. Tip: by typing "1" here you implement a singleton.'),
++        ),
++      ),
++      'group' => t('Flag'),
++      'access callback' => 'flag_rules_integration_access',
++    ),
++  );
++  $param_defaults = array(
++    'flagging_user' => array(
++      'type' => 'user',
++      'label' => t('User on whose behalf to flag'),
++      'description' => t('For non-global flags, this is the user on whose behalf to flag the object. In addition, if checked below, the access permissions to the flag are checked against this user.'),
++    ),
++    'permission_check' => array(
++      'type' => 'boolean',
++      'label' => t('Permission check'),
++      'description' => t('Whether to check access permissions against the user on whose behalf to flag.'),
++      'restriction' => 'input',
++    ),
++  );
++  foreach (flag_get_types() as $type) {
++    $flag = flag_create_handler($type);
++    $entity_info = entity_get_info($type);
++    $items += array(
++      'flag_flag'. $type => array(
++        'label' => t('Flag a @type', array('@type' => $type)),
++        'base' => 'flag_rules_action_flag',
++        'parameter' => array(
++          'flag' => array(
++            'type' => 'flag',
++            'label' => t('Flag'),
++            'flag_type' => $type,
++            'description' => t('The flag to check for.')
++          ),
++           $type => array(
++             'type' => $type,
++             'label' => isset($entity_info[$type]['label']) ? $entity_info[$type]['label'] : $type,
++           ),
++        ) + $param_defaults,
++        'group' => t('Flag'),
++        'access callback' => 'flag_rules_integration_access',
++      ),
++      'flag_unflag'. $type => array(
++        'label' => t('Unflag a @type', array('@type' => $type)),
++        'base' => 'flag_rules_action_unflag',
++        'parameter' => array(
++          'flag' => array(
++            'type' => 'flag',
++            'label' => t('Flag'),
++            'flag_type' => $type,
++            'description' => t('The flag to check for.')
++          ),
++           $type => array(
++             'type' => $type,
++             'label' => isset($entity_info[$type]['label']) ? $entity_info[$type]['label'] : $type,
++           ),
++        ) + $param_defaults,
++        'group' => t('Flag'),
++        'access callback' => 'flag_rules_integration_access',
++      ),
++    );
++  }
++  return $items;
++}
++
++/**
++ * Base action implementation: Flag.
++ */
++function flag_rules_action_flag($flag, $entity, $flagging_user, $permissions_check) {
++  $flag->flag('flag', $flag->get_content_id($entity), $flagging_user, $permissions_check);
++}
++
++/**
++ * Base action implementation: Unflag.
++ */
++function flag_rules_action_unflag($flag, $entity, $flagging_user, $permissions_check) {
++  $flag->flag('unflag', $flag->get_content_id($entity), $flagging_user, $permissions_check);
++}
++
++/**
++ * Base action implementation: Trim flag.
++ */
++function flag_rules_action_trim($flag, $flagging_user, $cutoff_size) {
++  flag_trim_flag($flag, $flagging_user, $cutoff_size);
++}
++
++/**
++ * Implements hook_rules_condition_info().
++ */
++function flag_rules_condition_info() {
++  $items = array();
++  foreach (flag_get_types() as $type) {
++    $flag = flag_create_handler($type);
++    $entity_info = entity_get_info($type);
++    $label = isset($entity_info[$type]['label']) ? $entity_info[$type]['label'] : $type;
++    $items += array(
++      'flag_threshold_'. $type => array(
++        'label' => drupal_ucfirst(t('@type has flagging count', array('@type' => $label))),
++        'base' => 'flag_rules_condition_threshold',
++        'parameter' => array(
++          'flag' => array(
++            'type' => 'flag',
++            'label' => t('Flag'),
++            'flag_type' => $type,
++            'description' => t('The flag to check for.')
++          ),
++           $type => array(
++             'type' => $type,
++             'label' => $label,
++           ),
++           'number' => array(
++             'type' => 'integer',
++             'label' => t('Number'),
++             'description' => t('The number against which to test the number of times the object is flagged. For example, if you type "3" here, and choose "Greater than" for the operator, then this condition will return TRUE if the object is flagged more than three times.'),
++           ),
++           'operator' => array(
++             'type' => 'text',
++             'label' => t('Comparison operator'),
++             'options list' => 'flag_rules_condition_threshold_operator_options',
++             'restriction' => 'input',
++             'default value' => '=',
++             'optional' => TRUE,
++           ),
++        ),
++        'group' => t('Flag'),
++        'access callback' => 'flag_rules_integration_access',
++      ),
++      'flag_flagged_'. $type => array(
++        'label' => drupal_ucfirst(t('@type is flagged', array('@type' => $label))),
++        'base' => 'flag_rules_condition_flagged',
++        'parameter' => array(
++          'flag' => array(
++            'type' => 'flag',
++            'label' => t('Flag'),
++            'flag_type' => $type,
++            'description' => t('The flag to check for.')
++          ),
++           $type => array(
++             'type' => $type,
++             'label' => $label,
++           ),
++          'user' => array(
++            'type' => 'user',
++            'label' => t('User on whose behalf to check'),
++            'description' => t('For non-global flags, this is the user on whose behalf the flag is checked.'),
++          ),
++        ),
++        'group' => t('Flag'),
++        'access callback' => 'flag_rules_integration_access',
++      ),
++    );
++  }
++  return $items;
++}
++
++/**
++ * Options list callback for the operator parameter of the flagging threshold condition.
++ */
++function flag_rules_condition_threshold_operator_options() {
++  return array(
++    '>'  => t('Greater than'),
++    '>=' => t('Greater than or equal'),
++    '='  => t('Equal to'),
++    '<=' => t('Less than or equal'),
++    '<'  => t('Less than'),
++  );
++}
++
++/**
++ * Condition: Check flagging count.
++ */
++function flag_rules_condition_threshold($flag, $entity, $number, $operator = '=') {
++  $count = $flag->get_count($flag->get_content_id($entity));
++
++  switch ($operator) {
++    case '>' : return $count >  $number;
++    case '>=': return $count >= $number;
++    case '=' : return $count == $number;
++    case '<' : return $count <  $number;
++    case '<=': return $count <= $number;
++  }
++}
++
++/**
++ * Condition: Flag is flagged.
++ */
++function flag_rules_condition_flagged($flag, $entity, $account) {
++  return $flag->is_flagged($flag->get_content_id($entity), $account->uid);
++}
++
++/**
++ * Rules integration access callback.
++ */
++function flag_rules_integration_access($type, $name) {
++  return user_access('administer flags');
++}
+diff --git includes/flag.admin.inc includes/flag.admin.inc
+index 8ff9ffa..e44224b 100644
+--- includes/flag.admin.inc
++++ includes/flag.admin.inc
+@@ -105,7 +105,7 @@ function theme_flag_admin_page($variables) {
+     $output .= '<p>' . t('Flagging an item may trigger <em>rules</em>. However, you don\'t have the <a href="@rules-url">Rules</a> module enabled, so you won\'t be able to enjoy this feature. The Rules module is a more extensive solution than Flag actions.', array('@rules-url' => url('http://drupal.org/node/407070'))) . '</p>';
+   }
+   else {
+-    $output .= '<p>' . t('<del>Flagging an item may trigger <a href="@rules-url">rules</a>.</del> (This feature was not yet ported to Drupal 7.)', array('@rules-url' => url('admin/rules/trigger'))) . '</p>';
++    $output .= '<p>' . t('Flagging an item may trigger <a href="@rules-url">rules</a>.', array('@rules-url' => url('admin/config/workflow/rules'))) . '</p>';
+   }
+ 
+   $output .= '<p>' . t('To learn about the various ways to use flags, please check out the <a href="@handbook-url">Flag module handbook</a>.', array('@handbook-url' => 'http://drupal.org/handbook/modules/flag')) . '</p>';
+@@ -295,7 +295,7 @@ function flag_form($form, &$form_state, $flag) {
+     '#tree' => FALSE,
+     '#weight' => 10,
+   );
+-  
++
+   $options = array();
+   $node_types = node_type_get_types();
+   foreach ($node_types as $node_type) {
+diff --git includes/flag.rules.inc includes/flag.rules.inc
+deleted file mode 100644
+index 5ca6aff..0000000
+--- includes/flag.rules.inc
++++ /dev/null
+@@ -1,293 +0,0 @@
+-<?php
+-
+-/**
+- * @file flag.rules.inc
+- * Rules integration for the Flag module.
+- */
+-
+-/**
+- * Implementation of hook_rules_data_type_info().
+- * @ingroup rules
+- */
+-function flag_rules_data_type_info() {
+-  return array(
+-    'flag' => array(
+-      'label' => t('Flag'),
+-      'class' => 'flag_rules_data_type',
+-      'savable' => TRUE,
+-      'identifiable' => TRUE,
+-      'use_input_form' => TRUE,
+-      'module' => 'Flag',
+-    ),
+-  );
+-}
+-
+-/**
+- * Defines the flag rule data type.
+- * @ingroup rules
+- */
+-class flag_rules_data_type extends rules_data_type {
+-
+-  function save() {
+-    $flag = &$this->get();
+-    $flag->save;
+-    return TRUE;
+-  }
+-
+-  function load($name) {
+-    return flag_get_flag($name);
+-  }
+-
+-  function get_identifier() {
+-    $flag = &$this->get();
+-    return $flag->name;
+-  }
+-
+-  /**
+-   * Returns radios for selecting a flag of the type given in
+-   * $info['flag_type'].
+-   */
+-  function get_default_input_form($info, $value) {
+-    $options = _flag_rules_flags_options(isset($info['flag_type']) ? $info['flag_type'] : NULL);
+-    $form = array(
+-      '#type' => 'radios',
+-      '#title' => $info['label'],
+-      '#options' => $options,
+-      '#required' => TRUE,
+-      '#disabled' => !$options,
+-      '#default_value' =>  isset($value) ? $value : NULL,
+-      '#theme' => 'flag_rules_radios',
+-      '#printed' => TRUE, //don't use the elements type theme function
+-    );
+-    if (!$options) {
+-      $form['#description'] = t('Error: There is no suiting flag available.');
+-    }
+-    return $form;
+-  }
+-
+-  function check_value($info, $value) {
+-    if ($flag = flag_get_flag($value)) {
+-      return $flag;
+-    }
+-    rules_log(t('The flag %name does not exist any more.', array('%name' => $value)));
+-  }
+-}
+-
+-/**
+- * Implementation of hook_rules_event_info().
+- */
+-function flag_rules_event_info() {
+-  $items = array();
+-
+-  $flags = flag_get_flags();
+-  foreach ($flags as $flag) {
+-
+-    $arguments = array(
+-      // First, define ubiquitous arguments.
+-      'flag' => array(
+-        'type' => 'flag',
+-        'label' => t('flag'),
+-      ),
+-      'flag_content_id' => array(
+-        'type' => 'number',
+-        'hidden' => TRUE,
+-      ),
+-      'flagging_user' => array(
+-        'type' => 'user',
+-        'label' => t('flagging user'),
+-      ),
+-    );
+-    // Then, define flag-specific arguments.
+-    $arguments += $flag->rules_get_event_arguments_definition();
+-
+-    // For each flag we define two events.
+-    $items['flag_flagged_' . $flag->name] = array(
+-      'module' => 'Flag',
+-      'label' => t('A @flag-type has been flagged, under "@flag-title"', array('@flag-title' => $flag->get_title(), '@flag-type' => t($flag->content_type))),
+-      'arguments' => $arguments,
+-    );
+-    $items['flag_unflagged_' . $flag->name] = array(
+-      'module' => 'Flag',
+-      'label' => t('A @flag-type has been unflagged, under "@flag-title"', array('@flag-title' => $flag->get_title(), '@flag-type' => t($flag->content_type))),
+-      'arguments' => $arguments,
+-    );
+-  }
+-  return $items;
+-}
+-
+-/**
+- * Argument handler: Fetches the flags content for use with rules.
+- */
+-function flag_rules_get_event_argument($flag, $content_id, $account) {
+-  return $flag->fetch_content($content_id);
+-}
+-
+-function flag_rules_get_comment_content($flag, $content_id, $account) {
+-  $comment = $flag->fetch_content($content_id);
+-  return node_load($comment->nid);
+-}
+-
+-/**
+- * Implementation of hook_rules_action_info().
+- */
+-function flag_rules_action_info() {
+-  $items = array(
+-    'flag_rules_action_trim' => array(
+-      'label' => t('Trim a flag'),
+-      'arguments' => array(
+-        'flag' => array(
+-          'type' => 'flag',
+-          'label' => t('Flag'),
+-        ),
+-        'flagging_user' => array(
+-          'type' => 'user',
+-          'label' => t('User whose flag to trim'),
+-          'description' => t('For non-global flags, this is the user whose flag to trim. (For global flags, this argument is ignored.)'),
+-        ),
+-        'cutoff_size' => array(
+-          'type' => 'number',
+-          'label' => t('Flag queue size'),
+-          'description' => t('The maximum number of objects to keep in the queue. Newly flagged objects will be kept; older ones will be removed. Tip: by typing "1" here you implement a singleton.'),
+-        ),
+-      ),
+-      'module' => 'Flag',
+-    ),
+-  );
+-  foreach (flag_get_types() as $type) {
+-    $args = array(
+-      'flag' => array(
+-        'type' => 'flag',
+-        'label' => t('Flag'),
+-        'flag_type' => $type,
+-      ),
+-    );
+-    $flag = flag_create_handler($type);
+-    if ($flag->rules_get_element_argument_definition()) {
+-      $args += array('object' => $flag->rules_get_element_argument_definition());
+-
+-      $items += array(
+-        'flag_rules_action_flag_'. $type => array(
+-          'label' => t('Flag a @type', array('@type' => $type)),
+-          'base' => 'flag_rules_action_flag',
+-          'label callback' => 'flag_rules_action_flag_label',
+-          'arguments' => $args + array(
+-            'flagging_user' => array(
+-              'type' => 'user',
+-              'label' => t('User on whose behalf to flag'),
+-              'description' => t('For non-global flags, this is the user on whose behalf to flag the object. In addition, if checked below, the access permissions to the flag are checked against this user.'),
+-            ),
+-          ),
+-          'module' => 'Flag',
+-        ),
+-        'flag_rules_action_unflag_'. $type => array(
+-          'label' => t('Unflag a @type', array('@type' => $type)),
+-          'base' => 'flag_rules_action_unflag',
+-          'label callback' => 'flag_rules_action_unflag_label',
+-          'arguments' => $args + array(
+-            'flagging_user' => array(
+-              'type' => 'user',
+-              'label' => t('User on whose behalf to unflag'),
+-              'description' => t('For non-global flags, this is the user on whose behalf to unflag the object. In addition, if checked below, the access permissions to the flag are checked against this user.'),
+-            ),
+-          ),
+-          'module' => 'Flag',
+-        ),
+-      );
+-    }
+-  }
+-  return $items;
+-}
+-
+-/**
+- * Base action implementation: Flag.
+- */
+-function flag_rules_action_flag($flag, $object, $flagging_user, $settings) {
+-  $flag->flag('flag', $flag->get_content_id($object), $flagging_user, !$settings['permission_check']);
+-}
+-
+-/**
+- * Base action implementation: Unflag.
+- */
+-function flag_rules_action_unflag($flag, $object, $flagging_user, $settings) {
+-  $flag->flag('unflag', $flag->get_content_id($object), $flagging_user, !$settings['permission_check']);
+-}
+-
+-/**
+- * Base action implementation: Trim flag.
+- */
+-function flag_rules_action_trim($flag, $flagging_user, $cutoff_size, $settings) {
+-  flag_trim_flag($flag, $flagging_user, $cutoff_size);
+-}
+-
+-/**
+- * Implementation of hook_rules_condition_info().
+- */
+-function flag_rules_condition_info() {
+-  $items = array();
+-  foreach (flag_get_types() as $type) {
+-    $args = array(
+-      'flag' => array(
+-        'type' => 'flag',
+-        'label' => t('Flag'),
+-        'flag_type' => $type,
+-      ),
+-    );
+-    $flag = flag_create_handler($type);
+-    if ($flag->rules_get_element_argument_definition()) {
+-      $args += array('object' => $flag->rules_get_element_argument_definition());
+-
+-      $items += array(
+-        'flag_rules_condition_threshold_'. $type => array(
+-          'label' => drupal_ucfirst(t('@type has flagging count', array('@type' => $type))),
+-          'base' => 'flag_rules_condition_threshold',
+-          'label callback' => 'flag_rules_condition_threshold_label',
+-          'arguments' => $args + array(
+-            'number' => array(
+-              'type' => 'number',
+-              'label' => t('Number'),
+-              'description' => t('The number against which to test the number of times the object is flagged. For example, if you type "3" here, and choose "Greater than" for the operator, then this condition will return TRUE if the object is flagged more than three times.'),
+-            ),
+-          ),
+-          'module' => 'Flag',
+-        ),
+-        'flag_rules_condition_flagged_'. $type => array(
+-          'label' => drupal_ucfirst(t('@type is flagged', array('@type' => $type))),
+-          'base' => 'flag_rules_condition_flagged',
+-          'label callback' => 'flag_rules_condition_flagged_label',
+-          'arguments' => $args + array(
+-            'user' => array(
+-              'type' => 'user',
+-              'label' => t('User on whose behalf to check'),
+-              'description' => t('For non-global flags, this is the user on whose behalf the flag is checked.'),
+-            ),
+-          ),
+-          'module' => 'Flag',
+-        ),
+-      );
+-    }
+-  }
+-  return $items;
+-}
+-
+-/**
+- * Condition: Check flagging count.
+- */
+-function flag_rules_condition_threshold($flag, $object, $number, $settings) {
+-
+-  $count = $flag->get_count($flag->get_content_id($object));
+-
+-  switch ($settings['operator']) {
+-    case '>' : return $count >  $number;
+-    case '>=': return $count >= $number;
+-    case '=' : return $count == $number;
+-    case '<' : return $count <  $number;
+-    case '<=': return $count <= $number;
+-  }
+-}
+-
+-/**
+- * Condition: Flag is flagged.
+- */
+-function flag_rules_condition_flagged($flag, $object, $account, $settings) {
+-  return $flag->is_flagged($flag->get_content_id($object), $account->uid);
+-}
+diff --git includes/flag.rules_forms.inc includes/flag.rules_forms.inc
+deleted file mode 100644
+index cd4e936..0000000
+--- includes/flag.rules_forms.inc
++++ /dev/null
+@@ -1,128 +0,0 @@
+-<?php
+-
+-/**
+- * @file flag.rules_form.inc
+- * Rules integration for the Flag module.
+- */
+-
+-/*******************************************************************************
+- * Actions forms.
+- ******************************************************************************/
+-
+-function flag_rules_action_flag_form($settings, &$form, &$form_state) {
+-  $settings += array('permission_check' => FALSE);
+-  $form['settings']['permission_check'] = array(
+-    '#title' => t('Check access permissions against the user on whose behalf to flag'),
+-    '#type' => 'checkbox',
+-    '#default_value' => $settings['permission_check'],
+-  );
+-}
+-
+-function flag_rules_action_flag_label($settings, $argument_labels, $element) {
+-  $flag = rules_get_element_variable($element, 'flag');
+-  return t('Flag @object, under "@flag-title"', $argument_labels + array('@flag-title' => $flag->get_title()));
+-}
+-
+-function flag_rules_action_unflag_form($settings, &$form, &$form_state) {
+-  $settings += array('permission_check' => FALSE);
+-  $form['settings']['permission_check'] = array(
+-    '#title' => t('Check access permissions against the user on whose behalf to unflag'),
+-    '#type' => 'checkbox',
+-    '#default_value' => $settings['permission_check'],
+-  );
+-}
+-
+-function flag_rules_action_unflag_label($settings, $argument_labels, $element) {
+-  $flag = rules_get_element_variable($element, 'flag');
+-  return t('Unflag @object, under "@flag-title"', $argument_labels + array('@flag-title' => $flag->get_title()));
+-}
+-
+-function flag_rules_action_trim_form($settings, &$form, &$form_state) {
+-  // Move argument to center of form.
+-  $form['settings']['cutoff_size']['#weight'] = 2;
+-}
+-
+-function flag_rules_action_trim_label($settings, $argument_labels, $element) {
+-  $flag = rules_get_element_variable($element, 'flag');
+-  return t('Trim "@flag-title" at @size', array('@flag-title' => $flag->get_title(), '@size' => $settings['cutoff_size']));
+-}
+-
+-function flag_rules_action_trim_help() {
+-  return t('The <em>trim</em> action is used to restrict the number of objects that may be flagged. For example, you may wish your "Editor picks" queue (that is, flag) to contain a maximum of 3 nodes. The trim action is best understood when we think of a flag as a <em>queue</em>. The action works by discarding old flaggings; So newly flagged objects push older ones out of the queue.');
+-}
+-
+-
+-/*******************************************************************************
+- * Conditions forms.
+- ******************************************************************************/
+-
+-
+-function flag_rules_condition_threshold_form($settings, &$form, &$form_state) {
+-
+-  $form['settings']['operator'] = array(
+-    '#title' => t('Comparison operator'),
+-    '#type' => 'select',
+-    '#options' => array(
+-      '>'  => t('Greater than'),
+-      '>=' => t('Greater than or equal'),
+-      '='  => t('Equal to'),
+-      '<=' => t('Less than or equal'),
+-      '<'  => t('Less than'),
+-    ),
+-    '#default_value' => isset($settings['operator']) ? $settings['operator'] : '>=',
+-  );
+-
+-  // Move argument to bottom of form.
+-  $form['settings']['number']['#weight'] = 2;
+-
+-  // Move tokens help to bottom of form.
+-  $form['settings']['input_help'] = $form['input_help'];
+-  $form['settings']['input_help']['#weight'] = 3;
+-  unset($form['input_help']);
+-}
+-
+-function flag_rules_condition_threshold_label($settings, $argument_labels, $element) {
+-  $flag = rules_get_element_variable($element, 'flag');
+-  return t('Flagging count !op @number, for @object, under "@flag-title"', array('@flag-title' => $flag->get_title(), '!op' => $settings['operator'], '@number' => $settings['number']) + $argument_labels);
+-}
+-
+-function flag_rules_condition_flagged_label($settings, $argument_labels, $element) {
+-  $flag = rules_get_element_variable($element, 'flag');
+-  return t('Flag "@flag-title" is flagged, for @object', array('@flag-title' => $flag->get_title()) + $argument_labels);
+-}
+-
+-/*******************************************************************************
+- * Form utilities for the default input form of flags.
+- ******************************************************************************/
+-
+-function theme_flag_rules_radios($variables) {
+-  $element = $variables['element'];
+-
+-  if (!empty($element['#disabled'])) {
+-    drupal_set_message($element['#description'], 'error');
+-  }
+-
+-  $headers = array(t('Flag:'), t('The flag type'), t('Is the flag global?'));
+-  $rows = array();
+-  foreach (element_children($element) as $flag_name) {
+-    $flag = flag_get_flag($flag_name);
+-    $rows[] = array(
+-      '<div class="flag-radio">' . drupal_render($element[$flag_name]) . '</div>',
+-      $flag->content_type,
+-      $flag->global ? t('Yes') : t('No'),
+-    );
+-  }
+-  return theme('table', array('header' => $headers, 'rows' => $rows));
+-}
+-
+-function _flag_rules_flags_options($flag_type = NULL) {
+-  $flags = flag_get_flags();
+-  $options = array();
+-  foreach ($flags as $flag) {
+-    if (!isset($flag_type) || $flag->content_type == $flag_type) {
+-      $options[$flag->name] = $flag->get_title();
+-    }
+-  }
+-  return $options;
+-}
+-

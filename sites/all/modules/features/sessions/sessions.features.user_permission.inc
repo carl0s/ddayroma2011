@@ -19,7 +19,10 @@ function sessions_user_default_permissions() {
   // Exported permission: create session content
   $permissions['create session content'] = array(
     'name' => 'create session content',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'node',
   );
 
   // Exported permission: create time_slot content

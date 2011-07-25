@@ -135,6 +135,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '5';
   $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;
@@ -277,6 +278,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '5';
   $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;
@@ -384,6 +386,13 @@ function sessions_views_default_views() {
   $handler->display->display_options['filters']['field_session_track_value']['expose']['identifier'] = 'track';
   $handler->display->display_options['filters']['field_session_track_value']['expose']['multiple'] = 1;
   $handler->display->display_options['filters']['field_session_track_value']['expose']['reduce'] = 1;
+  /* Filter criterion: Content: Status (field_session_status) */
+  $handler->display->display_options['filters']['field_session_status_value']['id'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['table'] = 'field_data_field_session_status';
+  $handler->display->display_options['filters']['field_session_status_value']['field'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['path'] = 'conference/sessions';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'All Sessions';
@@ -485,6 +494,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '5';
   $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;
@@ -604,6 +614,13 @@ function sessions_views_default_views() {
   $handler->display->display_options['filters']['field_slot_date_value']['default_to_date'] = '';
   $handler->display->display_options['filters']['field_slot_date_value']['year_range'] = '-3:+3';
   $handler->display->display_options['filters']['field_slot_date_value']['add_delta'] = '';
+  /* Filter criterion: Content: Status (field_session_status) */
+  $handler->display->display_options['filters']['field_session_status_value']['id'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['table'] = 'field_data_field_session_status';
+  $handler->display->display_options['filters']['field_session_status_value']['field'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['value'] = array(
+    1 => '1',
+  );
   $handler->display->display_options['path'] = 'conference/monday';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Lunedi 2 Luglio';
@@ -749,6 +766,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '5';
   $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;

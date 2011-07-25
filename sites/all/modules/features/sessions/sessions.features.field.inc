@@ -155,7 +155,7 @@ function sessions_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
@@ -164,7 +164,7 @@ function sessions_field_default_fields() {
   $fields['node-session-field_session_presenters'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '5',
+      'cardinality' => '3',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_presenters',
@@ -312,7 +312,7 @@ function sessions_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '5',
+        'weight' => '9',
       ),
     ),
   );
@@ -384,6 +384,73 @@ function sessions_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_status'
+  $fields['node-session-field_session_status'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_status',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Proposed',
+          1 => 'Accepted',
+          2 => 'Deferred',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '1',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 7,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_status',
+      'label' => 'Status',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
         'weight' => '6',
       ),
     ),
@@ -460,7 +527,7 @@ function sessions_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '8',
       ),
     ),
   );
@@ -627,6 +694,7 @@ function sessions_field_default_fields() {
   t('Presenter(s)');
   t('Room');
   t('Slides');
+  t('Status');
   t('Time Slot');
   t('Track');
 
