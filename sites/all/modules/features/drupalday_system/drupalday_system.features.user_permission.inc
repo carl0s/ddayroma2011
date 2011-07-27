@@ -351,7 +351,10 @@ function drupalday_system_user_default_permissions() {
   // Exported permission: use admin toolbar
   $permissions['use admin toolbar'] = array(
     'name' => 'use admin toolbar',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'devel',
+    ),
+    'module' => 'admin',
   );
 
   // Exported permission: use advanced search

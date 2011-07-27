@@ -28,7 +28,7 @@ function drupalday_system_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_theme';
-  $strongarm->value = 'rubik';
+  $strongarm->value = 'bartik';
   $export['admin_theme'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -156,7 +156,7 @@ function drupalday_system_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'update_last_check';
-  $strongarm->value = 1310516640;
+  $strongarm->value = 1311722058;
   $export['update_last_check'] = $strongarm;
 
   $strongarm = new stdClass;
