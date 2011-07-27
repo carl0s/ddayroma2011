@@ -5,6 +5,48 @@
  */
 
 include_once('sessions.features.inc');
+define('SESSIONS_CTYPE', 'session');
+
+/**
+ * Implements hook_permission().
+ */
+function sessions_permission() {
+  return array(
+    'administer sessions' => array(
+      'title' => t('Administer Sessions'),
+      'description' => t('Perform administration tasks on sessions.'),
+    ),
+  );
+}
+
+
+function sessions_menu() {
+  $items = array();
+  $items['admin/config/sessions'] = array(
+    'title' => 'Sessions',
+    'description' => 'Manage sessions.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('sessions_admin_form'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'sessions.admin.inc',
+    'access arguments' => array('administer sessions')
+  );
+  return $items;
+}
+
+/**
+ * Implements of hook_menu_alter()
+ */
+function sessions_menu_alter(&$items) {
+  $items['user/%/schedule']['access callback'] = $items['user/%/sessions']['access callback'] = 'sessions_access';
+  $items['user/%/schedule']['access arguments'] = $items['user/%/sessions']['access arguments'] = array(1);
+}
+
+function sessions_access($uid) {
+  $account = user_load($uid);
+  return user_edit_access($account);
+}
+
 
 function sessions_theme($existing, $type, $theme, $path) {
   $items['views_view_unformatted__sessions_schedule'] = array(
@@ -13,6 +55,12 @@ function sessions_theme($existing, $type, $theme, $path) {
     'variables' => array('view' => NULL, 'options' => NULL, 'rows' => NULL, 'title' => NULL),
     'path' => drupal_get_path('module', 'sessions').'/templates'
   );  
+  $items['views_view_field__field_session_status'] = array(
+     'template'  => 'views-view-field--field-session-status',
+     'base hook' => 'views_view_field',
+     'variables' => array('view' => NULL, 'options' => NULL, 'row' => NULL),
+     'path' => drupal_get_path('module', 'sessions').'/templates'
+   );
   return $items;
 }
 
@@ -34,22 +82,23 @@ function sessions_form_alter(&$form, &$form_state, $form_id) {
       // multilanguage fields alter: http://timonweb.com/how-remove-format-options-guideliness-comments-textarea-drupal-7#comment-4611
       $form['field_session_status'][$form['field_session_status']['#language']]['#type'] = 'hidden';
       $form['field_session_status'][$form['field_session_status']['#language']]['#value'] = '0';
+      // hack to hide group fieldset 
+      // @todo make this code better!
+      $form['#groups']['group_session_schedule_info']->format_type = 'hidden';
     }
   }
 }
 
-
 function sessions_preprocess_node(&$vars) {
- if (!user_access('administer content')) {
+ if ($vars['node']->type == SESSIONS_CTYPE) {
+   global $user;
    $node = $vars['node'];
    
-   // hide status to users
-   hide($vars['content']['field_session_status']);
+   // grant access ever to administrators and user's own sessions status
+   $access = (user_access('administer sessions') || ($node->uid == $user->uid)) ? 1 : variable_get('sessions_status_check', 0);
    
-   // deny access to non promoted sessions by normal users
-   if ($node->field_session_status[$node->language][0]['value'] != 1) {
-     // return to homepage (@todo make a better access rules or manage this with Rules module)
-     drupal_goto('<front>');
+   if (!$access) {
+     hide($vars['content']['field_session_status']);
    }
  }
 }
