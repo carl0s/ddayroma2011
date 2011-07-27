@@ -16,5 +16,11 @@ function drupalday_system_user_default_roles() {
     'weight' => '2',
   );
 
+  // Exported role: devel
+  $roles['devel'] = array(
+    'name' => 'devel',
+    'weight' => '3',
+  );
+
   return $roles;
 }
