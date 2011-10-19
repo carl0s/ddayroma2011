@@ -1,0 +1,6 @@
+name = Custom View Modes
+description = "Custom view modes to be used in Drupal in place of build modes"
+core = 7.x
+package = n3
+files[] = custom_view_modes.test
+configure = admin/config/structure/custom_view_modes

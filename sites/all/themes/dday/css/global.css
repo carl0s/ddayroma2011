@@ -1,0 +1,22 @@
+/* This file will hold the main styles for your website. */
+
+/*Trash*/
+
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: normal;
+}
+
+h2.block-title {
+    font-size: 20px;
+}
+
+#zone-preface {
+    padding: 0;
+}
+
+#region-sidebar-first article {margin: 0 -10px;}
+#region-sidebar-first footer span.username {display:none;}
+#region-sidebar-first footer span a.username {display:none;}
+
+.views-field-field-owner-logo img { margin: 0 40px;}

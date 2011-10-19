@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function dday_news_field_default_fields() {
   $fields = array();
@@ -112,6 +112,12 @@ function dday_news_field_default_fields() {
           'type' => 'text_default',
           'weight' => 0,
         ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -186,6 +192,12 @@ function dday_news_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => 1,
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',

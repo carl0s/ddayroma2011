@@ -1,0 +1,5 @@
+name = Drupal Day Utilities
+description = "Drupal Day Utilities module: contains all useful functions and hook that doesn't 
+represent functionalities"
+core = 7.x
+package = bmeme

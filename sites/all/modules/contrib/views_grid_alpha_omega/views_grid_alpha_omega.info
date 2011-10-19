@@ -1,0 +1,13 @@
+name = Views Grid Alpha Omega
+description = Provides an grid_alpha_omega views display plugin.
+package = Views
+core = 7.x
+dependencies[] = views
+
+files[] = views_grid_alpha_omega.views.inc
+files[] = views_grid_alpha_omega_style_plugin.inc
+
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "views_grid_alpha_omega"
+

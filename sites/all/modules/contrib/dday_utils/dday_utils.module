@@ -1,0 +1,4 @@
+<?php
+function dday_utils_form_mailchimp_lists_user_subscribe_form_1_alter(&$form, &$form_state, $form_id) {
+    $form['submit']['#value'] = '';
+}

@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function sessions_field_default_fields() {
   $fields = array();
@@ -112,6 +112,12 @@ function sessions_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -182,8 +188,14 @@ function sessions_field_default_fields() {
           'label' => 'above',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'default',
+          'type' => 'link_default',
           'weight' => '4',
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -210,6 +222,7 @@ function sessions_field_default_fields() {
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
+        'validate_url' => 1,
       ),
       'widget' => array(
         'active' => 0,
@@ -273,6 +286,12 @@ function sessions_field_default_fields() {
           'settings' => array(),
           'type' => 'user_reference_default',
           'weight' => '0',
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -354,6 +373,12 @@ function sessions_field_default_fields() {
           'type' => 'hidden',
           'weight' => '3',
         ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -419,6 +444,12 @@ function sessions_field_default_fields() {
           'settings' => array(),
           'type' => 'file_default',
           'weight' => '2',
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -492,6 +523,12 @@ function sessions_field_default_fields() {
           'settings' => array(),
           'type' => 'list_default',
           'weight' => 7,
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -569,6 +606,12 @@ function sessions_field_default_fields() {
           'type' => 'hidden',
           'weight' => '5',
         ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -631,6 +674,12 @@ function sessions_field_default_fields() {
           'settings' => array(),
           'type' => 'list_default',
           'weight' => 6,
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -700,6 +749,12 @@ function sessions_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
+          'weight' => 0,
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => 0,
         ),
         'teaser' => array(
