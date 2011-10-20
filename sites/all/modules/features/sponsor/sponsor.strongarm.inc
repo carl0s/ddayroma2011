@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_strongarm().
+ * Implementation of hook_strongarm().
  */
 function sponsor_strongarm() {
   $export = array();

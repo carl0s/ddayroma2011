@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_filter_default_formats().
+ * Implementation of hook_filter_default_formats().
  */
 function drupalday_system_feature_filter_default_formats() {
   $formats = array();

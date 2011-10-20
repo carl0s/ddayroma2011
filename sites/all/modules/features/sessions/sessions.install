@@ -1,6 +1,6 @@
 <?php
 
-function sessions_update_7001() {
+function sessions_update_7207() {
   $sql = "UPDATE {system} SET weight = 11 WHERE name = 'sessions'";
   $result = db_query($sql);
   $ret[] = array('success' => $result !== FALSE, 'query' => check_plain($sql));

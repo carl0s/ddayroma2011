@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_user_default_permissions().
+ * Implementation of hook_user_default_permissions().
  */
 function drupalday_system_feature_user_default_permissions() {
   $permissions = array();
@@ -66,15 +66,6 @@ function drupalday_system_feature_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'contextual',
-  );
-
-  // Exported permission: access dashboard
-  $permissions['access dashboard'] = array(
-    'name' => 'access dashboard',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'dashboard',
   );
 
   // Exported permission: access site in maintenance mode

@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_field_default_fields().
+ * Implementation of hook_field_default_fields().
  */
 function sponsor_field_default_fields() {
   $fields = array();
@@ -196,7 +196,7 @@ function sponsor_field_default_fields() {
           'label' => 'above',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
+          'type' => 'default',
           'weight' => 4,
         ),
         'listing' => array(
@@ -432,7 +432,7 @@ function sponsor_field_default_fields() {
           'label' => 'above',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
+          'type' => 'default',
           'weight' => 5,
         ),
         'listing' => array(
@@ -516,7 +516,7 @@ function sponsor_field_default_fields() {
           'label' => 'above',
           'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
+          'type' => 'default',
           'weight' => 3,
         ),
         'listing' => array(

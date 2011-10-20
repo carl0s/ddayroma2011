@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_default_box().
+ * Implementation of hook_default_box().
  */
 function context_and_delta_default_box() {
   $export = array();

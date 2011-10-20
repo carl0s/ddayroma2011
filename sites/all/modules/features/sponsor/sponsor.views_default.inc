@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_views_default_views().
+ * Implementation of hook_views_default_views().
  */
 function sponsor_views_default_views() {
   $export = array();

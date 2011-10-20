@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_delta_default_templates().
+ * Implementation of hook_delta_default_templates().
  */
 function context_and_delta_delta_default_templates() {
   $export = array();
@@ -28,7 +28,7 @@ function context_and_delta_delta_default_templates() {
       'toggle_comment_user_picture' => 1,
       'toggle_comment_user_verification' => 1,
       'toggle_favicon' => 1,
-      'toggle_main_menu' => 0,
+      'toggle_main_menu' => 1,
       'toggle_secondary_menu' => 0,
       'default_logo' => 1,
       'logo_path' => '',
@@ -439,7 +439,7 @@ function context_and_delta_delta_default_templates() {
       'toggle_comment_user_picture' => 1,
       'toggle_comment_user_verification' => 1,
       'toggle_favicon' => 1,
-      'toggle_main_menu' => 0,
+      'toggle_main_menu' => 1,
       'toggle_secondary_menu' => 0,
       'default_logo' => 1,
       'logo_path' => '',

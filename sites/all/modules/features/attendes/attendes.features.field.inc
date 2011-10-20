@@ -31,9 +31,11 @@ function attendes_field_default_fields() {
           'dc2008' => 'Drupal Day 2008 - Milan',
           'dc2009' => 'Drupal Camp 2009 - Crema',
           'dc2010' => 'Drupal Camp 2010 - Turin',
-          'dcchi11' => 'DrupalCon Chicago 2011',
-          'dccph2010' => 'DrupalCon Copenhagen 2010',
-          'dcsfx2010' => 'DrupalCon San Francisco 2010',
+          'dc2011' => 'Drupal Camp 2011 - Verona',
+          'dconchi11' => 'DrupalCon Chicago 2011',
+          'dconcph2010' => 'DrupalCon Copenhagen 2010',
+          'dconlon11' => 'DrupalCon London 2011',
+          'dconsfx2010' => 'DrupalCon San Francisco 2010',
         ),
         'allowed_values_function' => '',
       ),
@@ -44,7 +46,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the Drupal Conferences where you are attendee
+      'description' => 'Select the Drupal Conferences where you were attendee
 ',
       'display' => array(
         'default' => array(
@@ -254,6 +256,7 @@ function attendes_field_default_fields() {
         'title_value' => '',
         'url' => 'optional',
         'user_register_form' => 1,
+        'validate_url' => 1,
       ),
       'widget' => array(
         'active' => 0,
@@ -449,6 +452,7 @@ function attendes_field_default_fields() {
         'title_value' => '',
         'url' => 0,
         'user_register_form' => 1,
+        'validate_url' => 1,
       ),
       'widget' => array(
         'active' => 0,
@@ -473,7 +477,7 @@ function attendes_field_default_fields() {
   t('Insert your city, this field is public. ');
   t('Insert your first name. This field is not public.');
   t('Last name');
-  t('Select the Drupal Conferences where you are attendee
+  t('Select the Drupal Conferences where you were attendee
 ');
   t('Twitter');
 

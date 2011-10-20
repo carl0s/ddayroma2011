@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_field_default_fields().
+ * Implementation of hook_field_default_fields().
  */
 function drupalday_system_feature_field_default_fields() {
   $fields = array();
@@ -261,8 +261,8 @@ function drupalday_system_feature_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => array(
-            'vocabulary' => 'tags',
             'parent' => 0,
+            'vocabulary' => 'tags',
           ),
         ),
       ),

@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_user_default_roles().
+ * Implementation of hook_user_default_roles().
  */
 function drupalday_system_feature_user_default_roles() {
   $roles = array();

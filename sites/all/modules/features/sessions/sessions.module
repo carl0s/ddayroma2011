@@ -38,10 +38,11 @@ function sessions_menu() {
  * Implements of hook_menu_alter()
  */
 function sessions_menu_alter(&$items) {
-  $items['user/%/schedule']['access callback'] = $items['user/%/sessions']['access callback'] = 'sessions_access';
+  $items['user/%/schedule']['access callback'] = $items['user/%/sessions']['access callback'] = array('sessions_access');
   $items['user/%/schedule']['access arguments'] = $items['user/%/sessions']['access arguments'] = array(1);
 }
 
+// Check if this user is able to update this user profile 
 function sessions_access($uid) {
   $account = user_load($uid);
   return user_edit_access($account);

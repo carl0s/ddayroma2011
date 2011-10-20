@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_field_group_info().
+ * Implementation of hook_field_group_info().
  */
 function sessions_field_group_info() {
   $export = array();

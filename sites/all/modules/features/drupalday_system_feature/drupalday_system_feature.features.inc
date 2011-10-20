@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_ctools_plugin_api().
+ * Implementation of hook_ctools_plugin_api().
  */
 function drupalday_system_feature_ctools_plugin_api() {
   list($module, $api) = func_get_args();
@@ -15,7 +15,7 @@ function drupalday_system_feature_ctools_plugin_api() {
 }
 
 /**
- * Implements hook_node_info().
+ * Implementation of hook_node_info().
  */
 function drupalday_system_feature_node_info() {
   $items = array(

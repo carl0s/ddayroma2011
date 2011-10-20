@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_context_default_contexts().
+ * Implementation of hook_context_default_contexts().
  */
 function context_and_delta_context_default_contexts() {
   $export = array();
@@ -55,12 +55,6 @@ function context_and_delta_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-menu-pa',
           'region' => 'user_third',
-          'weight' => '-10',
-        ),
-        'system-main-menu' => array(
-          'module' => 'system',
-          'delta' => 'main-menu',
-          'region' => 'menu',
           'weight' => '-10',
         ),
         'views-news-block' => array(
@@ -143,43 +137,43 @@ function context_and_delta_context_default_contexts() {
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'menu-menu-top' => array(
           'module' => 'menu',
           'delta' => 'menu-top',
           'region' => 'user_first',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'menu-menu-menu-biz' => array(
           'module' => 'menu',
           'delta' => 'menu-menu-biz',
           'region' => 'user_second',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'menu-menu-menu-pa' => array(
           'module' => 'menu',
           'delta' => 'menu-menu-pa',
           'region' => 'user_third',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'system-main-menu' => array(
           'module' => 'system',
           'delta' => 'main-menu',
-          'region' => 'menu',
+          'region' => 'sidebar_first',
           'weight' => '-10',
         ),
         'block-1' => array(
           'module' => 'block',
           'delta' => 1,
           'region' => 'header_first',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'views-sponsor-block_1' => array(
           'module' => 'views',
           'delta' => 'sponsor-block_1',
           'region' => 'header_first',
-          'weight' => '-1',
+          'weight' => '1',
         ),
         'views-sponsor-block_2' => array(
           'module' => 'views',
@@ -191,19 +185,19 @@ function context_and_delta_context_default_contexts() {
           'module' => 'views',
           'delta' => 'sponsor-block_3',
           'region' => 'postscript_first',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'views-owner-block' => array(
           'module' => 'views',
           'delta' => 'owner-block',
           'region' => 'postscript_second',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
           'region' => 'footer_first',
-          'weight' => '-10',
+          'weight' => '0',
         ),
       ),
     ),

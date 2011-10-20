@@ -10,3 +10,8 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
+ 
+function dday_preprocess_page(&$vars) {
+  // fixed level child -> 1 on main menu
+//  $vars['main_menu'] = menu_navigation_links(variable_get('menu_main_links_source', 'main-menu'));
+}

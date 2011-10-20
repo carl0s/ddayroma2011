@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_views_default_views().
+ * Implementation of hook_views_default_views().
  */
 function sessions_views_default_views() {
   $export = array();
@@ -488,7 +488,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_room']['id'] = 'field_session_room';
   $handler->display->display_options['fields']['field_session_room']['table'] = 'field_data_field_session_room';
   $handler->display->display_options['fields']['field_session_room']['field'] = 'field_session_room';
-  /* Sort criterion: Content: Date and Time -  start date (field_slot_date) */
+  /* Sort criterion: Content: Date and Time (field_slot_date) */
   $handler->display->display_options['sorts']['field_slot_date_value']['id'] = 'field_slot_date_value';
   $handler->display->display_options['sorts']['field_slot_date_value']['table'] = 'field_data_field_slot_date';
   $handler->display->display_options['sorts']['field_slot_date_value']['field'] = 'field_slot_date_value';
@@ -924,12 +924,18 @@ function sessions_views_default_views() {
   $handler->display->display_options['filters']['field_session_track_value']['expose']['identifier'] = 'track';
   $handler->display->display_options['filters']['field_session_track_value']['expose']['multiple'] = 1;
   $handler->display->display_options['filters']['field_session_track_value']['expose']['reduce'] = 1;
-  /* Filter criterion: Content: Date and Time -  start date (field_slot_date) */
+  /* Filter criterion: Content: Date and Time (field_slot_date) */
   $handler->display->display_options['filters']['field_slot_date_value']['id'] = 'field_slot_date_value';
   $handler->display->display_options['filters']['field_slot_date_value']['table'] = 'field_data_field_slot_date';
   $handler->display->display_options['filters']['field_slot_date_value']['field'] = 'field_slot_date_value';
   $handler->display->display_options['filters']['field_slot_date_value']['relationship'] = 'field_session_timeslot_nid';
   $handler->display->display_options['filters']['field_slot_date_value']['value']['value'] = '2011-07-02';
+  $handler->display->display_options['filters']['field_slot_date_value']['granularity'] = 'day';
+  $handler->display->display_options['filters']['field_slot_date_value']['form_type'] = 'date_select';
+  $handler->display->display_options['filters']['field_slot_date_value']['default_date'] = '';
+  $handler->display->display_options['filters']['field_slot_date_value']['default_to_date'] = '';
+  $handler->display->display_options['filters']['field_slot_date_value']['year_range'] = '-3:+3';
+  $handler->display->display_options['filters']['field_slot_date_value']['add_delta'] = '';
   /* Filter criterion: Content: Status (field_session_status) */
   $handler->display->display_options['filters']['field_session_status_value']['id'] = 'field_session_status_value';
   $handler->display->display_options['filters']['field_session_status_value']['table'] = 'field_data_field_session_status';

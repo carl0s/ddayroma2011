@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_default_rules_configuration().
+ * Implementation of hook_default_rules_configuration().
  */
 function sessions_default_rules_configuration() {
   $items = array();
