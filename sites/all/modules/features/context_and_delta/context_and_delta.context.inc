@@ -63,12 +63,6 @@ function context_and_delta_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-24',
         ),
-        'mailchimp_lists-1' => array(
-          'module' => 'mailchimp_lists',
-          'delta' => 1,
-          'region' => 'sidebar_first',
-          'weight' => '-23',
-        ),
         'block-1' => array(
           'module' => 'block',
           'delta' => 1,
@@ -79,6 +73,24 @@ function context_and_delta_context_default_contexts() {
           'module' => 'views',
           'delta' => 'sponsor-block_1',
           'region' => 'header_first',
+          'weight' => '-10',
+        ),
+        'boxes-code' => array(
+          'module' => 'boxes',
+          'delta' => 'code',
+          'region' => 'preface_first',
+          'weight' => '-10',
+        ),
+        'boxes-biz' => array(
+          'module' => 'boxes',
+          'delta' => 'biz',
+          'region' => 'preface_second',
+          'weight' => '-10',
+        ),
+        'boxes-pa' => array(
+          'module' => 'boxes',
+          'delta' => 'pa',
+          'region' => 'preface_third',
           'weight' => '-10',
         ),
         'views-sponsor-block_2' => array(
@@ -193,11 +205,17 @@ function context_and_delta_context_default_contexts() {
           'region' => 'postscript_second',
           'weight' => '0',
         ),
+        'menu-menu-footer-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-footer-menu',
+          'region' => 'footer_first',
+          'weight' => '-10',
+        ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
-          'region' => 'footer_first',
-          'weight' => '0',
+          'region' => 'footer_second',
+          'weight' => '-10',
         ),
       ),
     ),

@@ -14,7 +14,7 @@ function attendes_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'gravatar_default';
-  $strongarm->value = 'mm';
+  $strongarm->value = '7';
   $export['gravatar_default'] = $strongarm;
 
   $strongarm = new stdClass;
@@ -28,7 +28,7 @@ function attendes_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'gravatar_size';
-  $strongarm->value = '52';
+  $strongarm->value = '80';
   $export['gravatar_size'] = $strongarm;
 
   $strongarm = new stdClass;
