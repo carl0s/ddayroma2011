@@ -9,6 +9,14 @@
  */
 function sessions_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "boxes" && $api == "box") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -33,7 +41,7 @@ function sessions_views_api() {
  */
 function sessions_flag_default_flags() {
   $flags = array();
-  // Exported flag: "Schedule".
+  // Exported flag: "Pianifica".
   $flags['session_schedule'] = array(
     'content_type' => 'node',
     'title' => 'Schedule',
@@ -116,15 +124,15 @@ function sessions_node_info() {
       'base' => 'node_content',
       'description' => t('Conference Room'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
     'session' => array(
-      'name' => t('Session'),
+      'name' => t('Sessione'),
       'base' => 'node_content',
-      'description' => t('Session'),
+      'description' => t('Sessione'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
     'time_slot' => array(
@@ -132,7 +140,7 @@ function sessions_node_info() {
       'base' => 'node_content',
       'description' => t('Time Slot for Sessions'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
   );

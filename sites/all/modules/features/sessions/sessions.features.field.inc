@@ -101,7 +101,13 @@ function sessions_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'session',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'format' => 'filtered_html',
+          'summary' => '',
+          'value' => 'massimo 800 caratteri',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -130,10 +136,10 @@ function sessions_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Description',
+      'label' => 'Descrizione',
       'required' => 1,
       'settings' => array(
-        'display_summary' => 0,
+        'display_summary' => 1,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -302,7 +308,7 @@ function sessions_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_session_presenters',
-      'label' => 'Presenter(s)',
+      'label' => 'Speaker(s)',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -690,7 +696,7 @@ function sessions_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_session_track',
-      'label' => 'Track',
+      'label' => 'Traccia',
       'required' => 1,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -806,14 +812,14 @@ function sessions_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Comment');
   t('Date and Time');
-  t('Description');
+  t('Descrizione');
   t('Joind.in link');
-  t('Presenter(s)');
   t('Room');
   t('Slides');
+  t('Speaker(s)');
   t('Status');
   t('Time Slot');
-  t('Track');
+  t('Traccia');
 
   return $fields;
 }

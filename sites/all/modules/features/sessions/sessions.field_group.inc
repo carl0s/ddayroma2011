@@ -23,8 +23,8 @@ function sessions_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_session_room',
-      1 => 'field_session_timeslot',
-      2 => 'field_session_status',
+      1 => 'field_session_status',
+      2 => 'field_session_timeslot',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

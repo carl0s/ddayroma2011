@@ -87,6 +87,8 @@ function sessions_form_alter(&$form, &$form_state, $form_id) {
       // @todo make this code better!
       $form['#groups']['group_session_schedule_info']->format_type = 'hidden';
     }
+    // set as default presenter the logged user
+    $form['field_session_presenters']['und'][0]['uid']['#default_value'] = $user->uid;
   }
 }
 

@@ -146,8 +146,8 @@ function sponsor_image_default_styles() {
     'name' => 'sponsor_silver',
     'effects' => array(
       5 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'label' => 'Scala e ritaglia',
+        'help' => 'Scala e ritaglia preserva il rapporto di dimensioni dell\'immagine originale per poi ritagliare la dimensione in eccesso. Questo metodo è utile nei casi in cui si desidera ottenere delle miniature perfettamente quadrate senza deformare l\'immagine.',
         'effect callback' => 'image_scale_and_crop_effect',
         'form callback' => 'image_resize_form',
         'summary theme' => 'image_resize_summary',
@@ -175,7 +175,7 @@ function sponsor_node_info() {
       'base' => 'node_content',
       'description' => t('Sponsor'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
   );

@@ -5,13 +5,3 @@
  */
 
 include_once('drupalday_system_feature.features.inc');
-
-
-/**
- * Implementation of hook_block_alter()
- */
-function drupalday_system_feature_block_view_alter(&$data, $block) {
-  if ($block->module == 'system' && $block->delta == 'main-menu') {
-    
-  }
-}
