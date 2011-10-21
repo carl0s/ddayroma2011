@@ -8,7 +8,10 @@ function custom_view_modes_entity_info_alter(&$entity_info) {
     'label' => t('Attendees'),
     'custom settings' => 'TRUE',
   );
-  
+  $entity_info['node']['view modes']['news'] = array(
+    'label' => t('News'),
+    'custom settings' => 'TRUE',
+  );
 } 
 
 /**
@@ -18,8 +21,8 @@ function custom_view_modes_preprocess_node(&$vars) {
   if($vars['view_mode'] == 'listing') {
     $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__listing';
   }
-  if($vars['view_mode'] == 'sponsor') {
-      $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__sponsor';
+  if($vars['view_mode'] == 'news') {
+      $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__news';
     }
 }
 
