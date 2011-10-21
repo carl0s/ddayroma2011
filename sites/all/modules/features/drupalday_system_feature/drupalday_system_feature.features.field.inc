@@ -113,6 +113,12 @@ function drupalday_system_feature_field_default_fields() {
           'weight' => 0,
         ),
         'listing' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -194,6 +200,12 @@ function drupalday_system_feature_field_default_fields() {
           'weight' => -1,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -283,6 +295,12 @@ function drupalday_system_feature_field_default_fields() {
           'weight' => 10,
         ),
         'listing' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -357,6 +375,12 @@ function drupalday_system_feature_field_default_fields() {
           'weight' => 0,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
