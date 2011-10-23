@@ -6,6 +6,9 @@ screenshot = screenshot.png
 base theme = omega
 stylesheets[all][] = css/dday.less
 
+; OPTIONAL SCRIPTS
+scripts[] = js/custom.js
+
 ; IMPORTANT: DELETE THESE TWO LINES IN YOUR SUBTHEME
 
 ;hidden = TRUE

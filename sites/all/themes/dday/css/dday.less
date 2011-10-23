@@ -13,7 +13,6 @@
          url('fonts/museo_slab_700-webfont.svg#MuseoSlab700') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 .base-family {font-family: Lucida Grande, "Helvetica", sans-serif !important; }
@@ -761,3 +760,164 @@ form{
   }
 }
 
+.view-sessions-schedule {
+  
+  .views-exposed-form {
+    .views-submit-button {
+      float:left;
+      padding:0;
+      .form-submit {
+        margin-top:12px;
+        .button;
+        background:@light-grey;
+        color:@dark-grey;
+      }
+    }
+    #edit-track-wrapper {
+      float:left;
+      width:650px;
+      input {
+        visibility:hidden;
+      }
+      label {
+        float:left;
+        font-size:16px;
+        line-height:40px;
+        width:120px;
+        .serif;
+        .italic;
+        color:@mid-grey;
+      }
+      .form-item-track {
+        float:left;
+        margin-right:5px;
+        padding-left:20px;
+        border:1px solid @mid-grey;
+        border-bottom:0;
+        -webkit-border-top-right-radius: 3px; 
+        -webkit-border-top-left-radius: 3px;
+        -moz-border-radius-topright: 3px; 
+        -moz-border-radius-topleft: 3px;
+        border-top-right-radius:3px;
+        border-top-left-radius: 3px;
+        width:100px;
+        height:40px;
+        line-height:40px;
+        label {
+          .fancy;
+          .normal;
+          .uppercase;
+          color:@dark-grey;
+          font-style:normal;
+          font-size:16px;
+          width:auto;
+        }
+        &.selected {
+          background:@light-blue;
+          border-color:@light-blue;
+          label {
+            color:white;
+          }
+        }
+      }
+      
+    }
+  }
+  .view-filters {
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+  .view-content {
+    margin-top:-7px;
+    background:white;
+    border:1px solid @mid-grey;
+    .border-radius(5px);
+    table {
+      background:none;
+      border:none;
+
+      thead {
+        background:none;
+        border:none;
+      }
+
+      tr {
+        background:none;
+        border:none;
+      }
+
+      th,td {
+        background:none;
+        border:none;
+
+        &.views-field-title-1 {
+          width:120px;
+
+          span {
+            padding:5px 10px;
+            .fancy;
+            .border-radius(5px);
+            color:white;
+            background:@dark-grey;
+          }
+        }
+
+        &.views-field-nothing {
+          width:auto;
+          .session {
+            margin-top:20px;
+            h2 {
+              margin-bottom:0;
+              .fancy;
+              .normal;
+              color:@light-blue;
+              font-size:18px;
+              a {
+                .no-decoration;
+                
+                &:hover {
+                  color:@red;
+                }
+                
+                &:visited {
+                  color:@dark-blue;
+                }
+              }
+            }
+            h3 {
+              .italic;
+              font-size:14px;
+
+              a {
+                color:@light-blue;
+
+                &:hover {
+                  color:@red;
+                }
+              }
+            }
+          }
+        }
+
+        &.views-field-ops {
+          width:210px;
+          span.flag-wrapper {
+            a.flag {
+              padding:5px 10px;
+              .fancy;
+              .uppercase;
+              .no-decoration;
+              .border-radius(5px);
+              color:white;
+              background:@light-blue;
+              &:hover {
+                background:@red;
+              }
+            }
+          }
+        }
+      }
+    }
+    
+  }
+}
