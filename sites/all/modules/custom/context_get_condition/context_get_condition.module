@@ -1,0 +1,37 @@
+<?php
+
+
+/**
+ * Implementation of hook_init().
+ */
+function context_get_condition_init() {
+  if ($plugin = context_get_plugin('condition', 'get')) {
+    $plugin->execute();
+  }
+}
+
+function context_get_condition_context_plugins() {
+  $plugins = array();
+  $plugins['context_get_condition'] = array(
+    'handler' => array(
+      'path' => drupal_get_path('module', 'context_get_condition') .'/plugins',
+      'file' => 'context_get_condition.inc',
+      'class' => 'context_get_condition',
+      'parent' => 'context_condition',
+    ),
+  );
+  return $plugins;
+}
+
+
+function context_get_condition_context_registry() {
+  return array(
+    'conditions' => array(
+      'get' => array(
+         'title' => t('GET Parameters'),
+         'description' => t('Set this context when any of the paths above match the get parameters. Put each path on a separate line.'),
+         'plugin' => 'context_get_condition',
+       ),
+    ),
+  );
+}

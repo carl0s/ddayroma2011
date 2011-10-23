@@ -1,0 +1,5 @@
+name = Context GET Conditions
+description = "Provides a simple $_GET condition to match against GET parameters."
+dependencies[] = context
+package = Context
+core = "7.x"
