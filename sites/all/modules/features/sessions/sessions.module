@@ -71,6 +71,8 @@ function sessions_theme($existing, $type, $theme, $path) {
 function sessions_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   if ($form_id == 'session_node_form') {
+    // force title
+    drupal_set_title('Proponi un talk');
     // hide some fields for authenticated users
     if (!user_access('administer content')) {
       $language = $form_state['node']->language;
