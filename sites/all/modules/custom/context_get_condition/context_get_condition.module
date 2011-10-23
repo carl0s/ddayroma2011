@@ -1,5 +1,6 @@
 <?php
 
+# based on this: http://drupal.org/files/issues/condition_get_plugin-1116050-1.patch
 
 /**
  * Implementation of hook_init().
