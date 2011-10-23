@@ -22,6 +22,7 @@ function sessions_permission() {
 
 function sessions_menu() {
   $items = array();
+  $custom_aliases = array('code', 'biz', 'pa');
   $items['admin/config/sessions'] = array(
     'title' => 'Sessions',
     'description' => 'Manage sessions.',
@@ -31,7 +32,20 @@ function sessions_menu() {
     'file' => 'sessions.admin.inc',
     'access arguments' => array('administer sessions')
   );
+  
+  foreach ($custom_aliases as $alias) {
+    $items['sessioni/'.$alias] = array(
+      'page callback' => 'sessions_alias_redirect',
+      'page arguments' =>  array(1),
+      'type' => MENU_CALLBACK,
+      'access arguments' => array('View published content')
+    );
+  }
   return $items;
+}
+
+function sessions_alias_redirect($alias) {
+  drupal_goto(url('sessioni', array('query' => array('track' => $alias), 'absolute' => true)));
 }
 
 /**
