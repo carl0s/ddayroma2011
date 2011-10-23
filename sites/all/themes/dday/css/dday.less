@@ -918,6 +918,41 @@ form{
         }
       }
     }
+  }
+}
+
+article.session {
+  .detail {
+    text-align:center;
     
+    span.timeslot {
+      padding:5px 10px;
+      width:80px;
+      .fancy;
+      .uppercase;
+      .normal;
+      .border-radius(5px);
+      color:white;
+      background:@dark-grey;
+      font-size:16px;
+    }
+    
+    h4 {
+      margin:20px 0;
+      .fancy;
+      .uppercase;
+      .normal;
+      font-size:16px;
+    }
+  }
+  
+  h1#page-title {
+    a {
+      .no-decoration;
+      color:@light-blue;
+      &:hover {
+        color:@red;
+      }
+    }
   }
 }
