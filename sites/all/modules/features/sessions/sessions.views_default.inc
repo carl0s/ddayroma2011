@@ -440,7 +440,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
-  $handler->display->display_options['empty']['area']['content'] = 'There are no sessions available for your selection.';
+  $handler->display->display_options['empty']['area']['content'] = 'Non ci sono ancora sessioni in questa track. <a href="/node/add/session" class="button">proponi una sessione</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
   /* Relazione: Contenuto: Time Slot (field_session_timeslot) */
@@ -623,7 +623,8 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_session_timeslot_nid';
   $handler->display->display_options['fields']['title_1']['ui_name'] = 'Timeslot';
   $handler->display->display_options['fields']['title_1']['label'] = '';
-  $handler->display->display_options['fields']['title_1']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['title_1']['alter']['text'] = '<span>[title_1]</span>';
   $handler->display->display_options['fields']['title_1']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['title_1']['alter']['external'] = 0;
@@ -646,6 +647,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
@@ -668,7 +670,9 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_presenters']['id'] = 'field_session_presenters';
   $handler->display->display_options['fields']['field_session_presenters']['table'] = 'field_data_field_session_presenters';
   $handler->display->display_options['fields']['field_session_presenters']['field'] = 'field_session_presenters';
-  $handler->display->display_options['fields']['field_session_presenters']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['label'] = '';
+  $handler->display->display_options['fields']['field_session_presenters']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['alter']['text'] = 'di [field_session_presenters] ';
   $handler->display->display_options['fields']['field_session_presenters']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['alter']['absolute'] = 0;
@@ -681,7 +685,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_presenters']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_session_presenters']['element_label_colon'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_session_presenters']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_session_presenters']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
@@ -739,6 +743,31 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_track']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_track']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_track']['field_api_classes'] = 0;
+  /* Campo: Globale: Testo personalizzato */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="session">
+  <h2>[title]</h2>
+  <h3>di [field_session_presenters] - [field_session_room]</h3>
+</div>';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
   /* Campo: Flags: Flag link */
   $handler->display->display_options['fields']['ops']['id'] = 'ops';
   $handler->display->display_options['fields']['ops']['table'] = 'flag_content';
@@ -1578,7 +1607,7 @@ function sessions_views_default_views() {
     t('Asc'),
     t('Disc'),
     t('Below are all sessions that <a href="/frontpage">DrupalDay Rome 2011</a> offers. You can <a href="/user/register/">sign up </a>  to create your own sessions schedule.'),
-    t('There are no sessions available for your selection.'),
+    t('Non ci sono ancora sessioni in questa track. <a href="/node/add/session" class="button">proponi una sessione</a>'),
     t('field_session_timeslot'),
     t('flag'),
     t('field_session_presenters'),
@@ -1587,9 +1616,13 @@ function sessions_views_default_views() {
     t('Sessioni'),
     t('Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/session">proporre una tua sessione e creare il tuo programma personalizzato.</a> 
 '),
-    t('Speaker(s)'),
+    t('<span>[title_1]</span>'),
     t('di [field_session_presenters] '),
     t('Traccia'),
+    t('<div class="session">
+  <h2>[title]</h2>
+  <h3>di [field_session_presenters] - [field_session_room]</h3>
+</div>'),
     t('Tracce'),
     t('2 Luglio'),
     t('Sessioni Lunedi 2 Luglio'),

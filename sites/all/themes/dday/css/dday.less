@@ -147,6 +147,26 @@ input[type=submit] {
   font-size:16px;
 }
 
+a {
+  color:@light-blue;
+  
+  &:hover {
+    color:@red;
+  }
+  
+  &:visited {
+    color:@dark-grey;
+  }
+  
+  &.button {
+    text-decoration:none !important;
+    color:white !important;
+    
+    &:visited {
+      color:@dark-grey;
+    }
+  }
+}
 // css
 
 body {
@@ -826,6 +846,15 @@ form{
   .view-filters {
     margin-bottom:0;
     padding-bottom:0;
+  }
+  
+  .view-empty {
+    margin-top:-7px;
+    background:white;
+    border:1px solid @mid-grey;
+    .border-radius(5px);
+    padding:20px 0 7px 0;
+    text-align:center;
   }
   .view-content {
     margin-top:-7px;

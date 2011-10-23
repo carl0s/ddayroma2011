@@ -112,11 +112,11 @@ function sessions_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '3',
         ),
         'listing' => array(
           'label' => 'above',
@@ -201,7 +201,7 @@ function sessions_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'listing' => array(
           'label' => 'above',
@@ -303,7 +303,7 @@ function sessions_field_default_fields() {
           'module' => 'user_reference',
           'settings' => array(),
           'type' => 'user_reference_default',
-          'weight' => '0',
+          'weight' => '2',
         ),
         'listing' => array(
           'label' => 'above',
@@ -393,9 +393,10 @@ function sessions_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
+          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '3',
+          'type' => 'node_reference_default',
+          'weight' => '1',
         ),
         'listing' => array(
           'label' => 'above',
@@ -469,11 +470,11 @@ function sessions_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '2',
+          'weight' => '4',
         ),
         'listing' => array(
           'label' => 'above',
@@ -558,7 +559,7 @@ function sessions_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 7,
+          'weight' => '7',
         ),
         'listing' => array(
           'label' => 'above',
@@ -644,9 +645,10 @@ function sessions_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
+          'module' => 'node_reference',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '5',
+          'type' => 'node_reference_default',
+          'weight' => '0',
         ),
         'listing' => array(
           'label' => 'above',
@@ -721,7 +723,7 @@ function sessions_field_default_fields() {
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 6,
+          'weight' => '6',
         ),
         'listing' => array(
           'label' => 'above',
