@@ -21,7 +21,7 @@ function context_and_delta_default_box() {
     'body' => array(
       'value' => 'Percorso di marketing e comunicazione per chiarire le potenzialità di business che Drupal offre a imprenditori, manager & decision maker.
 
-<a href="sessioni/biz" class="circle" title="vai alla sezione BIZ"></a>',
+<a href="sessioni?track=biz" class="circle" title="vai alla sezione BIZ"></a>',
       'format' => 'filtered_html',
     ),
   );
@@ -32,13 +32,15 @@ function context_and_delta_default_box() {
   $box->api_version = 1;
   $box->delta = 'call_for_paper';
   $box->plugin_key = 'simple';
-  $box->title = 'Call for paper';
-  $box->description = 'Call for paper';
+  $box->title = 'DrupalDay 2011: Call for paper';
+  $box->description = 'DrupalDay 2011: Call for paper';
   $box->options = array(
     'body' => array(
       'value' => '<div class="cfp">
 <a href="sessioni" class="button" title="inviaci la tua proposta di talk">fai una proposta</a>
 <div class="inner">
+Il <span class="fancy uppercase">DrupalDay</span> è un evento itinerante che sceglie Roma come location per il 2011.
+L’evento è stato ideato per far confluire le esigenze tecniche e necessità di business di imprenditori, manager, sviluppatori, art director e decision maker.
 Il Drupal Day Roma 2011 vuole dare spazio a proposte concrete che mirano al miglioramento delle pratiche lavorative di Imprese, Pubbliche Amministrazioni, Istituzioni e Web Developer.
 L\'approccio preferito per i paper è business oriented per dare spazio a nuove soluzioni a problemi comuni all\'interno dei 3 percorsi: Code, Business, PA.
 </div>
@@ -59,7 +61,7 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
     'body' => array(
       'value' => 'Percorso di alto profilo tecnico per confrontarsi su righe di codice e best practice d’implementazione.
 
-<a href="sessioni/code" class="circle" title="vai alla sezione CODE"></a>',
+<a href="sessioni?track=code" class="circle" title="vai alla sezione CODE"></a>',
       'format' => 'filtered_html',
     ),
   );
@@ -76,7 +78,7 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
     'body' => array(
       'value' => 'Percorso di strategic analysis per illustrare le opportunità che Drupal rappresenta per  fondazioni, enti ed organizzazione governative e non.
 
-<a href="sessioni/pa" class="circle" title="vai alla sezione PA"></a>',
+<a href="sessioni?track=pa" class="circle" title="vai alla sezione PA"></a>',
       'format' => 'filtered_html',
     ),
   );

@@ -63,6 +63,12 @@ function context_and_delta_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-24',
         ),
+        'mailchimp_lists-1' => array(
+          'module' => 'mailchimp_lists',
+          'delta' => 1,
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
         'block-1' => array(
           'module' => 'block',
           'delta' => 1,

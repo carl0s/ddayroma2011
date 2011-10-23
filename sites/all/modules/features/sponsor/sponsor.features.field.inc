@@ -57,6 +57,12 @@ function sponsor_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -134,6 +140,12 @@ function sponsor_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -200,6 +212,12 @@ function sponsor_field_default_fields() {
           'weight' => 4,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -286,6 +304,12 @@ function sponsor_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -355,6 +379,12 @@ function sponsor_field_default_fields() {
           'weight' => 1,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -441,6 +471,12 @@ function sponsor_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -520,6 +556,12 @@ function sponsor_field_default_fields() {
           'weight' => 3,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',

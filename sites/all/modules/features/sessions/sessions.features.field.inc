@@ -124,6 +124,12 @@ function sessions_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -198,6 +204,12 @@ function sessions_field_default_fields() {
           'weight' => '4',
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -299,6 +311,12 @@ function sessions_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -385,6 +403,12 @@ function sessions_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -452,6 +476,12 @@ function sessions_field_default_fields() {
           'weight' => '2',
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -531,6 +561,12 @@ function sessions_field_default_fields() {
           'weight' => 7,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -618,6 +654,12 @@ function sessions_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -682,6 +724,12 @@ function sessions_field_default_fields() {
           'weight' => 6,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -758,6 +806,12 @@ function sessions_field_default_fields() {
           'weight' => 0,
         ),
         'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',

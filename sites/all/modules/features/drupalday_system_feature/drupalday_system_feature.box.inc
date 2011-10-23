@@ -21,7 +21,7 @@ function drupalday_system_feature_default_box() {
     'body' => array(
       'value' => 'Percorso di marketing e comunicazione per chiarire le potenzialità di business che Drupal offre a imprenditori, manager & decision maker.
 
-<a href="sessioni/biz" class="circle" title="vai alla sezione BIZ"></a>',
+<a href="sessioni?track=biz" class="circle" title="vai alla sezione BIZ"></a>',
       'format' => 'filtered_html',
     ),
   );
@@ -38,7 +38,7 @@ function drupalday_system_feature_default_box() {
     'body' => array(
       'value' => 'Percorso di alto profilo tecnico per confrontarsi su righe di codice e best practice d’implementazione.
 
-<a href="sessioni/code" class="circle" title="vai alla sezione CODE"></a>',
+<a href="sessioni?track=code" class="circle" title="vai alla sezione CODE"></a>',
       'format' => 'filtered_html',
     ),
   );
@@ -55,7 +55,7 @@ function drupalday_system_feature_default_box() {
     'body' => array(
       'value' => 'Percorso di strategic analysis per illustrare le opportunità che Drupal rappresenta per  fondazioni, enti ed organizzazione governative e non.
 
-<a href="sessioni/pa" class="circle" title="vai alla sezione PA"></a>',
+<a href="sessioni?track=pa" class="circle" title="vai alla sezione PA"></a>',
       'format' => 'filtered_html',
     ),
   );

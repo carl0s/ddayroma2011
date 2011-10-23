@@ -13,6 +13,72 @@ function sessions_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'Sessioni Biz';
+  $context->description = '';
+  $context->tag = 'sessions';
+  $context->conditions = array(
+    'get' => array(
+      'values' => array(
+        'track=biz' => 'track=biz',
+        'q=sessioni' => 'q=sessioni',
+      ),
+    ),
+  );
+  $context->reactions = array();
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('sessions');
+  $export['Sessioni Biz'] = $context;
+
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'Sessioni Code';
+  $context->description = '';
+  $context->tag = 'sessions';
+  $context->conditions = array(
+    'get' => array(
+      'values' => array(
+        'track=code' => 'track=code',
+        'q=sessioni' => 'q=sessioni',
+      ),
+    ),
+  );
+  $context->reactions = array();
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('sessions');
+  $export['Sessioni Code'] = $context;
+
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'Sessioni PA';
+  $context->description = '';
+  $context->tag = 'sessions';
+  $context->conditions = array(
+    'get' => array(
+      'values' => array(
+        'track=pa' => 'track=pa',
+        'q=sessioni' => 'q=sessioni',
+      ),
+    ),
+  );
+  $context->reactions = array();
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('sessions');
+  $export['Sessioni PA'] = $context;
+
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'sessions_create';
   $context->description = '';
   $context->tag = 'sessions';
