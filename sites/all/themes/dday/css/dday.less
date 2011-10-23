@@ -748,38 +748,71 @@ form{
   }
 }
 
-#block-menu-menu-footer-menu {
-  ul {
-
-    li {
-      .no-style;
-      background:none;
-      .serif;
-      font-size:18px;
-      font-style:italic;
-      a {
-        color:white;
-        .no-decoration;
-        &:hover {
-          color:#ccc;
-        }
-        
-        &:active {
-          color:@red;
-        }
-      }
+#zone-footer-wrapper {
+  padding-top:20px;
+  #region-footer-first {
+    #block-menu-menu-footer-menu {
       ul {
-        width:300px;
-        float:left;
+        width:700px;
         li {
-          .base-family;
-          font-size:13px;
+          float:left;
+          width:200px;
+          margin-right:20px;
+          line-height:20px;
+          .no-style;
+          background:none;
+          .serif;
+          font-size:18px;
+          font-style:italic;
+          a {
+            color:white;
+            .no-decoration;
+            &:hover {
+              color:#ccc;
+            }
+
+            &:active {
+              color:@red;
+            }
+          }
+          ul {
+            margin-top:5px;
+            width:200px;
+            float:left;
+            li {
+              .base-family;
+              font-size:13px;
+            }
+          }
         }
       }
     }
   }
+  
+  #region-footer-second {
+    #edit-search-block-form--2 {
+      .base-family;
+      width:200px;
+      border:1px solid @mid-grey;
+      .border-radius(5px);
+      padding:5px 10px;
+      height:30px;
+      font-size:14px;
+      color:@mid-grey;
+      
+      &:focus {
+        color:@dark-grey;
+      }
+    }
+    .form-submit {
+      .button;
+      background:@red;
+      height:30px;
+      
+    }
+  }
+  
 }
-
 .view-sessions-schedule {
   
   .views-exposed-form {
