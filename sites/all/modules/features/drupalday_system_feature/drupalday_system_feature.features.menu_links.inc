@@ -30,23 +30,6 @@ function drupalday_system_feature_menu_default_menu_links() {
     'expanded' => '1',
     'weight' => '-49',
   );
-  // Exported menu link: menu-footer-menu:node/52
-  $menu_links['menu-footer-menu:node/52'] = array(
-    'menu_name' => 'menu-footer-menu',
-    'link_path' => 'node/52',
-    'router_path' => 'node/%',
-    'link_title' => 'Proponi una sessione',
-    'options' => array(
-      'attributes' => array(),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-50',
-    'parent_path' => '<front>',
-  );
   // Exported menu link: menu-footer-menu:node/59
   $menu_links['menu-footer-menu:node/59'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -158,7 +141,6 @@ function drupalday_system_feature_menu_default_menu_links() {
   t('L\'evento');
   t('La location');
   t('Partecipa');
-  t('Proponi una sessione');
   t('Sponsor');
   t('Spread the word');
 
