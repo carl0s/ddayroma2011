@@ -350,7 +350,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['picture']['empty_zero'] = 0;
   $handler->display->display_options['fields']['picture']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['picture']['imagecache_preset'] = 'thumbnail';
-  /* Campo: Utente: Last name */
+  /* Campo: Utente: Cognome */
   $handler->display->display_options['fields']['field_user_lastname']['id'] = 'field_user_lastname';
   $handler->display->display_options['fields']['field_user_lastname']['table'] = 'field_data_field_user_lastname';
   $handler->display->display_options['fields']['field_user_lastname']['field'] = 'field_user_lastname';
@@ -374,7 +374,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_lastname']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_user_lastname']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_user_lastname']['field_api_classes'] = 0;
-  /* Campo: Utente: First name */
+  /* Campo: Utente: Nome */
   $handler->display->display_options['fields']['field_user_firstname']['id'] = 'field_user_firstname';
   $handler->display->display_options['fields']['field_user_firstname']['table'] = 'field_data_field_user_firstname';
   $handler->display->display_options['fields']['field_user_firstname']['field'] = 'field_user_firstname';

@@ -588,6 +588,7 @@ function sessions_views_default_views() {
   $handler = $view->new_display('page', 'All Sessions', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Sessioni';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
@@ -611,10 +612,11 @@ function sessions_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/session">proporre una tua sessione e creare il tuo programma personalizzato.</a> 
+  $handler->display->display_options['header']['area']['content'] = 'Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. 
+Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/session">proporre una tua sessione</a> e creare il tuo <a href="/user"> programma personalizzato.</a>
 ';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  $handler->display->display_options['header']['area']['tokenize'] = 1;
+  $handler->display->display_options['header']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Timeslot */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -1086,7 +1088,7 @@ function sessions_views_default_views() {
   /* Display: User's schedule */
   $handler = $view->new_display('page', 'User\'s schedule', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Your schedule';
+  $handler->display->display_options['title'] = 'Il tuo programma';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -1126,7 +1128,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
-  $handler->display->display_options['empty']['area']['content'] = 'No sessions scheduled for this user.';
+  $handler->display->display_options['empty']['area']['content'] = 'Non hai ancora nessuna sessione in programma, puoi aggiungere <a href="/sessioni">da qui</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1279,7 +1281,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['path'] = 'user/%/schedule';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Schedule';
+  $handler->display->display_options['menu']['title'] = 'Programma Sessioni';
   $handler->display->display_options['menu']['weight'] = '0';
 
   /* Display: User's sessions */
@@ -1323,7 +1325,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = FALSE;
-  $handler->display->display_options['empty']['area']['content'] = 'No uploaded sessions for this user.';
+  $handler->display->display_options['empty']['area']['content'] = 'Non ci sono sessioni, se vuoi proporne una <a href="/node/add/session">clicca qui.</a>';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1392,7 +1394,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['arguments']['uid']['relationship'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['uid']['title_enable'] = 1;
-  $handler->display->display_options['arguments']['uid']['title'] = '%1 submitted sessions';
+  $handler->display->display_options['arguments']['uid']['title'] = 'Sessioni proposte di %1';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
   $handler->display->display_options['arguments']['uid']['default_argument_skip_url'] = 0;
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
@@ -1418,7 +1420,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['filters']['type']['group'] = 0;
   $handler->display->display_options['path'] = 'user/%/sessions';
   $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Sessions';
+  $handler->display->display_options['menu']['title'] = 'Sessioni proposte';
   $handler->display->display_options['menu']['description'] = 'User\'s sessions';
   $handler->display->display_options['menu']['weight'] = '0';
 
@@ -1614,7 +1616,8 @@ function sessions_views_default_views() {
     t('Room'),
     t('All Sessions'),
     t('Sessioni'),
-    t('Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/session">proporre una tua sessione e creare il tuo programma personalizzato.</a> 
+    t('Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. 
+Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/session">proporre una tua sessione</a> e creare il tuo <a href="/user"> programma personalizzato.</a>
 '),
     t('<span>[title_1]</span>'),
     t('di [field_session_presenters] '),
@@ -1629,8 +1632,8 @@ function sessions_views_default_views() {
     t('Show Track'),
     t('Feed'),
     t('User\'s schedule'),
-    t('Your schedule'),
-    t('No sessions scheduled for this user.'),
+    t('Il tuo programma'),
+    t('Non hai ancora nessuna sessione in programma, puoi aggiungere <a href="/sessioni">da qui</a>'),
     t('autore'),
     t('Titolo'),
     t('Date and Time'),
@@ -1638,11 +1641,11 @@ function sessions_views_default_views() {
     t('Azione'),
     t('User\'s sessions'),
     t('Your submitted sessions'),
-    t('No uploaded sessions for this user.'),
+    t('Non ci sono sessioni, se vuoi proporne una <a href="/node/add/session">clicca qui.</a>'),
     t('Status'),
     t('[field_session_status-value]'),
     t('Tutti'),
-    t('%1 submitted sessions'),
+    t('Sessioni proposte di %1'),
     t('Ultime sessioni accettate'),
     t('Ultime Sessioni accettate'),
   );

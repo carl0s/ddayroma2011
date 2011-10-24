@@ -69,7 +69,7 @@ function attendes_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '13',
+        'weight' => '10',
       ),
     ),
   );
@@ -129,7 +129,7 @@ function attendes_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '12',
+        'weight' => '6',
       ),
     ),
   );
@@ -178,7 +178,7 @@ function attendes_field_default_fields() {
       ),
       'entity_type' => 'user',
       'field_name' => 'field_user_city',
-      'label' => 'City',
+      'label' => 'Città',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -191,7 +191,7 @@ function attendes_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '9',
+        'weight' => '7',
       ),
     ),
   );
@@ -240,7 +240,7 @@ function attendes_field_default_fields() {
       ),
       'entity_type' => 'user',
       'field_name' => 'field_user_company',
-      'label' => 'Company',
+      'label' => 'Azienda',
       'required' => 0,
       'settings' => array(
         'attributes' => array(
@@ -256,14 +256,13 @@ function attendes_field_default_fields() {
         'title_value' => '',
         'url' => 'optional',
         'user_register_form' => 1,
-        'validate_url' => 1,
       ),
       'widget' => array(
         'active' => 0,
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '10',
+        'weight' => '8',
       ),
     ),
   );
@@ -312,7 +311,7 @@ function attendes_field_default_fields() {
       ),
       'entity_type' => 'user',
       'field_name' => 'field_user_firstname',
-      'label' => 'First name',
+      'label' => 'Nome',
       'required' => 1,
       'settings' => array(
         'text_processing' => '0',
@@ -325,7 +324,7 @@ function attendes_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '7',
+        'weight' => '4',
       ),
     ),
   );
@@ -374,7 +373,7 @@ function attendes_field_default_fields() {
       ),
       'entity_type' => 'user',
       'field_name' => 'field_user_lastname',
-      'label' => 'Last name',
+      'label' => 'Cognome',
       'required' => 1,
       'settings' => array(
         'text_processing' => '0',
@@ -387,7 +386,7 @@ function attendes_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '5',
       ),
     ),
   );
@@ -459,7 +458,7 @@ function attendes_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '11',
+        'weight' => '9',
       ),
     ),
   );
@@ -467,16 +466,16 @@ function attendes_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Attendee');
+  t('Azienda');
   t('Bio');
-  t('City');
-  t('Company');
+  t('Città');
+  t('Cognome');
   t('Describe yourself, your relevant past experiences.');
-  t('First name');
   t('Insert here your company, this field is public.');
   t('Insert here your twitter account, this field is public.');
   t('Insert your city, this field is public. ');
   t('Insert your first name. This field is not public.');
-  t('Last name');
+  t('Nome');
   t('Select the Drupal Conferences where you were attendee
 ');
   t('Twitter');

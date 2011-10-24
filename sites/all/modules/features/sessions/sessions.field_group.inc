@@ -20,11 +20,12 @@ function sessions_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Schedule Info',
-    'weight' => '4',
+    'weight' => '6',
     'children' => array(
       0 => 'field_session_room',
       1 => 'field_session_status',
       2 => 'field_session_timeslot',
+      3 => 'field_session_experience_level',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
