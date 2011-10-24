@@ -1,4 +1,4 @@
-<article class="session clearfix">
+<article class="session">
   <div class="grid-3 detail alpha">
     <span class="timeslot"> <?php print $content['field_session_timeslot'][0]['#title'] ?> </span>
     <h4>difficoltà</h4>
@@ -7,10 +7,10 @@
         <?php print drupal_render($content['field_session_experience_level']); ?>
       </span>
     <?php endif; ?>
-    <?php if ($content['field_session_tags']) : ?>
+    <?php if ($content['field_user_interest']) : ?>
       <h4>da sapere</h4>
       <div class="helpful">
-        <?php print drupal_render($content['field_session_to_know_tags']) ?>
+        <?php print drupal_render($content['field_user_interest']) ?>
       </div>
     <?php endif; ?>
   </div>
@@ -20,6 +20,15 @@
     <?php else : ?>
       <h2 id='page-title'><?php print l($title, 'node/'.$node->nid) ?> </h2>
     <?php endif; ?>
+    <span class="username"> di <?php print theme('username', array('account' => user_load(array('uid' => $node->uid)))) ?> </span>
+    
+    <?php if ($content['field_user_skills']) : ?>
+      <div class="tags">
+        <?php print drupal_render($content['field_user_skills']) ?>
+      </div>
+    <?php endif; ?>
+    
+    
     <?php print render($content['body']); ?>
   </div>
 </article>
