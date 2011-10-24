@@ -52,6 +52,7 @@
 
 .no-decoration {text-decoration:none; }
 .center {text-align:center;}
+.centered {text-align:center;}
 .uppercase {text-transform:uppercase;}
 .lowercase {text-transform:lowercase;}
 .normal {font-weight: normal;}
@@ -311,6 +312,8 @@ nav.navigation {
   }
 }
 
+
+
 #zone-header-wrapper {
 background:transparent url("{@base-url}/bg_header.gif") repeat-x top left;
  	#zone-header {
@@ -356,6 +359,13 @@ background:transparent url("{@base-url}/bg_header.gif") repeat-x top left;
 		}
 	}
 	
+}
+
+.page-sponsor {
+  #zone-postscript-wrapper {
+    background:none;
+    height:auto;
+  }
 }
 
 .block-menu-top {
@@ -529,6 +539,10 @@ article {
                 .serif;
                 .italic;
                 color:@mid-grey;
+                &:focus {
+                  color:@dark-grey;
+                  border-color:@dark-grey;
+                }
             }
     }
     #edit-submit {
@@ -1015,6 +1029,102 @@ article.session {
       &:hover {
         color:@red;
       }
+    }
+  }
+}
+
+.view-sponsor {
+  .view-header {
+    p {
+      .fancy;
+      color:@light-blue;
+      font-size:16px;
+    }
+  }
+  
+  .view-content {
+    .views-row-first {
+      margin-left:0;
+      
+    }
+  }
+}
+
+#node-page-60 {
+  h3.serif {
+    .serif;
+    .normal;
+    text-transform:none;
+    font-size:32px;
+    color:#666;
+    em {
+      .bold;
+    }
+  }
+  
+  h4.fancy {
+    font-size:24px;
+    .fancy;
+    .normal;
+  }
+  
+  h3.topic {
+    font-size:24px;
+    color:@dark-grey;
+    .normal;
+  }
+  
+  ul.tracks {
+    width:940px;
+    height:120px;
+    clear:both;
+    margin:0;
+    margin-left:140px;
+    margin-bottom:40px;
+    padding:0;
+    li {
+      float:left;
+      .no-style;
+      width:120px;
+      height:120px;
+      line-height:120px;
+      font-size:24px;
+      .border-radius(60px);
+      color:white;
+      text-align:center;
+      margin-left:40px;
+      margin-right:60px;
+      .normal;
+      
+      a {
+        color:white;
+        .no-decoration;
+        display:block;
+      }
+      &.code {
+        background:@lightest-blue;
+        
+        &:hover {
+          background:@dark-blue
+        }
+      }
+      
+      &.biz {
+        background:@lightest-yellow;
+        
+        &:hover {
+          background:@yellow;
+        }
+      }
+      
+      &.pa {
+        background:@lightest-red;
+        
+        &:hover {
+          background:@red;
+        }
+      }
+      
     }
   }
 }
