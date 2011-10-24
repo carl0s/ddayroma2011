@@ -1108,7 +1108,22 @@ article.session {
   .view-content {
     .views-row-first {
       margin-left:0;
-      
+    }
+    .views-row {
+      a {
+        img {
+          border:1px solid @light-grey;
+        }
+        &:hover {
+          img {
+            border:1px solid @red;
+          }
+        }
+      }
+    }
+    .view-display-id-attachment_2 {
+      clear:both;
+      margin-top:40px;
     }
   }
 }
@@ -1257,5 +1272,11 @@ article.session {
       margin:10px 0;
       height:110px;
     }
+  }
+}
+
+#edit-submitted-tipo-sponsorship {
+  label {
+    width:100px;
   }
 }
