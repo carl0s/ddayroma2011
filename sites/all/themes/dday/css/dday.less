@@ -1108,7 +1108,16 @@ article.session {
   .view-content {
     .views-row-first {
       margin-left:0;
-      
+      a {
+        img {
+          border:1px solid @dark-grey;
+        }
+        &:hover {
+          img {
+            border:1px solid @red;
+          }
+        }
+      }
     }
     .view-display-id-attachment_2 {
       clear:both;
