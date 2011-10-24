@@ -39,11 +39,13 @@ function sessions_menu() {
       'page callback' => 'sessions_alias_redirect',
       'page arguments' =>  array(1),
       'type' => MENU_CALLBACK,
-      'access arguments' => array('View published content')
+      'access arguments' => array('access content')
     );
-  }
+  }  
   return $items;
 }
+
+
 
 function sessions_alias_redirect($alias) {
   drupal_goto(url('sessioni', array('query' => array('track' => $alias), 'absolute' => true)));
@@ -55,6 +57,22 @@ function sessions_alias_redirect($alias) {
 function sessions_menu_alter(&$items) {
   $items['user/%/schedule']['access callback'] = $items['user/%/sessions']['access callback'] = array('sessions_access');
   $items['user/%/schedule']['access arguments'] = $items['user/%/sessions']['access arguments'] = array(1);
+  
+  $items['node/add/session']['access callback'] = 'user_access';
+  $items['node/add/session']['access arguments'] = array('access content');
+  $items['node/add/session']['page callback'] = 'session_node_add';
+  unset($items['node/add/session']['file']);   unset($items['node/add/session']['module']);
+}
+
+function session_node_add() {
+  module_load_include('inc', 'node', 'node.pages');
+  global $user;
+  if (!$user->uid || (!node_access('create', 'session'))) {
+    return drupal_access_denied();
+  }
+  else {
+    return node_add('session');
+  }
 }
 
 // Check if this user is able to update this user profile 

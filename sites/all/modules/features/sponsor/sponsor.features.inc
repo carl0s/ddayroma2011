@@ -108,32 +108,32 @@ function sponsor_image_default_styles() {
   $styles['sponsor_platinum'] = array(
     'name' => 'sponsor_platinum',
     'effects' => array(
-      1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+      8 => array(
+        'label' => 'Scala',
+        'help' => 'La trasformazione in scala mantiene il rapporto delle dimensioni dell\'immagine originale. Se viene impostata una sola dimensione, l\'altra sarà calcolata di conseguenza.',
         'effect callback' => 'image_scale_effect',
         'form callback' => 'image_scale_form',
         'summary theme' => 'image_scale_summary',
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '220',
+          'width' => '200',
           'height' => '',
           'upscale' => 0,
         ),
         'weight' => '1',
       ),
-      2 => array(
-        'label' => 'Crop',
-        'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
+      9 => array(
+        'label' => 'Ritaglia',
+        'help' => 'Il ritaglio rimuove porzioni dell\'immagine in modo da portarla alle dimensioni desiderate.',
         'effect callback' => 'image_crop_effect',
         'form callback' => 'image_crop_form',
         'summary theme' => 'image_crop_summary',
         'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
-          'width' => '220',
-          'height' => '100',
+          'width' => '200',
+          'height' => '120',
           'anchor' => 'left-top',
         ),
         'weight' => '2',
@@ -154,8 +154,8 @@ function sponsor_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => '130',
-          'height' => '85',
+          'width' => '100',
+          'height' => '70',
         ),
         'weight' => '1',
       ),

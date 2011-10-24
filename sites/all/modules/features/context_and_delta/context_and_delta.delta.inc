@@ -538,7 +538,7 @@ function context_and_delta_delta_default_templates() {
         'modules/field/theme/field.css' => 0,
         'modules/node/node.css' => 0,
         'modules/search/search.css' => 0,
-        'sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sessions.css' => 0,
+        'sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sites/all/modules/features/sessions/sessions.css' => 0,
         'modules/user/user.css' => 0,
         'sites/all/modules/contrib/views/css/views.css' => 0,
         'sites/all/themes/dday/css/dday.less' => 0,
@@ -567,6 +567,8 @@ function context_and_delta_delta_default_templates() {
         'modules/tracker/tracker.css' => 0,
         'modules/update/update.css' => 0,
       ),
+      'alpha_debug_block_toggle' => 0,
+      'alpha_debug_grid_toggle' => 0,
       'alpha_region_preface_fourth_zone' => NULL,
       'alpha_region_preface_first_zone' => NULL,
       'alpha_region_postscript_first_zone' => NULL,
@@ -613,6 +615,7 @@ function context_and_delta_delta_default_templates() {
       'alpha_region_postscript_second_zone' => 'postscript',
       'alpha_region_postscript_second_columns' => '16',
       'alpha_zone_footer_primary' => NULL,
+      'alpha_settings__active_tab' => 'edit-alpha-debug',
     ),
   );
   $export['no_sponsor'] = $delta;

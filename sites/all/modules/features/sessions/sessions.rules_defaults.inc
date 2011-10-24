@@ -53,7 +53,7 @@ function sessions_default_rules_configuration() {
         }
       ],
       "DO" : [
-        { "drupal_message" : { "message" : "Thanks for your contribution [node:author]!\\r\\nYour sessions will be reviewed by our team as soon as possible, you will receive a notification when it will be approved or not.\\r\\n\\r\\nRemember that your uploaded session are listed in your profile: \\u003ca href=\\"[node:author:url]\\/sessions\\"\\u003e[node:author:url]\\/sessions\\u003c\\/a\\u003e" } },
+        { "drupal_message" : { "message" : "Grazie per il tuo contributo [node:author]!\\r\\nLa tua proposta di sessione verr\\u00e0 valutata dal nostro comitato scientifico, al pi\\u00f9 presto ti faremo sapere il risultato.\\r\\n\\r\\nRicordati che puoi verificare sempre lo stato della tua sessione dalla tua pagina profilo a questo indirizzo:\\r\\n\\u003ca href=\\"[site:url]user\\/[node:author:uid]\\/sessions\\"\\u003e[site:url]user\\/[node:author:uid]\\/sessions\\u003c\\/a\\u003e\\r\\n\\r\\n" } },
         { "redirect" : { "url" : "\\u003cfront\\u003e" } },
         { "mail" : {
             "to" : "[site:mail]",

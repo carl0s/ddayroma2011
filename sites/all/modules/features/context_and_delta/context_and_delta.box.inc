@@ -37,7 +37,7 @@ function context_and_delta_default_box() {
   $box->options = array(
     'body' => array(
       'value' => '<div class="cfp">
-<a href="sessioni" class="button" title="inviaci la tua proposta di talk">fai una proposta</a>
+<a href="node/add/session" class="button" title="inviaci la tua proposta di talk">fai una proposta</a>
 <div class="inner">
 Il <span class="fancy uppercase">DrupalDay</span> è un evento itinerante che sceglie Roma come location per il 2011.
 L’evento è stato ideato per far confluire le esigenze tecniche e necessità di business di imprenditori, manager, sviluppatori, art director e decision maker.
@@ -76,7 +76,8 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
   $box->description = 'pa';
   $box->options = array(
     'body' => array(
-      'value' => 'Percorso di strategic analysis per illustrare le opportunità che Drupal rappresenta per  fondazioni, enti ed organizzazione governative e non.
+      'value' => 'Percorso di strategic analysis per illustrare le opportunità che Drupal rappresenta per  fondazioni, enti ed organizzazioni 
+governative e non.
 
 <a href="sessioni?track=pa" class="circle" title="vai alla sezione PA"></a>',
       'format' => 'filtered_html',
@@ -96,9 +97,8 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
       'value' => '<ul class="social-icons">
   <li class="facebook"><a href="http://www.facebook.com/drupalday" title="Facebook page"></a></li>
   <li class="twitter"><a href="http://www.twitter.com/drupalday" title="Twitter handle"></a></li>
-  <li class="flickr"><a href="#" title="Flickr page"></a></li>
-  <li class="youtube"><a href="#" title="YouTube channel"></a></li>
-  <li class="slideshare"><a href="#" title="Slideshare account"></a></li>
+  <li class="flickr"><a href="http://www.flickr.com/photos/drupalday" title="Flickr page"></a></li>
+  <li class="youtube"><a href="http://www.youtube.com/user/DrupalDay" title="YouTube channel"></a></li>
 </ul>',
       'format' => 'filtered_html',
     ),

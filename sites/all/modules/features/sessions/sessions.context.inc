@@ -23,26 +23,89 @@ function sessions_context_default_contexts() {
         'q=sessioni' => 'q=sessioni',
       ),
     ),
-    'views' => array(
-      'values' => array(
-        'sessions_schedule' => 'sessions_schedule',
-        'sessions_schedule:page' => 'sessions_schedule:page',
-      ),
-    ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'boxes-biz_description' => array(
+          'module' => 'boxes',
+          'delta' => 'biz_description',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'menu-menu-top' => array(
+          'module' => 'menu',
+          'delta' => 'menu-top',
+          'region' => 'user_first',
+          'weight' => '-10',
+        ),
+        'menu-menu-menu-biz' => array(
+          'module' => 'menu',
+          'delta' => 'menu-menu-biz',
+          'region' => 'user_second',
+          'weight' => '-10',
+        ),
+        'menu-menu-menu-pa' => array(
+          'module' => 'menu',
+          'delta' => 'menu-menu-pa',
+          'region' => 'user_third',
+          'weight' => '-10',
+        ),
         'boxes-biz_block' => array(
           'module' => 'boxes',
           'delta' => 'biz_block',
           'region' => 'sidebar_first',
+          'weight' => '-32',
+        ),
+        'views-sponsor-block_2' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_2',
+          'region' => 'sidebar_first',
+          'weight' => '-31',
+        ),
+        'views-sponsor-block_3' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_3',
+          'region' => 'sidebar_first',
+          'weight' => '-30',
+        ),
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => 1,
+          'region' => 'header_first',
+          'weight' => '-34',
+        ),
+        'views-sponsor-block_1' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_1',
+          'region' => 'header_first',
+          'weight' => '-33',
+        ),
+        'menu-menu-footer-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-footer-menu',
+          'region' => 'footer_first',
           'weight' => '-10',
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'footer_second',
+          'weight' => '-34',
+        ),
+        'boxes-social_block' => array(
+          'module' => 'boxes',
+          'delta' => 'social_block',
+          'region' => 'footer_second',
+          'weight' => '-33',
         ),
       ),
     ),
     'delta' => array(
-      'delta_template' => 'clone_of_sitewide',
+      'delta_template' => 'pagina_track',
+    ),
+    'theme_html' => array(
+      'class' => 'biz-page',
     ),
   );
   $context->condition_mode = 0;
@@ -66,7 +129,90 @@ function sessions_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'boxes-code_description' => array(
+          'module' => 'boxes',
+          'delta' => 'code_description',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'menu-menu-top' => array(
+          'module' => 'menu',
+          'delta' => 'menu-top',
+          'region' => 'user_first',
+          'weight' => '-10',
+        ),
+        'menu-menu-menu-biz' => array(
+          'module' => 'menu',
+          'delta' => 'menu-menu-biz',
+          'region' => 'user_second',
+          'weight' => '-10',
+        ),
+        'menu-menu-menu-pa' => array(
+          'module' => 'menu',
+          'delta' => 'menu-menu-pa',
+          'region' => 'user_third',
+          'weight' => '-10',
+        ),
+        'boxes-code_block' => array(
+          'module' => 'boxes',
+          'delta' => 'code_block',
+          'region' => 'sidebar_first',
+          'weight' => '-32',
+        ),
+        'views-sponsor-block_2' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_2',
+          'region' => 'sidebar_first',
+          'weight' => '-31',
+        ),
+        'views-sponsor-block_3' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_3',
+          'region' => 'sidebar_first',
+          'weight' => '-30',
+        ),
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => 1,
+          'region' => 'header_first',
+          'weight' => '-10',
+        ),
+        'views-sponsor-block_1' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_1',
+          'region' => 'header_first',
+          'weight' => '-10',
+        ),
+        'menu-menu-footer-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-footer-menu',
+          'region' => 'footer_first',
+          'weight' => '-10',
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'footer_second',
+          'weight' => '-10',
+        ),
+        'boxes-social_block' => array(
+          'module' => 'boxes',
+          'delta' => 'social_block',
+          'region' => 'footer_second',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'delta' => array(
+      'delta_template' => 'pagina_track',
+    ),
+    'theme_html' => array(
+      'class' => 'code-page',
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables
@@ -88,7 +234,72 @@ function sessions_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'boxes-pa_description' => array(
+          'module' => 'boxes',
+          'delta' => 'pa_description',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'boxes-pa_block' => array(
+          'module' => 'boxes',
+          'delta' => 'pa_block',
+          'region' => 'sidebar_first',
+          'weight' => '-34',
+        ),
+        'views-sponsor-block_2' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_2',
+          'region' => 'sidebar_first',
+          'weight' => '-33',
+        ),
+        'views-sponsor-block_3' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_3',
+          'region' => 'sidebar_first',
+          'weight' => '-32',
+        ),
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => 1,
+          'region' => 'header_first',
+          'weight' => '-34',
+        ),
+        'views-sponsor-block_1' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_1',
+          'region' => 'header_first',
+          'weight' => '-33',
+        ),
+        'menu-menu-footer-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-footer-menu',
+          'region' => 'footer_first',
+          'weight' => '-10',
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'footer_second',
+          'weight' => '-34',
+        ),
+        'boxes-social_block' => array(
+          'module' => 'boxes',
+          'delta' => 'social_block',
+          'region' => 'footer_second',
+          'weight' => '-33',
+        ),
+      ),
+    ),
+    'delta' => array(
+      'delta_template' => 'pagina_track',
+    ),
+    'theme_html' => array(
+      'class' => 'pa-page',
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables

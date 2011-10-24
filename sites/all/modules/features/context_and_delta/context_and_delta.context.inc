@@ -153,6 +153,9 @@ function context_and_delta_context_default_contexts() {
       'values' => array(
         '~homepage' => '~homepage',
         '~sponsor' => '~sponsor',
+        '~sessioni_code' => '~sessioni_code',
+        '~sessioni_biz' => '~sessioni_biz',
+        '~sessioni_pa' => '~sessioni_pa',
       ),
     ),
     'sitewide' => array(
@@ -234,13 +237,13 @@ function context_and_delta_context_default_contexts() {
           'module' => 'search',
           'delta' => 'form',
           'region' => 'footer_second',
-          'weight' => '-10',
+          'weight' => '-32',
         ),
         'boxes-social_block' => array(
           'module' => 'boxes',
           'delta' => 'social_block',
           'region' => 'footer_second',
-          'weight' => '-10',
+          'weight' => '-31',
         ),
       ),
     ),

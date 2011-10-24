@@ -32,7 +32,7 @@ function drupalday_system_feature_default_box() {
   $box->api_version = 1;
   $box->delta = 'biz_block';
   $box->plugin_key = 'simple';
-  $box->title = '<none>';
+  $box->title = '';
   $box->description = 'Blocco pagina biz';
   $box->options = array(
     'body' => array(
@@ -64,7 +64,7 @@ function drupalday_system_feature_default_box() {
   $box->api_version = 1;
   $box->delta = 'code_block';
   $box->plugin_key = 'simple';
-  $box->title = '<none>';
+  $box->title = '';
   $box->description = 'Blocco pagina code';
   $box->options = array(
     'body' => array(
@@ -83,7 +83,8 @@ function drupalday_system_feature_default_box() {
   $box->description = 'pa';
   $box->options = array(
     'body' => array(
-      'value' => 'Percorso di strategic analysis per illustrare le opportunità che Drupal rappresenta per  fondazioni, enti ed organizzazione governative e non.
+      'value' => 'Percorso di strategic analysis per illustrare le opportunità che Drupal rappresenta per  fondazioni, enti ed organizzazioni 
+governative e non.
 
 <a href="sessioni?track=pa" class="circle" title="vai alla sezione PA"></a>',
       'format' => 'filtered_html',
@@ -96,12 +97,12 @@ function drupalday_system_feature_default_box() {
   $box->api_version = 1;
   $box->delta = 'pa_block';
   $box->plugin_key = 'simple';
-  $box->title = '<none>';
+  $box->title = '';
   $box->description = 'Blocco pagina pa';
   $box->options = array(
     'body' => array(
       'value' => '<img src="/sites/all/themes/dday/images/pa.png" title="pa" />',
-      'format' => 'filtered_html',
+      'format' => 'full_html',
     ),
   );
   $export['pa_block'] = $box;
@@ -118,9 +119,8 @@ function drupalday_system_feature_default_box() {
       'value' => '<ul class="social-icons">
   <li class="facebook"><a href="http://www.facebook.com/drupalday" title="Facebook page"></a></li>
   <li class="twitter"><a href="http://www.twitter.com/drupalday" title="Twitter handle"></a></li>
-  <li class="flickr"><a href="#" title="Flickr page"></a></li>
-  <li class="youtube"><a href="#" title="YouTube channel"></a></li>
-  <li class="slideshare"><a href="#" title="Slideshare account"></a></li>
+  <li class="flickr"><a href="http://www.flickr.com/photos/drupalday" title="Flickr page"></a></li>
+  <li class="youtube"><a href="http://www.youtube.com/user/DrupalDay" title="YouTube channel"></a></li>
 </ul>',
       'format' => 'filtered_html',
     ),
