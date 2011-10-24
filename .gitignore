@@ -9,3 +9,4 @@ sites/*/files
 sites/*/private
 .DS_Store
 .sql.*
+*.bz2
