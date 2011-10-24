@@ -143,7 +143,7 @@ function attendes_default_page_manager_handlers() {
     $display->panels['center'][0] = 'new-1';
     $pane = new stdClass;
     $pane->pid = 'new-2';
-    $pane->panel = 'profile_bottom';
+    $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'sessions_schedule';
     $pane->shown = TRUE;
@@ -173,9 +173,9 @@ function attendes_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $display->content['new-2'] = $pane;
-    $display->panels['profile_bottom'][0] = 'new-2';
+    $display->panels['center'][1] = 'new-2';
     $pane = new stdClass;
     $pane->pid = 'new-3';
     $pane->panel = 'profile_sidebar_left';
