@@ -8,5 +8,6 @@ sites/default
 sites/*/files
 sites/*/private
 .DS_Store
+.sql
 .sql.*
 *.bz2
