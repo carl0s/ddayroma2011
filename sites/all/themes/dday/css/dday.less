@@ -1302,6 +1302,7 @@ article.session {
     height:30px;
     display:block;
     .fancy;
+    .no-decoration;
     color:@light-blue;
     font-size:16px;
     margin:10px 0;
@@ -1312,7 +1313,12 @@ article.session {
       .uppercase;
       .normal;
       font-size:20px;
-      color:@light-blue;
+      margin-bottom:10px;
+      padding:0;
+      a {
+        color:@light-blue;
+        .no-decoration;
+      }
     }
   }
 }
