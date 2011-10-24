@@ -30,6 +30,21 @@ function drupalday_system_feature_default_box() {
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
+  $box->delta = 'biz_block';
+  $box->plugin_key = 'simple';
+  $box->title = '<none>';
+  $box->description = 'Blocco pagina biz';
+  $box->options = array(
+    'body' => array(
+      'value' => '<img src="/sites/all/themes/dday/images/biz.png" title="biz" />',
+      'format' => 'full_html',
+    ),
+  );
+  $export['biz_block'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
   $box->delta = 'code';
   $box->plugin_key = 'simple';
   $box->title = '';
@@ -47,6 +62,21 @@ function drupalday_system_feature_default_box() {
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
+  $box->delta = 'code_block';
+  $box->plugin_key = 'simple';
+  $box->title = '<none>';
+  $box->description = 'Blocco pagina code';
+  $box->options = array(
+    'body' => array(
+      'value' => '<img src="/sites/all/themes/dday/images/code.png" title="code" />',
+      'format' => 'full_html',
+    ),
+  );
+  $export['code_block'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
   $box->delta = 'pa';
   $box->plugin_key = 'simple';
   $box->title = '';
@@ -60,6 +90,21 @@ function drupalday_system_feature_default_box() {
     ),
   );
   $export['pa'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
+  $box->delta = 'pa_block';
+  $box->plugin_key = 'simple';
+  $box->title = '<none>';
+  $box->description = 'Blocco pagina pa';
+  $box->options = array(
+    'body' => array(
+      'value' => '<img src="/sites/all/themes/dday/images/pa.png" title="pa" />',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['pa_block'] = $box;
 
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
