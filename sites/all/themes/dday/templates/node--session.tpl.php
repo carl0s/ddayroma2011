@@ -1,4 +1,4 @@
-<article class="session">
+<article class="session clear-block">
   <div class="grid-3 detail alpha">
     <span class="timeslot"> <?php print $content['field_session_timeslot'][0]['#title'] ?> </span>
     <h4>difficoltà</h4>
