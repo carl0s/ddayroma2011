@@ -568,6 +568,13 @@ function sessions_views_default_views() {
   $handler->display->display_options['sorts']['field_slot_date_value']['table'] = 'field_data_field_slot_date';
   $handler->display->display_options['sorts']['field_slot_date_value']['field'] = 'field_slot_date_value';
   $handler->display->display_options['sorts']['field_slot_date_value']['relationship'] = 'field_session_timeslot_nid';
+  /* Filtro contestuale: Utente: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['relationship'] = 'field_session_presenters_uid';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   /* Criterio del filtro: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1599,6 +1606,237 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['granularity'] = 'day';
+
+  /* Display: All Sessions profilo utente */
+  $handler = $view->new_display('page', 'All Sessions profilo utente', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Sessioni';
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = 0;
+  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = 1;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'field_session_track_value' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 1,
+        'bef_collapsible' => 0,
+        'bef_filter_description' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Intestazione: Globale: Area di testo */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = FALSE;
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['tokenize'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Timeslot */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'field_session_timeslot_nid';
+  $handler->display->display_options['fields']['title_1']['ui_name'] = 'Timeslot';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['title_1']['alter']['text'] = '<span>[title_1]</span>';
+  $handler->display->display_options['fields']['title_1']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['title_1']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['title_1']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['title_1']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['title_1']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['title_1']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title_1']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['title_1']['link_to_node'] = 0;
+  /* Campo: Contenuto: Titolo */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['title']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['title']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['title']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['title']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['title']['link_to_node'] = 1;
+  /* Campo: Contenuto: Speaker(s) */
+  $handler->display->display_options['fields']['field_session_presenters']['id'] = 'field_session_presenters';
+  $handler->display->display_options['fields']['field_session_presenters']['table'] = 'field_data_field_session_presenters';
+  $handler->display->display_options['fields']['field_session_presenters']['field'] = 'field_session_presenters';
+  $handler->display->display_options['fields']['field_session_presenters']['label'] = '';
+  $handler->display->display_options['fields']['field_session_presenters']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['text'] = 'di [field_session_presenters] ';
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_presenters']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;
+  /* Campo: Contenuto: Room */
+  $handler->display->display_options['fields']['field_session_room']['id'] = 'field_session_room';
+  $handler->display->display_options['fields']['field_session_room']['table'] = 'field_data_field_session_room';
+  $handler->display->display_options['fields']['field_session_room']['field'] = 'field_session_room';
+  $handler->display->display_options['fields']['field_session_room']['label'] = '';
+  $handler->display->display_options['fields']['field_session_room']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_room']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_session_room']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_session_room']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_session_room']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_session_room']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_room']['type'] = 'node_reference_plain';
+  $handler->display->display_options['fields']['field_session_room']['field_api_classes'] = 0;
+  /* Campo: Contenuto: Traccia */
+  $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['table'] = 'field_data_field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['field'] = 'field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_track']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_session_track']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_session_track']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['element_label_colon'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_session_track']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['field_api_classes'] = 0;
+  /* Campo: Globale: Testo personalizzato */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="session">
+  <h2>[title]</h2>
+  <h3>di [field_session_presenters] - [field_session_room]</h3>
+</div>';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtro contestuale: Utente: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['relationship'] = 'field_session_presenters_uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['uid']['not'] = 0;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Criterio del filtro: Contenuto: Pubblicato */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Criterio del filtro: Contenuto: Tipo */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'session' => 'session',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 0;
+  /* Criterio del filtro: Contenuto: Status (field_session_status) */
+  $handler->display->display_options['filters']['field_session_status_value']['id'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['table'] = 'field_data_field_session_status';
+  $handler->display->display_options['filters']['field_session_status_value']['field'] = 'field_session_status_value';
+  $handler->display->display_options['filters']['field_session_status_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_session_status_value']['group'] = 0;
+  $handler->display->display_options['path'] = 'sessioni';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Sessioni';
+  $handler->display->display_options['menu']['weight'] = '-10';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['tab_options']['type'] = 'normal';
+  $handler->display->display_options['tab_options']['title'] = 'Sessioni';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+  $handler->display->display_options['tab_options']['name'] = 'main-menu';
   $translatables['sessions_schedule'] = array(
     t('Master'),
     t('Drupal Day Roma 2011 - Sessions Schedule'),
@@ -1614,6 +1852,7 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
     t('flag'),
     t('field_session_presenters'),
     t('Room'),
+    t('Tutti'),
     t('All Sessions'),
     t('Sessioni'),
     t('Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. 
@@ -1644,10 +1883,10 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
     t('Non ci sono sessioni, se vuoi proporne una <a href="/node/add/session">clicca qui.</a>'),
     t('Status'),
     t('[field_session_status-value]'),
-    t('Tutti'),
     t('Sessioni proposte di %1'),
     t('Ultime sessioni accettate'),
     t('Ultime Sessioni accettate'),
+    t('All Sessions profilo utente'),
   );
   $export['sessions_schedule'] = $view;
 
