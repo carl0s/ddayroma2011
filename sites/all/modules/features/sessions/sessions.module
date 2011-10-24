@@ -81,6 +81,17 @@ function sessions_access($uid) {
   return user_edit_access($account);
 }
 
+/* Implementation of hook_views_post_build() */
+function sessions_views_pre_build(&$view) {
+  if ($view->name == 'sessions_schedule') {
+    $input = $view->get_exposed_input();
+    if ($input && $input['track']) {
+      $title = 'Sessioni &raquo; ' . $input['track'];
+      $view->display_handler->set_option('title', $title);
+    }
+  }
+}
+
 
 function sessions_theme($existing, $type, $theme, $path) {
   $items['views_view_unformatted__sessions_schedule'] = array(
