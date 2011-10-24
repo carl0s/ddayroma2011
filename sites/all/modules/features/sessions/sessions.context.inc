@@ -13,7 +13,7 @@ function sessions_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'Sessioni Biz';
+  $context->name = 'sessioni_biz';
   $context->description = '';
   $context->tag = 'sessions';
   $context->conditions = array(
@@ -23,19 +23,39 @@ function sessions_context_default_contexts() {
         'q=sessioni' => 'q=sessioni',
       ),
     ),
+    'views' => array(
+      'values' => array(
+        'sessions_schedule' => 'sessions_schedule',
+        'sessions_schedule:page' => 'sessions_schedule:page',
+      ),
+    ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'boxes-biz_block' => array(
+          'module' => 'boxes',
+          'delta' => 'biz_block',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'delta' => array(
+      'delta_template' => 'clone_of_sitewide',
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables
   // Included for use with string extractors like potx.
   t('sessions');
-  $export['Sessioni Biz'] = $context;
+  $export['sessioni_biz'] = $context;
 
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'Sessioni Code';
+  $context->name = 'sessioni_code';
   $context->description = '';
   $context->tag = 'sessions';
   $context->conditions = array(
@@ -52,12 +72,12 @@ function sessions_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('sessions');
-  $export['Sessioni Code'] = $context;
+  $export['sessioni_code'] = $context;
 
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'Sessioni PA';
+  $context->name = 'sessioni_pa';
   $context->description = '';
   $context->tag = 'sessions';
   $context->conditions = array(
@@ -74,7 +94,7 @@ function sessions_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('sessions');
-  $export['Sessioni PA'] = $context;
+  $export['sessioni_pa'] = $context;
 
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
