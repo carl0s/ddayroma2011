@@ -9,9 +9,7 @@ function dday_alpha_preprocess_node_session(&$vars) {
 }
 
 function dday_alpha_preprocess_node(&$vars) {
-  $functions = array(__FUNCTION__ . '_' . $vars['node']->type, 
-                      __FUNCTION__ . '_' . $vars['node']->type . '_teaser',
-                      ($vars['teaser'] ? __FUNCTION__ . '_' . 'teaser' : ''));
+  $functions = array(__FUNCTION__ . '_' . $vars['node']->type, ($vars['teaser'] ? __FUNCTION__ . '_' . 'teaser' : ''));
   foreach ($functions as $function) {
      if (function_exists($function)) {
        $function($vars);
