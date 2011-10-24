@@ -1637,6 +1637,15 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
   $handler->display->display_options['header']['area']['empty'] = FALSE;
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['header']['area']['tokenize'] = 0;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Comportamento se non ci sono risultati: Globale: Area di testo */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = FALSE;
+  $handler->display->display_options['empty']['area']['content'] = 'Non ci sono sessioni nello schedule.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['empty']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Timeslot */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -1887,6 +1896,7 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
     t('Ultime sessioni accettate'),
     t('Ultime Sessioni accettate'),
     t('All Sessions profilo utente'),
+    t('Non ci sono sessioni nello schedule.'),
   );
   $export['sessions_schedule'] = $view;
 
