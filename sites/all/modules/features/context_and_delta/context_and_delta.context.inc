@@ -63,12 +63,6 @@ function context_and_delta_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-24',
         ),
-        'mailchimp_lists-1' => array(
-          'module' => 'mailchimp_lists',
-          'delta' => 1,
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
         'block-1' => array(
           'module' => 'block',
           'delta' => 1,
@@ -117,6 +111,24 @@ function context_and_delta_context_default_contexts() {
           'region' => 'postscript_second',
           'weight' => '-10',
         ),
+        'menu-menu-footer-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-footer-menu',
+          'region' => 'footer_first',
+          'weight' => '-10',
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'footer_second',
+          'weight' => '-10',
+        ),
+        'boxes-social_block' => array(
+          'module' => 'boxes',
+          'delta' => 'social_block',
+          'region' => 'footer_second',
+          'weight' => '-9',
+        ),
       ),
     ),
     'delta' => array(
@@ -140,6 +152,7 @@ function context_and_delta_context_default_contexts() {
     'context' => array(
       'values' => array(
         '~homepage' => '~homepage',
+        '~sponsor' => '~sponsor',
       ),
     ),
     'sitewide' => array(
@@ -223,6 +236,12 @@ function context_and_delta_context_default_contexts() {
           'region' => 'footer_second',
           'weight' => '-10',
         ),
+        'boxes-social_block' => array(
+          'module' => 'boxes',
+          'delta' => 'social_block',
+          'region' => 'footer_second',
+          'weight' => '-10',
+        ),
       ),
     ),
     'delta' => array(
@@ -235,6 +254,78 @@ function context_and_delta_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Sitewide Context');
   $export['sitewide'] = $context;
+
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'sponsor';
+  $context->description = 'Sponsor context';
+  $context->tag = 'Sponsor';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'sponsor' => 'sponsor',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu-menu-top' => array(
+          'module' => 'menu',
+          'delta' => 'menu-top',
+          'region' => 'user_first',
+          'weight' => '-10',
+        ),
+        'menu-menu-menu-biz' => array(
+          'module' => 'menu',
+          'delta' => 'menu-menu-biz',
+          'region' => 'user_second',
+          'weight' => '-10',
+        ),
+        'menu-menu-menu-pa' => array(
+          'module' => 'menu',
+          'delta' => 'menu-menu-pa',
+          'region' => 'user_third',
+          'weight' => '-10',
+        ),
+        'views-diventa_sponsor-block' => array(
+          'module' => 'views',
+          'delta' => 'diventa_sponsor-block',
+          'region' => 'postscript_second',
+          'weight' => '-10',
+        ),
+        'menu-menu-footer-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-footer-menu',
+          'region' => 'footer_first',
+          'weight' => '-10',
+        ),
+        'search-form' => array(
+          'module' => 'search',
+          'delta' => 'form',
+          'region' => 'footer_second',
+          'weight' => '-31',
+        ),
+        'boxes-social_block' => array(
+          'module' => 'boxes',
+          'delta' => 'social_block',
+          'region' => 'footer_second',
+          'weight' => '-30',
+        ),
+      ),
+    ),
+    'delta' => array(
+      'delta_template' => 'no_sponsor',
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Sponsor');
+  t('Sponsor context');
+  $export['sponsor'] = $context;
 
   return $export;
 }
