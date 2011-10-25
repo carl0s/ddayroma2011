@@ -30,21 +30,6 @@ function drupalday_system_feature_default_box() {
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
-  $box->delta = 'biz_block';
-  $box->plugin_key = 'simple';
-  $box->title = '';
-  $box->description = 'Blocco pagina biz';
-  $box->options = array(
-    'body' => array(
-      'value' => '<img src="/sites/all/themes/dday/images/biz.png" title="biz" />',
-      'format' => 'full_html',
-    ),
-  );
-  $export['biz_block'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
   $box->delta = 'code';
   $box->plugin_key = 'simple';
   $box->title = '';
@@ -58,21 +43,6 @@ function drupalday_system_feature_default_box() {
     ),
   );
   $export['code'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
-  $box->delta = 'code_block';
-  $box->plugin_key = 'simple';
-  $box->title = '';
-  $box->description = 'Blocco pagina code';
-  $box->options = array(
-    'body' => array(
-      'value' => '<img src="/sites/all/themes/dday/images/code.png" title="code" />',
-      'format' => 'full_html',
-    ),
-  );
-  $export['code_block'] = $box;
 
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
@@ -91,41 +61,6 @@ governative e non.
     ),
   );
   $export['pa'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
-  $box->delta = 'pa_block';
-  $box->plugin_key = 'simple';
-  $box->title = '';
-  $box->description = 'Blocco pagina pa';
-  $box->options = array(
-    'body' => array(
-      'value' => '<img src="/sites/all/themes/dday/images/pa.png" title="pa" />',
-      'format' => 'full_html',
-    ),
-  );
-  $export['pa_block'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
-  $box->delta = 'social_block';
-  $box->plugin_key = 'simple';
-  $box->title = 'Seguici';
-  $box->description = 'Seguici sui social network';
-  $box->options = array(
-    'body' => array(
-      'value' => '<ul class="social-icons">
-  <li class="facebook"><a href="http://www.facebook.com/drupalday" title="Facebook page"></a></li>
-  <li class="twitter"><a href="http://www.twitter.com/drupalday" title="Twitter handle"></a></li>
-  <li class="flickr"><a href="http://www.flickr.com/photos/drupalday" title="Flickr page"></a></li>
-  <li class="youtube"><a href="http://www.youtube.com/user/DrupalDay" title="YouTube channel"></a></li>
-</ul>',
-      'format' => 'filtered_html',
-    ),
-  );
-  $export['social_block'] = $box;
 
   return $export;
 }
