@@ -568,13 +568,6 @@ function sessions_views_default_views() {
   $handler->display->display_options['sorts']['field_slot_date_value']['table'] = 'field_data_field_slot_date';
   $handler->display->display_options['sorts']['field_slot_date_value']['field'] = 'field_slot_date_value';
   $handler->display->display_options['sorts']['field_slot_date_value']['relationship'] = 'field_session_timeslot_nid';
-  /* Filtro contestuale: Utente: Uid */
-  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['table'] = 'users';
-  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['relationship'] = 'field_session_presenters_uid';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   /* Criterio del filtro: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1861,7 +1854,6 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
     t('flag'),
     t('field_session_presenters'),
     t('Room'),
-    t('Tutti'),
     t('All Sessions'),
     t('Sessioni'),
     t('Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. 
@@ -1892,6 +1884,7 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
     t('Non ci sono sessioni, se vuoi proporne una <a href="/node/add/session">clicca qui.</a>'),
     t('Status'),
     t('[field_session_status-value]'),
+    t('Tutti'),
     t('Sessioni proposte di %1'),
     t('Ultime sessioni accettate'),
     t('Ultime Sessioni accettate'),

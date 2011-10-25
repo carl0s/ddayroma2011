@@ -292,6 +292,18 @@ function context_and_delta_context_default_contexts() {
           'region' => 'user_third',
           'weight' => '-10',
         ),
+        'block-1' => array(
+          'module' => 'block',
+          'delta' => 1,
+          'region' => 'header_first',
+          'weight' => '-10',
+        ),
+        'views-sponsor-block_1' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_1',
+          'region' => 'header_first',
+          'weight' => '0',
+        ),
         'views-diventa_sponsor-block' => array(
           'module' => 'views',
           'delta' => 'diventa_sponsor-block',

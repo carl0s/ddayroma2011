@@ -84,40 +84,6 @@ function drupalday_system_feature_menu_default_menu_links() {
     'weight' => '-47',
     'parent_path' => 'node/60',
   );
-  // Exported menu link: menu-footer-menu:node/85
-  $menu_links['menu-footer-menu:node/85'] = array(
-    'menu_name' => 'menu-footer-menu',
-    'link_path' => 'node/85',
-    'router_path' => 'node/%',
-    'link_title' => 'La location',
-    'options' => array(
-      'attributes' => array(),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-49',
-    'parent_path' => 'node/60',
-  );
-  // Exported menu link: menu-footer-menu:node/86
-  $menu_links['menu-footer-menu:node/86'] = array(
-    'menu_name' => 'menu-footer-menu',
-    'link_path' => 'node/86',
-    'router_path' => 'node/%',
-    'link_title' => 'Gli organizzatori',
-    'options' => array(
-      'attributes' => array(),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-48',
-    'parent_path' => 'node/60',
-  );
   // Exported menu link: menu-footer-menu:sponsor
   $menu_links['menu-footer-menu:sponsor'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -137,9 +103,7 @@ function drupalday_system_feature_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Diventa sponsor');
-  t('Gli organizzatori');
   t('L\'evento');
-  t('La location');
   t('Partecipa');
   t('Sponsor');
   t('Spread the word');

@@ -32,7 +32,7 @@ function context_and_delta_default_box() {
   $box->api_version = 1;
   $box->delta = 'call_for_paper';
   $box->plugin_key = 'simple';
-  $box->title = 'DrupalDay 2011: Call for paper';
+  $box->title = 'ROMA2011: Call for paper';
   $box->description = 'DrupalDay 2011: Call for paper';
   $box->options = array(
     'body' => array(
