@@ -652,6 +652,42 @@ article {
 }
 
 #block-views-attendees-block {
+  .pager {
+    background:none;
+    border:0;
+    margin-top:20px;
+    li {
+      background:none;
+      border:0;
+      &:hover {
+        background:@light-blue;
+        color:white;
+        a {
+          color:white;
+        }
+      }
+      a {
+        background:none;
+        color:@dark-blue;
+      }
+      &.pager-current {
+        background:@red;
+        color:white;
+        border-radius:0;
+        a {
+          color:white;
+        }
+      }
+      
+      &.pager-next,
+      &.pager-last{
+        display:none;
+      }
+      
+    }
+  }
+
+
   h2.block-title {
     .margin;
   }
@@ -663,6 +699,7 @@ article {
       float:left;
     }
   }
+  
 }
 
 #block-boxes-call-for-paper {
