@@ -46,7 +46,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Select the Drupal Conferences where you were attendee
+      'description' => 'Seleziona gli eventi Drupal ai quali hai partecipato.
 ',
       'display' => array(
         'default' => array(
@@ -59,7 +59,7 @@ function attendes_field_default_fields() {
       ),
       'entity_type' => 'user',
       'field_name' => 'field_user_attendee',
-      'label' => 'Attendee',
+      'label' => 'Eventi Drupal ai quali ho partecipato',
       'required' => 0,
       'settings' => array(
         'user_register_form' => 1,
@@ -104,7 +104,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Describe yourself, your relevant past experiences.',
+      'description' => 'Descriviti atraverso le tue esperienze professionali (e non) più rilevanti.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -166,7 +166,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Insert your city, this field is public. ',
+      'description' => 'Inserisci la tua città, questo campo è pubblico.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -228,7 +228,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Insert here your company, this field is public.',
+      'description' => 'Inserisci qui il nome della tua azienda/attività. Questo campo è pubblico.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -246,7 +246,7 @@ function attendes_field_default_fields() {
         'attributes' => array(
           'class' => '',
           'rel' => '',
-          'target' => 'default',
+          'target' => '_blank',
         ),
         'display' => array(
           'url_cutoff' => '80',
@@ -299,7 +299,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Insert your first name. This field is not public.',
+      'description' => 'Inserisci il tuo nome. Questo campo non sarà pubblico.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -361,7 +361,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Inserisci il tuo cognome. Questo campo non sarà pubblico.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -423,7 +423,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Insert here your twitter account, this field is public.',
+      'description' => 'Inserisci qui il tuo account Twitter. Questo campo è pubblico.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -451,7 +451,6 @@ function attendes_field_default_fields() {
         'title_value' => '',
         'url' => 0,
         'user_register_form' => 1,
-        'validate_url' => 1,
       ),
       'widget' => array(
         'active' => 0,
@@ -465,18 +464,19 @@ function attendes_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Attendee');
   t('Azienda');
   t('Bio');
   t('Città');
   t('Cognome');
-  t('Describe yourself, your relevant past experiences.');
-  t('Insert here your company, this field is public.');
-  t('Insert here your twitter account, this field is public.');
-  t('Insert your city, this field is public. ');
-  t('Insert your first name. This field is not public.');
+  t('Descriviti atraverso le tue esperienze professionali (e non) più rilevanti.');
+  t('Eventi Drupal ai quali ho partecipato');
+  t('Inserisci il tuo cognome. Questo campo non sarà pubblico.');
+  t('Inserisci il tuo nome. Questo campo non sarà pubblico.');
+  t('Inserisci la tua città, questo campo è pubblico.');
+  t('Inserisci qui il nome della tua azienda/attività. Questo campo è pubblico.');
+  t('Inserisci qui il tuo account Twitter. Questo campo è pubblico.');
   t('Nome');
-  t('Select the Drupal Conferences where you were attendee
+  t('Seleziona gli eventi Drupal ai quali hai partecipato.
 ');
   t('Twitter');
 

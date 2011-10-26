@@ -10,26 +10,6 @@
 function drupalday_system_feature_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-footer-menu:<front>
-  $menu_links['menu-footer-menu:<front>'] = array(
-    'menu_name' => 'menu-footer-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Partecipa',
-    'options' => array(
-      'attributes' => array(
-        'class' => array(
-          0 => 'no-link',
-        ),
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '1',
-    'has_children' => '1',
-    'expanded' => '1',
-    'weight' => '-49',
-  );
   // Exported menu link: menu-footer-menu:node/59
   $menu_links['menu-footer-menu:node/59'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -104,7 +84,6 @@ function drupalday_system_feature_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Diventa sponsor');
   t('L\'evento');
-  t('Partecipa');
   t('Sponsor');
   t('Spread the word');
 

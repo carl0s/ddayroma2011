@@ -79,6 +79,21 @@ La community Drupal è grande e unita, non soltanto all’estero, ma anche in It
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
+  $box->delta = 'join_button';
+  $box->plugin_key = 'simple';
+  $box->title = '';
+  $box->description = 'Big join button';
+  $box->options = array(
+    'body' => array(
+      'value' => '<a class="button bigjoin red" href="/user/register">PARTECIPA</a>',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['join_button'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
   $box->delta = 'pa_block';
   $box->plugin_key = 'simple';
   $box->title = '';

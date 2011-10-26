@@ -108,35 +108,19 @@ function sponsor_image_default_styles() {
   $styles['sponsor_platinum'] = array(
     'name' => 'sponsor_platinum',
     'effects' => array(
-      8 => array(
-        'label' => 'Scala',
-        'help' => 'La trasformazione in scala mantiene il rapporto delle dimensioni dell\'immagine originale. Se viene impostata una sola dimensione, l\'altra sarà calcolata di conseguenza.',
-        'effect callback' => 'image_scale_effect',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
+      12 => array(
+        'label' => 'Ridimensiona',
+        'help' => 'Il ridimensionamento forza le dimensioni dell\'immagine secondo i valori impostati. Questo può causare restringimento o allungamento sproporzionato delle immagini.',
+        'effect callback' => 'image_resize_effect',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
         'module' => 'image',
-        'name' => 'image_scale',
-        'data' => array(
-          'width' => '200',
-          'height' => '',
-          'upscale' => 0,
-        ),
-        'weight' => '1',
-      ),
-      9 => array(
-        'label' => 'Ritaglia',
-        'help' => 'Il ritaglio rimuove porzioni dell\'immagine in modo da portarla alle dimensioni desiderate.',
-        'effect callback' => 'image_crop_effect',
-        'form callback' => 'image_crop_form',
-        'summary theme' => 'image_crop_summary',
-        'module' => 'image',
-        'name' => 'image_crop',
+        'name' => 'image_resize',
         'data' => array(
           'width' => '200',
           'height' => '120',
-          'anchor' => 'left-top',
         ),
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -145,19 +129,35 @@ function sponsor_image_default_styles() {
   $styles['sponsor_silver'] = array(
     'name' => 'sponsor_silver',
     'effects' => array(
-      5 => array(
-        'label' => 'Scala e ritaglia',
-        'help' => 'Scala e ritaglia preserva il rapporto di dimensioni dell\'immagine originale per poi ritagliare la dimensione in eccesso. Questo metodo è utile nei casi in cui si desidera ottenere delle miniature perfettamente quadrate senza deformare l\'immagine.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
+      13 => array(
+        'label' => 'Scala',
+        'help' => 'La trasformazione in scala mantiene il rapporto delle dimensioni dell\'immagine originale. Se viene impostata una sola dimensione, l\'altra sarà calcolata di conseguenza.',
+        'effect callback' => 'image_scale_effect',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
         'module' => 'image',
-        'name' => 'image_scale_and_crop',
+        'name' => 'image_scale',
         'data' => array(
-          'width' => '100',
-          'height' => '70',
+          'width' => '130',
+          'height' => '',
+          'upscale' => 0,
         ),
         'weight' => '1',
+      ),
+      14 => array(
+        'label' => 'Ritaglia',
+        'help' => 'Il ritaglio rimuove porzioni dell\'immagine in modo da portarla alle dimensioni desiderate.',
+        'effect callback' => 'image_crop_effect',
+        'form callback' => 'image_crop_form',
+        'summary theme' => 'image_crop_summary',
+        'module' => 'image',
+        'name' => 'image_crop',
+        'data' => array(
+          'width' => '130',
+          'height' => '70',
+          'anchor' => 'center-center',
+        ),
+        'weight' => '2',
       ),
     ),
   );
