@@ -1394,3 +1394,50 @@ article.session {
     }
   }
 }
+
+.location {
+  .relative;
+  .browse {
+    .absolute;
+    top:190px;
+    height:71px;
+    width:46px;
+    background:url("{@base-url}/arrows.png") 0 0 no-repeat;
+    cursor:pointer;
+    &.left {
+      left:-50px;
+      &:hover {
+        background:url("{@base-url}/arrows.png") -91px 0 no-repeat;
+      }
+    }
+    
+    &.right {
+      right:-50px;
+      background:url("{@base-url}/arrows.png") -46px 0 no-repeat;
+      &:hover {
+        background:url("{@base-url}/arrows.png") center right no-repeat;
+      }
+    }
+  }
+  .scrollable {
+
+    /* required settings */
+  .relative;
+  overflow:hidden;
+  width: 940px;
+  height:402px;
+  border:1px solid @dark-grey;
+  .items {
+  	/* this cannot be too large */
+  	height:402px;
+  	width:20000em;
+  	position:absolute;
+      img {
+        float:left;
+      }
+    }
+  }
+  .location-content {
+    margin-top:40px;
+  }
+}

@@ -9,7 +9,12 @@
         $(this).find('input').attr('checked', true);
         $('.form-item-track').removeClass('selected');
         $(this).addClass('selected');
-      })
+      });
+      
+      $('.scrollable').scrollable({
+      circular:true,
+      speed: 800
+      }).autoscroll(13000).navigator();;
     }
   };
 })(jQuery);
