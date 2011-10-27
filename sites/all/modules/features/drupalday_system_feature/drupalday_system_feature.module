@@ -33,9 +33,17 @@ function drupalday_system_feature_user_update(&$edit, $account, $category) {
  * Implements hook_theme()
  */
 function drupalday_system_feature_theme() {
-	return array(
-	    'render_drupalday_system_feature_user_count' => array(),
-	);
+  $path = drupal_get_path('module', 'my_board') .'/theme';
+  require_once "./$path/theme.inc";
+  return array(
+    'render_drupalday_system_feature_user_count' => array(),
+    'my_dday' => array(
+    'template' => 'my-dday',
+    'file' => 'theme.inc',
+    'arguments' => array('account' => NULL),
+    'path' => $path,
+    ),
+  );
 }
 
 /**
