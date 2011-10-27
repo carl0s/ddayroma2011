@@ -4,7 +4,7 @@ Capfile
 includes/deploy
 sites/default
 config
-
+.project
 
 # Ignore paths that contain user-generated content.
 sites/*/files
