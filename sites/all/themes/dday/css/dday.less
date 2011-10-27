@@ -57,8 +57,6 @@
   -webkit-border-radius: @radius;
 }
 
-
-
 .off-left { text-indent: -999999px; }
 
 .no-decoration {text-decoration:none; }
@@ -958,6 +956,10 @@ form{
         .button;
         background:@light-grey;
         color:@dark-grey;
+        
+        &:hover {
+          color:white;
+        }
       }
     }
     #edit-track-wrapper {
@@ -1203,6 +1205,28 @@ article.session {
           }
         }
       }
+    }
+  }
+}
+
+.node-type-sponsor {
+  h1#page-title {
+    font-size:32px;
+  }
+  #sponsor {
+    figure {
+      img {
+        border:1px solid @dark-grey;
+        &:hover {
+          border-color:@red;
+        }
+      }
+    }
+    a {
+      font-size:16px;
+      .fancy;
+      margin-bottom:20px;
+      display:block;
     }
   }
 }

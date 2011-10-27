@@ -29,7 +29,7 @@
         }
       );
       
-      $('.scrollable').scrollable({ circular:true, speed: 800 }).autoscroll(13000).navigator();
+     // $('.scrollable').scrollable({ circular:true, speed: 800 }).autoscroll(13000).navigator();
       
     }
   };
