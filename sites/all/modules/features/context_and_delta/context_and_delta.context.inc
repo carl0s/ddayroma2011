@@ -20,6 +20,7 @@ function context_and_delta_context_default_contexts() {
     'views' => array(
       'values' => array(
         'attendees:page' => 'attendees:page',
+        'attendees:page_1' => 'attendees:page_1',
       ),
     ),
   );
@@ -104,7 +105,7 @@ function context_and_delta_context_default_contexts() {
       'delta_template' => 'pagina_track',
     ),
   );
-  $context->condition_mode = 1;
+  $context->condition_mode = 0;
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -163,6 +164,12 @@ function context_and_delta_context_default_contexts() {
           'delta' => 'join_button',
           'region' => 'branding',
           'weight' => '0',
+        ),
+        'boxes-mydrupalday' => array(
+          'module' => 'boxes',
+          'delta' => 'mydrupalday',
+          'region' => 'menu',
+          'weight' => '-10',
         ),
         'views-news-block' => array(
           'module' => 'views',
@@ -311,17 +318,17 @@ function context_and_delta_context_default_contexts() {
           'region' => 'branding',
           'weight' => '0',
         ),
-        'menu-menu-my-drupal-day' => array(
-          'module' => 'menu',
-          'delta' => 'menu-my-drupal-day',
-          'region' => 'menu',
+        'boxes-mydrupalday' => array(
+          'module' => 'boxes',
+          'delta' => 'mydrupalday',
+          'region' => 'sidebar_first',
           'weight' => '-10',
         ),
         'system-main-menu' => array(
           'module' => 'system',
           'delta' => 'main-menu',
           'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'block-1' => array(
           'module' => 'block',

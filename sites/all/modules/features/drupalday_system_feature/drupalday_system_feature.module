@@ -27,3 +27,45 @@ function drupalday_system_feature_user_update(&$edit, $account, $category) {
     cache_clear_all('dday_user_counter', 'cache');
   }
 }
+
+
+/**
+ * Implements hook_theme()
+ */
+function drupalday_system_feature_theme() {
+  $path = drupal_get_path('module', 'drupalday_system_feature') .'/theme';
+  
+  return array(
+    'render_drupalday_system_feature_user_count' => array(),
+    'my_dday' => array(
+    	'template' => 'my-dday',
+    	'file' => 'theme.inc',
+    	'path' => $path,
+    ),
+  );
+}
+
+/**
+ * Theme function to render the sole participant number
+ * to be called as <?php print theme('render_drupalday_system_feature_user_count'); ?>
+ */
+function theme_render_drupalday_system_feature_user_count(){
+	$output = '<div class="user-count-number">Siamo <span>'.drupalday_system_feature_user_count().'</span></div>';
+	return $output;
+}
+
+
+/**
+ * This function renders the image according the imagecache preset selected
+ * object = ( picture, uid )
+ * 
+ * To be called as it follows theme('avatar', $object, 'avatar_big');
+ * 
+ * @param unknown_type $form
+ */
+function theme_avatar($object, $imagecache = 'avatar_medium') {
+  $picture = $object->picture;
+  /*@TODO: Insert theme( image-style )*/
+  /*@TODO: Insert default image avatar in case picture = 0*/
+  return $picture;
+}

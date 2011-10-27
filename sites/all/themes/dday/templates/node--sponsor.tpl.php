@@ -8,5 +8,6 @@
     <?php print drupal_render($content['field_sponsor_website']); ?>
     <?php print drupal_render($content['body']); ?>
     <div class="tweets"><?php print drupal_render($content['field_sponsor_twitter']); ?></div>
+    <div class="facebook"><?php print drupal_render($content['field_sponsor_facebook']); ?></div>
   </section>
 </article>

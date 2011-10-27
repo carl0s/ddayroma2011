@@ -98,47 +98,13 @@ function drupalday_system_feature_menu_default_menu_links() {
     'expanded' => '1',
     'weight' => '-48',
   );
-  // Exported menu link: menu-my-drupal-day:node/add/session
-  $menu_links['menu-my-drupal-day:node/add/session'] = array(
-    'menu_name' => 'menu-my-drupal-day',
-    'link_path' => 'node/add/session',
-    'router_path' => 'node/add/session',
-    'link_title' => 'Proponi un talk',
-    'options' => array(
-      'attributes' => array(),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-48',
-  );
-  // Exported menu link: menu-my-drupal-day:user
-  $menu_links['menu-my-drupal-day:user'] = array(
-    'menu_name' => 'menu-my-drupal-day',
-    'link_path' => 'user',
-    'router_path' => 'user',
-    'link_title' => 'il tuo profilo',
-    'options' => array(
-      'attributes' => array(),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '1',
-    'weight' => '-50',
-  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Diventa sponsor');
   t('L\'evento');
   t('My drupalday');
-  t('Proponi un talk');
   t('Sponsor');
   t('Spread the word');
-  t('il tuo profilo');
 
 
   return $menu_links;

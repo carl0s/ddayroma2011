@@ -85,6 +85,21 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
+  $box->delta = 'mydrupalday';
+  $box->plugin_key = 'simple';
+  $box->title = '';
+  $box->description = 'my drupal day block';
+  $box->options = array(
+    'body' => array(
+      'value' => '',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['mydrupalday'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
   $box->delta = 'pa';
   $box->plugin_key = 'simple';
   $box->title = '';
