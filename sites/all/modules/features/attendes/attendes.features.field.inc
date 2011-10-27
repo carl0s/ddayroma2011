@@ -299,7 +299,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Inserisci il tuo nome. Questo campo non sarà pubblico.',
+      'description' => 'Inserisci il tuo nome. Questo campo sarà pubblico nella visualizzazione del tuo profilo.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -361,7 +361,7 @@ function attendes_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Inserisci il tuo cognome. Questo campo non sarà pubblico.',
+      'description' => 'Inserisci il tuo cognome. Questo campo sarà pubblico nella visualizzazione del tuo profilo.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -470,8 +470,8 @@ function attendes_field_default_fields() {
   t('Cognome');
   t('Descriviti atraverso le tue esperienze professionali (e non) più rilevanti.');
   t('Eventi Drupal ai quali ho partecipato');
-  t('Inserisci il tuo cognome. Questo campo non sarà pubblico.');
-  t('Inserisci il tuo nome. Questo campo non sarà pubblico.');
+  t('Inserisci il tuo cognome. Questo campo sarà pubblico nella visualizzazione del tuo profilo.');
+  t('Inserisci il tuo nome. Questo campo sarà pubblico nella visualizzazione del tuo profilo.');
   t('Inserisci la tua città, questo campo è pubblico.');
   t('Inserisci qui il nome della tua azienda/attività. Questo campo è pubblico.');
   t('Inserisci qui il tuo account Twitter. Questo campo è pubblico.');
