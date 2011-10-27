@@ -38,10 +38,9 @@ function drupalday_system_feature_theme() {
   return array(
     'render_drupalday_system_feature_user_count' => array(),
     'my_dday' => array(
-    'template' => 'my-dday',
-    'file' => 'theme.inc',
-    'arguments' => array('account' => NULL),
-    'path' => $path,
+    	'template' => 'my-dday',
+    	'file' => 'theme.inc',
+    	'path' => $path,
     ),
   );
 }
@@ -53,4 +52,20 @@ function drupalday_system_feature_theme() {
 function theme_render_drupalday_system_feature_user_count(){
 	$output = '<div class="user-count-number">'.drupalday_system_feature_user_count().'</div>';
 	return $output;
+}
+
+
+/**
+ * This function renders the image according the imagecache preset selected
+ * object = ( picture, uid )
+ * 
+ * To be called as it follows theme('avatar', $object, 'avatar_big');
+ * 
+ * @param unknown_type $form
+ */
+function theme_avatar($object, $imagecache = 'avatar_medium') {
+  $picture = $object->picture;
+  /*@TODO: Insert theme( image-style )*/
+  /*@TODO: Insert default image avatar in case picture = 0*/
+  return $picture;
 }
