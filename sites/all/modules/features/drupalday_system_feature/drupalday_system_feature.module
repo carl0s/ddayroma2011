@@ -50,7 +50,7 @@ function drupalday_system_feature_theme() {
  * to be called as <?php print theme('render_drupalday_system_feature_user_count'); ?>
  */
 function theme_render_drupalday_system_feature_user_count(){
-	$output = '<div class="user-count-number">Siamo '.drupalday_system_feature_user_count().'</div>';
+	$output = '<div class="user-count-number">Siamo <span>'.drupalday_system_feature_user_count().'</span></div>';
 	return $output;
 }
 
