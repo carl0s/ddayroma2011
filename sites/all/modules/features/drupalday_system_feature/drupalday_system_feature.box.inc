@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_default_box().
+ * Implements hook_default_box().
  */
 function drupalday_system_feature_default_box() {
   $export = array();
