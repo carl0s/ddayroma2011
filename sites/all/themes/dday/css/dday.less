@@ -135,6 +135,37 @@
   }
 }
 
+.pager {
+  background:none;
+  border:0;
+  margin-top:20px;
+  li {
+    background:none;
+    border:0;
+    &:hover {
+      background:@light-blue;
+      color:white;
+      a {
+        color:white;
+      }
+    }
+    a {
+      background:none;
+      color:@dark-blue;
+    }
+    &.pager-current {
+      background:@red;
+      color:white;
+      border-radius:0;
+      a {
+        color:white;
+      }
+    }
+    
+  }
+}
+
+
 input[type=text] {
   width:550px;
   border:1px solid @light-grey;
@@ -1400,6 +1431,18 @@ article.session {
   &:hover {
     border-color:@red;
   }
+}
+
+.tweets {
+  background:url("{@base-url}/tweets.png") center left no-repeat;
+  padding-left:30px;
+  height:30px;
+  display:block;
+  .fancy;
+  .no-decoration;
+  color:@light-blue;
+  font-size:16px;
+  margin:10px 0;
 }
 
 .page-user {
