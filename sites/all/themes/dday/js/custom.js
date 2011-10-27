@@ -30,7 +30,7 @@
       );
       
      // $('.scrollable').scrollable({ circular:true, speed: 800 }).autoscroll(13000).navigator();
-      
+
     }
   };
 })(jQuery);
