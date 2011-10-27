@@ -10,8 +10,6 @@
 function drupalday_system_feature_menu_default_menu_links() {
   $menu_links = array();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
   // Exported menu link: main-menu:user
   $menu_links['main-menu:user'] = array(
     'menu_name' => 'main-menu',
@@ -30,10 +28,7 @@ function drupalday_system_feature_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '50',
   );
-=======
->>>>>>> 2131171... attendees
-=======
->>>>>>> 2131171... attendees
+
   // Exported menu link: menu-footer-menu:node/59
   $menu_links['menu-footer-menu:node/59'] = array(
     'menu_name' => 'menu-footer-menu',
@@ -140,14 +135,10 @@ function drupalday_system_feature_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Diventa sponsor');
   t('L\'evento');
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   t('My drupalday');
   t('Proponi un talk');
-=======
->>>>>>> 2131171... attendees
-=======
->>>>>>> 2131171... attendees
+
   t('Sponsor');
   t('Spread the word');
   t('il tuo profilo');

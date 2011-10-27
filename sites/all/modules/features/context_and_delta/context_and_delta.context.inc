@@ -309,18 +309,12 @@ function context_and_delta_context_default_contexts() {
           'module' => 'boxes',
           'delta' => 'join_button',
           'region' => 'branding',
-<<<<<<< HEAD
-<<<<<<< HEAD
           'weight' => '0',
         ),
         'menu-menu-my-drupal-day' => array(
           'module' => 'menu',
           'delta' => 'menu-my-drupal-day',
           'region' => 'menu',
-=======
->>>>>>> 2131171... attendees
-=======
->>>>>>> 2131171... attendees
           'weight' => '-10',
         ),
         'system-main-menu' => array(
