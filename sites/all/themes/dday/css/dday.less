@@ -57,6 +57,12 @@
   -webkit-border-radius: @radius;
 }
 
+.shadow {
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 5px 2px rgba(255, 255, 255, 0.6);
+}
+
 .off-left { text-indent: -999999px; }
 
 .no-decoration {text-decoration:none; }
@@ -281,6 +287,14 @@ h2.node-title {
           &.active {
             color:@red;
           }
+          
+          &#mydrupalday {
+            color:@light-blue;
+          }
+          
+          &#partecipa {
+            color:@light-blue;
+          }
         }
       }
     }
@@ -296,26 +310,46 @@ h2.node-title {
     right: 29px; 
     top:40px;
     border:1px solid #ccc;
+    .shadow;
     border-top:0;
     background:url("{@base-url}/bg_top.jpg") white top left repeat-x; 
     .my-dday-top {
       .fancy;
+      
       color:@light-blue;
       padding-bottom:10px;
       border-bottom:1px solid #ccc;
       margin-bottom:10px;
-      padding: 10px 70px 10px 50px;
+      padding: 10px;
+      height:40px;
+      .picture {
+        width:40px;
+        height:40px;
+        float:left;
+        margin-right:5px;
+        border:1px solid @mid-grey;
+      }
+      #my-dday-user-name {
+        float:left;
+        width:190px;
+        
+        #my-dday-logout {
+          clear:both;
+          .serif;
+          .italic;
+        }
+      }
     }
     
     .my-dday-bottom {
-      padding: 10px 70px 30px 20px;
+      padding: 10px 70px 10px 20px;
       ul.my-dday-menu {
         li {
           list-style:none;
           .fancy;
           .uppercase;
           a {
-            color:@light-blue;
+            color:@dark-grey;
             .no-decoration;
 
             &:hover {
@@ -1447,6 +1481,18 @@ article.session {
 
 .tweets {
   background:url("{@base-url}/tweets.png") center left no-repeat;
+  padding-left:30px;
+  height:30px;
+  display:block;
+  .fancy;
+  .no-decoration;
+  color:@light-blue;
+  font-size:16px;
+  margin:10px 0;
+}
+
+.fb_small {
+  background:url("{@base-url}/facebook_small.png") 3px 6px no-repeat;
   padding-left:30px;
   height:30px;
   display:block;

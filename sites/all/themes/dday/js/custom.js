@@ -12,7 +12,8 @@
       });
       
       $('#mydrupalday').live('click',function() {
-        $('.my-dday-container').show();
+        $('.my-dday-container').css('display','block');
+        
         return false;
       })
       
