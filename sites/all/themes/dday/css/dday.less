@@ -57,8 +57,6 @@
   -webkit-border-radius: @radius;
 }
 
-
-
 .off-left { text-indent: -999999px; }
 
 .no-decoration {text-decoration:none; }
@@ -227,34 +225,67 @@ h2.node-title {
 }
 
 //  menu
-nav.navigation {
-  height:40px;
-  line-height:40px;
-  ul#main-menu {
-    margin: 0;
-    li {
-      .no-style;
-      .inline-b;
-      margin: 0 15px;
-      a {
-        .no-decoration;
+.region-menu-inner {
+  position:relative;
+  nav.navigation {
+    height:40px;
+    line-height:40px;
+    ul#main-menu {
+      margin: 0;
+      li {
+        .no-style;
+        .inline-b;
+        margin: 0 15px;
+        a {
+          .no-decoration;
+          .fancy;
+          .uppercase;
+          .inline-b;
+          font-size: 20px;
+          color: @dark-grey;
+
+          &:hover {
+            color:@light-blue;
+          }
+          &.active {
+            color:@red;
+          }
+        }
+      }
+    }
+
+  }
+  
+  #block-menu-menu-my-drupal-day {
+    height:120px;
+    display:none;
+    position: absolute; 
+    z-index: 999; 
+    background: white; 
+    padding: 10px 70px 10px 20px; 
+    right: 25px; 
+    top:40px;
+    border:1px solid #ccc;
+    border-top:0;
+    
+    ul.menu {
+      li {
+        list-style:none;
         .fancy;
         .uppercase;
-        .inline-b;
-        font-size: 20px;
-        color: @dark-grey;
-        
-        &:hover {
+        a {
           color:@light-blue;
-        }
-        &.active {
-          color:@red;
+          .no-decoration;
+          
+          &:hover {
+            color:@red;
+          }
         }
       }
     }
   }
-  
 }
+
 
 
 
@@ -925,6 +956,10 @@ form{
         .button;
         background:@light-grey;
         color:@dark-grey;
+        
+        &:hover {
+          color:white;
+        }
       }
     }
     #edit-track-wrapper {
@@ -1170,6 +1205,28 @@ article.session {
           }
         }
       }
+    }
+  }
+}
+
+.node-type-sponsor {
+  h1#page-title {
+    font-size:32px;
+  }
+  #sponsor {
+    figure {
+      img {
+        border:1px solid @dark-grey;
+        &:hover {
+          border-color:@red;
+        }
+      }
+    }
+    a {
+      font-size:16px;
+      .fancy;
+      margin-bottom:20px;
+      display:block;
     }
   }
 }
@@ -1533,3 +1590,5 @@ article.session {
 .baloon {
   display: none;
 }
+
+
