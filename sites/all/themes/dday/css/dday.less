@@ -1394,3 +1394,61 @@ article.session {
     }
   }
 }
+
+//all attendees
+
+.wrapper-attendees{
+    margin-bottom:20px;
+    padding-bottom:20px;
+    padding-top:20px;
+    border-bottom: 1px solid @light-blue;
+    .user-picture {
+        margin-bottom:10px;
+        a { font-size:9px;}
+    }
+    .field-name-twitter {
+        .field-name {
+           a {
+            .fancy;
+            color:@light-blue;
+            font-size:14px;
+            .no-decoration;
+            }
+        }
+        .field-twitter {
+            a.link-twitter{
+            background:url("{@base-url}/tweets.png") center left no-repeat;
+            padding-left:30px;
+            height:30px;
+            display:block;
+            .fancy;
+            .no-decoration;
+            color:@light-blue;
+            font-size:12px;
+            margin:10px 0;
+            }
+        }
+    }
+    .field-skills, .field-interests {
+        .label {
+            .serif;
+            color:@dark-grey;
+            .italic;
+            margin:0;
+        }
+         a {
+             font-size:10px;
+                background:@dark-grey;
+                .border-radius(5px);
+                padding:2px 5px;
+                color:white;
+                .fancy;
+                .normal;
+                .no-decoration;
+                white-space: nowrap;
+                &:hover {
+                     background:@light-blue;
+                }
+            }
+    }
+}

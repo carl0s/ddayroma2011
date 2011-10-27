@@ -40,10 +40,10 @@ $counter = 1;
     $counter++;
 ?>
 
-<div class="<?php print $classes_array[$id]; ?>">
-    <div class="<?php print $grid_class . $class_alpha_omega; ?>">
+<div class="<?php print $classes_array[$id] . ' ' . $grid_class . ' ' . $class_alpha_omega; ?>">
+    <!--div class="<?php //print $grid_class . $class_alpha_omega; ?>"-->
         <?php print $row; ?>
-    </div>
+    <!--/div-->
 </div>
 
 <?php endforeach; ?>

@@ -3,11 +3,14 @@ sites/*/settings*.php
 Capfile
 includes/deploy
 sites/default
+config
+
 
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
 .DS_Store
-.sql
-.sql.*
+.idea
+*.sql
+*.sql.*
 *.bz2

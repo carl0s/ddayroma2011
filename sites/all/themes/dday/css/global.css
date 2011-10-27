@@ -20,3 +20,7 @@ h2.block-title {
 #region-sidebar-first footer span a.username {display:none;}
 
 .views-field-field-owner-logo img { margin: 0 40px;}
+
+ul.pager {
+    margin-bottom: 20px!important
+}
