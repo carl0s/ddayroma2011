@@ -33,8 +33,8 @@ function drupalday_system_feature_user_update(&$edit, $account, $category) {
  * Implements hook_theme()
  */
 function drupalday_system_feature_theme() {
-  $path = drupal_get_path('module', 'my_board') .'/theme';
-  require_once "./$path/theme.inc";
+  $path = drupal_get_path('module', 'drupalday_system_feature') .'/theme';
+  
   return array(
     'render_drupalday_system_feature_user_count' => array(),
     'my_dday' => array(
