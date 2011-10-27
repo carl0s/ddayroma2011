@@ -11,7 +11,14 @@
  * for more information on this topic.
  */
  
-function dday_preprocess_page(&$vars) {
-  // fixed level child -> 1 on main menu
-//  $vars['main_menu'] = menu_navigation_links(variable_get('menu_main_links_source', 'main-menu'));
+function dday_preprocess_block(&$vars) {
+  $block = $vars['block'];
+  //  block_id_1 = logo block
+  if ($block->module == 'block' && $block->bid == 'block-1') {
+    if (module_exists('drupalday_system_feature')) {
+      $count_users_tot = drupalday_system_feature_user_count();
+      // prepend user cached user count
+      $vars['content'] = '<span class="user_counter baloon"> '. $count_users_tot .' </span>' . $vars['content'];
+    }
+  }
 }

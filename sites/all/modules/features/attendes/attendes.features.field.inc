@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function attendes_field_default_fields() {
   $fields = array();
@@ -27,15 +27,15 @@ function attendes_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'adc2011' => 'Alpine Drupal Camp 2011 - Brixen',
           'dc2008' => 'Drupal Day 2008 - Milan',
           'dc2009' => 'Drupal Camp 2009 - Crema',
           'dc2010' => 'Drupal Camp 2010 - Turin',
+          'adc2011' => 'Alpine Drupal Camp 2011 - Brixen',
           'dc2011' => 'Drupal Camp 2011 - Verona',
-          'dconchi11' => 'DrupalCon Chicago 2011',
-          'dconcph2010' => 'DrupalCon Copenhagen 2010',
-          'dconlon11' => 'DrupalCon London 2011',
           'dconsfx2010' => 'DrupalCon San Francisco 2010',
+          'dconcph2010' => 'DrupalCon Copenhagen 2010',
+          'dconchi11' => 'DrupalCon Chicago 2011',
+          'dconlon11' => 'DrupalCon London 2011',
         ),
         'allowed_values_function' => '',
       ),
@@ -441,7 +441,7 @@ function attendes_field_default_fields() {
         'attributes' => array(
           'class' => 'link-twitter',
           'rel' => '',
-          'target' => '_top',
+          'target' => '_blank',
         ),
         'display' => array(
           'url_cutoff' => '80',

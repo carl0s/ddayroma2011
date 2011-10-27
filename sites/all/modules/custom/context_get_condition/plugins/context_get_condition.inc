@@ -67,8 +67,10 @@ class context_get_condition extends context_condition {
     $matches = 0;
     foreach($combos as $combo) {
       $combo = explode("=", $combo);
-      if($get[$combo[0]] == $combo[1]) {
-        $matches++;
+      if (isset($get[$combo[0]]) && isset($combo[1])) {
+         if($get[$combo[0]] == $combo[1]) {
+            $matches++;
+          }
       }
       // Make sure all of the conditions were matched
       if($matches == count($combos)) {

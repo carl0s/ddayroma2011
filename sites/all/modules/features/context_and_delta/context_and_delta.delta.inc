@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_delta_default_templates().
+ * Implements hook_delta_default_templates().
  */
 function context_and_delta_delta_default_templates() {
   $export = array();

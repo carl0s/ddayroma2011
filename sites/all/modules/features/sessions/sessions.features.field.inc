@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function sessions_field_default_fields() {
   $fields = array();
@@ -698,8 +698,8 @@ function sessions_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => array(
-            'parent' => '0',
             'vocabulary' => 'session_tags',
+            'parent' => '0',
           ),
         ),
       ),
@@ -874,8 +874,8 @@ function sessions_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           0 => array(
-            'parent' => '0',
             'vocabulary' => 'session_to_know',
+            'parent' => '0',
           ),
         ),
       ),
