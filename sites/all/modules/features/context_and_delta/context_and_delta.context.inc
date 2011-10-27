@@ -269,7 +269,6 @@ function context_and_delta_context_default_contexts() {
         '~sessioni_code' => '~sessioni_code',
         '~sessioni_biz' => '~sessioni_biz',
         '~sessioni_pa' => '~sessioni_pa',
-        '~attendees' => '~attendees',
       ),
     ),
     'sitewide' => array(
@@ -309,6 +308,12 @@ function context_and_delta_context_default_contexts() {
           'module' => 'boxes',
           'delta' => 'join_button',
           'region' => 'branding',
+          'weight' => '0',
+        ),
+        'menu-menu-my-drupal-day' => array(
+          'module' => 'menu',
+          'delta' => 'menu-my-drupal-day',
+          'region' => 'menu',
           'weight' => '-10',
         ),
         'system-main-menu' => array(
@@ -351,19 +356,19 @@ function context_and_delta_context_default_contexts() {
           'module' => 'menu',
           'delta' => 'menu-footer-menu',
           'region' => 'footer_first',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'search-form' => array(
           'module' => 'search',
           'delta' => 'form',
           'region' => 'footer_second',
-          'weight' => '-32',
+          'weight' => '0',
         ),
         'boxes-social_block' => array(
           'module' => 'boxes',
           'delta' => 'social_block',
           'region' => 'footer_second',
-          'weight' => '-31',
+          'weight' => '1',
         ),
       ),
     ),

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the DrupalDay System feature.
- */
-
-include_once('drupalday_system.features.inc');
