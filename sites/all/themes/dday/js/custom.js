@@ -11,10 +11,26 @@
         $(this).addClass('selected');
       });
       
-      $('.scrollable').scrollable({
-      circular:true,
-      speed: 800
-      }).autoscroll(13000).navigator();;
+      $('#mydrupalday').mouseover(
+        function() {
+          $('#block-menu-menu-my-drupal-day').slideDown('500');
+        }
+      );
+      
+      $('#block-menu-menu-my-drupal-day').mouseover(
+        function() {
+          $(this).show();
+        }
+      );
+      
+      $('#block-menu-menu-my-drupal-day ul.menu').mouseout(
+        function() {
+          $(this).slideUp('500');
+        }
+      );
+      
+      $('.scrollable').scrollable({ circular:true, speed: 800 }).autoscroll(13000).navigator();
+      
     }
   };
 })(jQuery);
