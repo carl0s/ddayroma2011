@@ -31,8 +31,11 @@ features[filter][] = "plain_text"
 features[menu_custom][] = "main-menu"
 features[menu_custom][] = "menu-footer-menu"
 <<<<<<< HEAD
+<<<<<<< HEAD
 features[menu_custom][] = "menu-my-drupal-day"
 features[menu_links][] = "main-menu:user"
+=======
+>>>>>>> 2131171... attendees
 =======
 >>>>>>> 2131171... attendees
 features[menu_links][] = "menu-footer-menu:node/59"

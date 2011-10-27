@@ -11,6 +11,7 @@ function drupalday_system_feature_menu_default_menu_links() {
   $menu_links = array();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   // Exported menu link: main-menu:user
   $menu_links['main-menu:user'] = array(
     'menu_name' => 'main-menu',
@@ -29,6 +30,8 @@ function drupalday_system_feature_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '50',
   );
+=======
+>>>>>>> 2131171... attendees
 =======
 >>>>>>> 2131171... attendees
   // Exported menu link: menu-footer-menu:node/59
@@ -138,8 +141,11 @@ function drupalday_system_feature_menu_default_menu_links() {
   t('Diventa sponsor');
   t('L\'evento');
 <<<<<<< HEAD
+<<<<<<< HEAD
   t('My drupalday');
   t('Proponi un talk');
+=======
+>>>>>>> 2131171... attendees
 =======
 >>>>>>> 2131171... attendees
   t('Sponsor');
