@@ -27,3 +27,22 @@ function drupalday_system_feature_user_update(&$edit, $account, $category) {
     cache_clear_all('dday_user_counter', 'cache');
   }
 }
+
+
+/**
+ * Implements hook_theme()
+ */
+function drupalday_system_feature_theme() {
+	return array(
+	    'render_drupalday_system_feature_user_count' => array(),
+	);
+}
+
+/**
+ * Theme function to render the sole participant number
+ * to be called as <?php print theme('render_drupalday_system_feature_user_count'); ?>
+ */
+function theme_render_drupalday_system_feature_user_count(){
+	$output = '<div class="user-count-number">'.drupalday_system_feature_user_count().'</div>';
+	return $output;
+}
