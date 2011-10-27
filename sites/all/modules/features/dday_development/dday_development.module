@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the dday development feature.
+ */
+
+include_once('dday_development.features.inc');
