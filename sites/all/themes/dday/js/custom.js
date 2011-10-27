@@ -11,23 +11,10 @@
         $(this).addClass('selected');
       });
       
-      $('#mydrupalday').mouseover(
-        function() {
-          $('#block-menu-menu-my-drupal-day').slideDown('500');
-        }
-      );
-      
-      $('#block-menu-menu-my-drupal-day').mouseover(
-        function() {
-          $(this).show();
-        }
-      );
-      
-      $('#block-menu-menu-my-drupal-day ul.menu').mouseout(
-        function() {
-          $(this).slideUp('500');
-        }
-      );
+      $('#mydrupalday').live('click',function() {
+        $('.my-dday-container').show();
+        return false;
+      })
       
      // $('.scrollable').scrollable({ circular:true, speed: 800 }).autoscroll(13000).navigator();
 

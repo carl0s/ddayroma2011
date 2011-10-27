@@ -1,4 +1,7 @@
-<?php if ($user->uid >0):
+<?php 
+  if ($user->uid >0):
+  
+  // kpr($user);
 ?>
 <div class="my-dday-container">
 	<div class="my-dday-top">
@@ -7,9 +10,8 @@
 		<div id="my-dday-user-name">
 			<?php print $username;?>
 		</div>
+    <div id="my-dday-logout">( <a href="/user/logout">Sign Out</a> )</div>
 	</div>
-	<div id="my-dday-logout">( <a href="/user/logout">Sign Out</a> )</div>
-	<hr class="my-dday-separator" />
 	<div class="my-dday-bottom">
 		<ul class="my-dday-menu">
 			<li>

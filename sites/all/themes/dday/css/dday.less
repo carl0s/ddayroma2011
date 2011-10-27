@@ -287,32 +287,44 @@ h2.node-title {
 
   }
   
-  #block-menu-menu-my-drupal-day {
-    height:120px;
-    display:none;
+  .my-dday-container {
+    width:259px;
     position: absolute; 
     z-index: 999; 
     background: white; 
-    padding: 10px 70px 10px 20px; 
-    right: 25px; 
+     
+    right: 29px; 
     top:40px;
     border:1px solid #ccc;
     border-top:0;
+    background:url("{@base-url}/bg_top.jpg") white top left repeat-x; 
+    .my-dday-top {
+      .fancy;
+      color:@light-blue;
+      padding-bottom:10px;
+      border-bottom:1px solid #ccc;
+      margin-bottom:10px;
+      padding: 10px 70px 10px 50px;
+    }
     
-    ul.menu {
-      li {
-        list-style:none;
-        .fancy;
-        .uppercase;
-        a {
-          color:@light-blue;
-          .no-decoration;
-          
-          &:hover {
-            color:@red;
+    .my-dday-bottom {
+      padding: 10px 70px 30px 20px;
+      ul.my-dday-menu {
+        li {
+          list-style:none;
+          .fancy;
+          .uppercase;
+          a {
+            color:@light-blue;
+            .no-decoration;
+
+            &:hover {
+              color:@red;
+            }
           }
         }
       }
+      
     }
   }
 }

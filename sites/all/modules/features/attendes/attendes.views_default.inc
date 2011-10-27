@@ -301,7 +301,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  $handler->display->display_options['path'] = 'attendees';
+  $handler->display->display_options['path'] = 'partecipanti';
 
   /* Display: Attendees Block Home */
   $handler = $view->new_display('block', 'Attendees Block Home', 'block');
@@ -569,7 +569,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['uid']['not'] = 0;
-  $handler->display->display_options['path'] = 'attendees/%';
+  $handler->display->display_options['path'] = 'partecipanti/%';
 
   /* Display: Attendees details attachment */
   $handler = $view->new_display('attachment', 'Attendees details attachment', 'attachment_1');
