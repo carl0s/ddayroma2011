@@ -22,11 +22,11 @@ function drupalday_system_feature_menu_default_menu_links() {
       ),
     ),
     'module' => 'menu',
-    'hidden' => '1',
+    'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '50',
+    'weight' => '-42',
   );
   // Exported menu link: menu-footer-menu:node/59
   $menu_links['menu-footer-menu:node/59'] = array(

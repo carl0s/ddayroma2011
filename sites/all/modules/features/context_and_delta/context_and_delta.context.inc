@@ -165,9 +165,9 @@ function context_and_delta_context_default_contexts() {
           'region' => 'branding',
           'weight' => '0',
         ),
-        'boxes-mydrupalday' => array(
-          'module' => 'boxes',
-          'delta' => 'mydrupalday',
+        'menu-menu-my-drupal-day' => array(
+          'module' => 'menu',
+          'delta' => 'menu-my-drupal-day',
           'region' => 'menu',
           'weight' => '-10',
         ),
@@ -176,12 +176,6 @@ function context_and_delta_context_default_contexts() {
           'delta' => 'news-block',
           'region' => 'sidebar_first',
           'weight' => '-36',
-        ),
-        'mailchimp_lists-1' => array(
-          'module' => 'mailchimp_lists',
-          'delta' => 1,
-          'region' => 'sidebar_first',
-          'weight' => '-35',
         ),
         'block-1' => array(
           'module' => 'block',
@@ -276,7 +270,6 @@ function context_and_delta_context_default_contexts() {
         '~sessioni_code' => '~sessioni_code',
         '~sessioni_biz' => '~sessioni_biz',
         '~sessioni_pa' => '~sessioni_pa',
-        '~attendees' => '~attendees',
       ),
     ),
     'sitewide' => array(
@@ -318,17 +311,11 @@ function context_and_delta_context_default_contexts() {
           'region' => 'branding',
           'weight' => '0',
         ),
-        'boxes-mydrupalday' => array(
-          'module' => 'boxes',
-          'delta' => 'mydrupalday',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
         'system-main-menu' => array(
           'module' => 'system',
           'delta' => 'main-menu',
           'region' => 'sidebar_first',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'block-1' => array(
           'module' => 'block',
