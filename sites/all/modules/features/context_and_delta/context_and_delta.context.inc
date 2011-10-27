@@ -20,6 +20,7 @@ function context_and_delta_context_default_contexts() {
     'views' => array(
       'values' => array(
         'attendees:page' => 'attendees:page',
+        'attendees:page_1' => 'attendees:page_1',
       ),
     ),
   );
@@ -104,7 +105,7 @@ function context_and_delta_context_default_contexts() {
       'delta_template' => 'pagina_track',
     ),
   );
-  $context->condition_mode = 1;
+  $context->condition_mode = 0;
 
   // Translatables
   // Included for use with string extractors like potx.
