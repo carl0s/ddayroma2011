@@ -441,7 +441,7 @@ function attendes_field_default_fields() {
         'attributes' => array(
           'class' => 'link-twitter',
           'rel' => '',
-          'target' => '_top',
+          'target' => '_blank',
         ),
         'display' => array(
           'url_cutoff' => '80',
