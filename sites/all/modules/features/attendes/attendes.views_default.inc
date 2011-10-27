@@ -5,7 +5,7 @@
  */
 
 /**
- * Implements hook_views_default_views().
+ * Implementation of hook_views_default_views().
  */
 function attendes_views_default_views() {
   $export = array();
@@ -41,7 +41,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Scostamento';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relazione: Utente: Sessioni Drupal Day 2011 di interesse (field_session_attendee) */
+  /* Relazione: Utente: Drupal Day 2011 sessions of interest (field_session_attendee) */
   $handler->display->display_options['relationships']['field_session_attendee_nid']['id'] = 'field_session_attendee_nid';
   $handler->display->display_options['relationships']['field_session_attendee_nid']['table'] = 'field_data_field_session_attendee';
   $handler->display->display_options['relationships']['field_session_attendee_nid']['field'] = 'field_session_attendee_nid';
@@ -221,7 +221,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_skills']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_skills']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['field_api_classes'] = 0;
-  /* Campo: Utente: Interessi */
+  /* Campo: Utente: Interests */
   $handler->display->display_options['fields']['field_user_interest']['id'] = 'field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['table'] = 'field_data_field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['field'] = 'field_user_interest';
@@ -450,7 +450,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_skills']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_skills']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['field_api_classes'] = 0;
-  /* Campo: Utente: Interessi */
+  /* Campo: Utente: Interests */
   $handler->display->display_options['fields']['field_user_interest']['id'] = 'field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['table'] = 'field_data_field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['field'] = 'field_user_interest';
@@ -523,7 +523,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['title'] = 'Il mio programma';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relazione: Utente: Sessioni Drupal Day 2011 di interesse (field_session_attendee) */
+  /* Relazione: Utente: Drupal Day 2011 sessions of interest (field_session_attendee) */
   $handler->display->display_options['relationships']['field_session_attendee_nid']['id'] = 'field_session_attendee_nid';
   $handler->display->display_options['relationships']['field_session_attendee_nid']['table'] = 'field_data_field_session_attendee';
   $handler->display->display_options['relationships']['field_session_attendee_nid']['field'] = 'field_session_attendee_nid';
@@ -787,10 +787,11 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_skills']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_skills']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['field_api_classes'] = 0;
-  /* Campo: Utente: Interessi */
+  /* Campo: Utente: Interests */
   $handler->display->display_options['fields']['field_user_interest']['id'] = 'field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['table'] = 'field_data_field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['field'] = 'field_user_interest';
+  $handler->display->display_options['fields']['field_user_interest']['label'] = 'Interessi';
   $handler->display->display_options['fields']['field_user_interest']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['alter']['absolute'] = 0;
