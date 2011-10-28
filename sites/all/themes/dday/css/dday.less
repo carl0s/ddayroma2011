@@ -590,12 +590,13 @@ article {
     }
 }
 
-.preface-region-inner (@color) {
-    background: transparent url("{@base-url}/bg-hg.png") no-repeat left top;
+.preface-region-inner (@color; @position) {
+    background: transparent url("{@base-url}/bg-hg.png") no-repeat @position top;
     width:261px;
     .block;
     height:260px;
     &:hover { background-color:@color; }
+    &.selected { background-color:@color; }
     .boxes-box {
       height:260px;
       .relative;
@@ -621,41 +622,41 @@ article {
     
     #region-preface-first {
         p {
-          line-height:14px !important;
+          line-height:16px !important;
         }
         .region-inner {
-            .preface-region-inner(@lightest-blue);
+            .preface-region-inner(@lightest-blue;left);
              margin:0 0 0 40px;
           &.selected {
-            .preface-region-inner(@lightest-blue);
+            .preface-region-inner(@lightest-blue;left);
           }
         }
     }
 
     #region-preface-second {
         p {
-          line-height:14px !important;
+          line-height:16px !important;
         }
         .region-inner {
-            .preface-region-inner(@lightest-yellow);
+            .preface-region-inner(@lightest-yellow;center);
             margin:0 40px 0 40px;
             background-position:center top;
             &.selected {
-              .preface-region-inner(@lightest-yellow);
+              .preface-region-inner(@lightest-yellow;center);
             }
         }
     }
 
     #region-preface-third{
         p {
-          line-height:14px !important;
+          line-height:16px !important;
         }
         .region-inner {
-          .preface-region-inner(@lightest-red);
+          .preface-region-inner(@lightest-red;right);
           margin:0 20px 0 -20px;
          background-position:right top;
          &.selected {
-           .preface-region-inner(@lightest-red);
+           .preface-region-inner(@lightest-red;right);
          }
         }
     }
