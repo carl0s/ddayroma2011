@@ -144,6 +144,54 @@ function attendes_default_page_manager_handlers() {
     $pane = new stdClass;
     $pane->pid = 'new-2';
     $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_user_attendee';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'list_default',
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:user_1',
+      'override_title' => 1,
+      'override_title_text' => 'Ho partecipato a',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $display->content['new-2'] = $pane;
+    $display->panels['center'][1] = 'new-2';
+    $pane = new stdClass;
+    $pane->pid = 'new-3';
+    $pane->panel = 'center';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_session_attendee';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'node_reference_default',
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:user_1',
+      'override_title' => 1,
+      'override_title_text' => 'In questo Drupal Day mi interessano',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $display->content['new-3'] = $pane;
+    $display->panels['center'][2] = 'new-3';
+    $pane = new stdClass;
+    $pane->pid = 'new-4';
+    $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'sessions_schedule';
     $pane->shown = TRUE;
@@ -173,11 +221,11 @@ function attendes_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
-    $display->content['new-2'] = $pane;
-    $display->panels['center'][1] = 'new-2';
+    $pane->position = 3;
+    $display->content['new-4'] = $pane;
+    $display->panels['center'][3] = 'new-4';
     $pane = new stdClass;
-    $pane->pid = 'new-3';
+    $pane->pid = 'new-5';
     $pane->panel = 'profile_sidebar_left';
     $pane->type = 'views';
     $pane->subtype = 'user_profile';
@@ -209,8 +257,8 @@ function attendes_default_page_manager_handlers() {
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
-    $display->content['new-3'] = $pane;
-    $display->panels['profile_sidebar_left'][0] = 'new-3';
+    $display->content['new-5'] = $pane;
+    $display->panels['profile_sidebar_left'][0] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
