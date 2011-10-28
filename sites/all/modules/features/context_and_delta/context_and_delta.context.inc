@@ -165,9 +165,9 @@ function context_and_delta_context_default_contexts() {
           'region' => 'branding',
           'weight' => '0',
         ),
-        'boxes-mydrupalday' => array(
-          'module' => 'boxes',
-          'delta' => 'mydrupalday',
+        'menu-menu-my-drupal-day' => array(
+          'module' => 'menu',
+          'delta' => 'menu-my-drupal-day',
           'region' => 'menu',
           'weight' => '-10',
         ),
@@ -176,12 +176,6 @@ function context_and_delta_context_default_contexts() {
           'delta' => 'news-block',
           'region' => 'sidebar_first',
           'weight' => '-36',
-        ),
-        'mailchimp_lists-1' => array(
-          'module' => 'mailchimp_lists',
-          'delta' => 1,
-          'region' => 'sidebar_first',
-          'weight' => '-35',
         ),
         'block-1' => array(
           'module' => 'block',
@@ -265,6 +259,42 @@ function context_and_delta_context_default_contexts() {
   $context = new stdClass;
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'press';
+  $context->description = 'press context, with news, mailchimp block and page-press';
+  $context->tag = 'press context';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'press' => 'press',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-news-block' => array(
+          'module' => 'views',
+          'delta' => 'news-block',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'delta' => array(
+      'delta_template' => 'pagina_track',
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('press context');
+  t('press context, with news, mailchimp block and page-press');
+  $export['press'] = $context;
+
+  $context = new stdClass;
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'sitewide';
   $context->description = '';
   $context->tag = 'Sitewide Context';
@@ -276,7 +306,6 @@ function context_and_delta_context_default_contexts() {
         '~sessioni_code' => '~sessioni_code',
         '~sessioni_biz' => '~sessioni_biz',
         '~sessioni_pa' => '~sessioni_pa',
-        '~attendees' => '~attendees',
       ),
     ),
     'sitewide' => array(
@@ -318,17 +347,11 @@ function context_and_delta_context_default_contexts() {
           'region' => 'branding',
           'weight' => '0',
         ),
-        'boxes-mydrupalday' => array(
-          'module' => 'boxes',
-          'delta' => 'mydrupalday',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
         'system-main-menu' => array(
           'module' => 'system',
           'delta' => 'main-menu',
           'region' => 'sidebar_first',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'block-1' => array(
           'module' => 'block',

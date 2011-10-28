@@ -97,21 +97,6 @@ function attendes_views_default_views() {
   $handler = $view->new_display('page', 'Attendees', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Partecipanti';
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Scostamento';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Utente: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
@@ -142,7 +127,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['picture']['table'] = 'users';
   $handler->display->display_options['fields']['picture']['field'] = 'picture';
   $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['picture']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['picture']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['picture']['alter']['absolute'] = 0;
@@ -155,7 +139,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['picture']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['picture']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['picture']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['picture']['element_class'] = 'grid-1 alpha';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['picture']['hide_empty'] = 0;
@@ -167,7 +150,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = 1;
   $handler->display->display_options['fields']['name']['alter']['path'] = 'attendees/[uid]';
@@ -181,7 +163,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['name']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['name']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['name']['element_class'] = 'grid-2 omega';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['name']['hide_empty'] = 0;
@@ -194,7 +175,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_twitter']['table'] = 'field_data_field_user_twitter';
   $handler->display->display_options['fields']['field_user_twitter']['field'] = 'field_user_twitter';
   $handler->display->display_options['fields']['field_user_twitter']['label'] = '';
-  $handler->display->display_options['fields']['field_user_twitter']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_twitter']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_user_twitter']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_user_twitter']['alter']['absolute'] = 0;
@@ -207,20 +187,19 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_twitter']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_user_twitter']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_user_twitter']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_user_twitter']['element_class'] = 'grid-2 omega';
   $handler->display->display_options['fields']['field_user_twitter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_twitter']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_user_twitter']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_user_twitter']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_user_twitter']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_user_twitter']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_user_twitter']['type'] = 'link_title_plain';
   $handler->display->display_options['fields']['field_user_twitter']['field_api_classes'] = 0;
   /* Campo: Utente: Skills */
   $handler->display->display_options['fields']['field_user_skills']['id'] = 'field_user_skills';
   $handler->display->display_options['fields']['field_user_skills']['table'] = 'field_data_field_user_skills';
   $handler->display->display_options['fields']['field_user_skills']['field'] = 'field_user_skills';
-  $handler->display->display_options['fields']['field_user_skills']['label'] = '';
-  $handler->display->display_options['fields']['field_user_skills']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_skills']['label'] = 'my skills';
   $handler->display->display_options['fields']['field_user_skills']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['alter']['absolute'] = 0;
@@ -233,8 +212,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_skills']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_user_skills']['element_class'] = 'grid-3 alpha';
-  $handler->display->display_options['fields']['field_user_skills']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_skills']['element_label_colon'] = 1;
   $handler->display->display_options['fields']['field_user_skills']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_user_skills']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_user_skills']['empty_zero'] = 0;
@@ -247,8 +225,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_interest']['id'] = 'field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['table'] = 'field_data_field_user_interest';
   $handler->display->display_options['fields']['field_user_interest']['field'] = 'field_user_interest';
-  $handler->display->display_options['fields']['field_user_interest']['label'] = '';
-  $handler->display->display_options['fields']['field_user_interest']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_interest']['label'] = 'my interests';
   $handler->display->display_options['fields']['field_user_interest']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['alter']['absolute'] = 0;
@@ -261,8 +238,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_interest']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_user_interest']['element_class'] = 'grid-3 alpha';
-  $handler->display->display_options['fields']['field_user_interest']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_interest']['element_label_colon'] = 1;
   $handler->display->display_options['fields']['field_user_interest']['element_default_classes'] = 1;
   $handler->display->display_options['fields']['field_user_interest']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['empty_zero'] = 0;
@@ -271,37 +247,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['field_user_interest']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_interest']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_user_interest']['field_api_classes'] = 0;
-  /* Campo: Globale: Testo personalizzato */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="wrapper-attendees grid-11">
-<div class="field-picture grid-1 alpha"> [picture] </div>
-<div class="field-name-twitter grid-3">
-<span class="field-name">[name]</span>
-<span class="field-twitter">[field_user_twitter]</span>
-</div>
-<div class="field-skills grid-4"><p class="label">Skills: </p>[field_user_skills]</div> 
-<div class="field-interests grid-3 omega"><p class="label">Interessi: </p>[field_user_interest]</div> 
-</div>';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  $handler->display->display_options['path'] = 'partecipanti';
+  $handler->display->display_options['path'] = 'attendees';
 
   /* Display: Attendees Block Home */
   $handler = $view->new_display('block', 'Attendees Block Home', 'block');
@@ -569,7 +515,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uid']['break_phrase'] = 0;
   $handler->display->display_options['arguments']['uid']['not'] = 0;
-  $handler->display->display_options['path'] = 'partecipanti/%';
+  $handler->display->display_options['path'] = 'attendees/%';
 
   /* Display: Attendees details attachment */
   $handler = $view->new_display('attachment', 'Attendees details attachment', 'attachment_1');
@@ -719,21 +665,12 @@ function attendes_views_default_views() {
     t('Tutti'),
     t('Partecipanti'),
     t('attendees/[uid]'),
-    t('<div class="wrapper-attendees grid-11">
-<div class="field-picture grid-1 alpha"> [picture] </div>
-<div class="field-name-twitter grid-3">
-<span class="field-name">[name]</span>
-<span class="field-twitter">[field_user_twitter]</span>
-</div>
-<div class="field-skills grid-4"><p class="label">Skills: </p>[field_user_skills]</div> 
-<div class="field-interests grid-3 omega"><p class="label">Interessi: </p>[field_user_interest]</div> 
-</div>'),
+    t('my skills'),
+    t('my interests'),
     t('Attendees Block Home'),
     t('<front>'),
     t('Attendees details'),
     t('[field_user_firstname] [field_user_lastname]'),
-    t('my skills'),
-    t('my interests'),
     t('Attendees details attachment'),
     t('Il mio programma'),
     t('di'),
