@@ -165,12 +165,6 @@ function context_and_delta_context_default_contexts() {
           'region' => 'branding',
           'weight' => '0',
         ),
-        'menu-menu-my-drupal-day' => array(
-          'module' => 'menu',
-          'delta' => 'menu-my-drupal-day',
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
         'views-news-block' => array(
           'module' => 'views',
           'delta' => 'news-block',
