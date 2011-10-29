@@ -14,7 +14,7 @@
 function dday_preprocess_block(&$vars) {
   $block = $vars['block'];
   //  block_id_1 = logo block
-  if ($block->module == 'block' && $block->bid == 'block-1') {
+  if ($block->module == 'block' && $block->bid == 'block-boxes-join-button') {
     if (module_exists('drupalday_system_feature')) {
       $count_users_tot = drupalday_system_feature_user_count();
       // prepend user cached user count

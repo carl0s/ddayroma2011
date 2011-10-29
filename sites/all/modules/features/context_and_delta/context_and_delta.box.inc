@@ -13,23 +13,6 @@ function context_and_delta_default_box() {
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
-  $box->delta = 'biz';
-  $box->plugin_key = 'simple';
-  $box->title = '';
-  $box->description = 'Biz';
-  $box->options = array(
-    'body' => array(
-      'value' => 'Percorso di marketing e comunicazione per chiarire le potenzialità di business che Drupal offre a imprenditori, manager & decision maker.
-
-<a href="sessioni?track=biz" class="circle" title="vai alla sezione BIZ"></a>',
-      'format' => 'filtered_html',
-    ),
-  );
-  $export['biz'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
   $box->delta = 'call_for_paper';
   $box->plugin_key = 'simple';
   $box->title = 'ROMA2011: Call for paper';
@@ -53,38 +36,6 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
-  $box->delta = 'code';
-  $box->plugin_key = 'simple';
-  $box->title = '';
-  $box->description = 'Code';
-  $box->options = array(
-    'body' => array(
-      'value' => 'Percorso di alto profilo tecnico per confrontarsi su righe di codice e best practice d’implementazione.
-
-<a href="sessioni?track=code" class="circle" title="vai alla sezione CODE"></a>',
-      'format' => 'filtered_html',
-    ),
-  );
-  $export['code'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
-  $box->delta = 'join_button';
-  $box->plugin_key = 'simple';
-  $box->title = '';
-  $box->description = 'Big join button';
-  $box->options = array(
-    'body' => array(
-      'value' => '<a class="button bigjoin red" href="/user/register">PARTECIPA</a>',
-      'format' => 'filtered_html',
-    ),
-  );
-  $export['join_button'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
   $box->delta = 'mydrupalday';
   $box->plugin_key = 'simple';
   $box->title = '';
@@ -96,44 +47,6 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
     ),
   );
   $export['mydrupalday'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
-  $box->delta = 'pa';
-  $box->plugin_key = 'simple';
-  $box->title = '';
-  $box->description = 'pa';
-  $box->options = array(
-    'body' => array(
-      'value' => 'Percorso di strategic analysis per illustrare le opportunità che Drupal rappresenta per  fondazioni, enti ed organizzazioni 
-governative e non.
-
-<a href="sessioni?track=pa" class="circle" title="vai alla sezione PA"></a>',
-      'format' => 'filtered_html',
-    ),
-  );
-  $export['pa'] = $box;
-
-  $box = new stdClass;
-  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
-  $box->api_version = 1;
-  $box->delta = 'social_block';
-  $box->plugin_key = 'simple';
-  $box->title = 'Seguici';
-  $box->description = 'Seguici sui social network';
-  $box->options = array(
-    'body' => array(
-      'value' => '<ul class="social-icons">
-  <li class="facebook"><a href="http://www.facebook.com/drupalday" title="Facebook page"></a></li>
-  <li class="twitter"><a href="http://www.twitter.com/drupalday" title="Twitter handle"></a></li>
-  <li class="flickr"><a href="http://www.flickr.com/photos/drupalday" title="Flickr page"></a></li>
-  <li class="youtube"><a href="http://www.youtube.com/user/DrupalDay" title="YouTube channel"></a></li>
-</ul>',
-      'format' => 'filtered_html',
-    ),
-  );
-  $export['social_block'] = $box;
 
   return $export;
 }
