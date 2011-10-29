@@ -1463,8 +1463,37 @@ article.session {
   clear: both; 
   text-align: center; 
   float: left; 
-  margin: 20px 0px 0px 40px;
+  margin: 10px 0px 0px 0px;
 }
+
+.user-count-number {
+  width:80px;
+  background:url("{@base-url}/bubble_count.png") center left no-repeat;
+  height:47px;
+  .absolute;
+  right:0;
+  top:6px;
+  .wrapper {
+    margin-left:12px;
+    .center;
+    padding:0 10px;
+    font-size:16px;
+    line-height:40px;
+    .serif;
+    .italic;
+    .lowercase;
+    color:@red;
+    line-height:20px;
+    font-size:30px;
+    span {
+      color:#555;
+      font-size:12px;
+      .base-family;
+    }
+  }
+}
+
+
 #edit-submitted-tipo-sponsorship {
   label {
     width:100px;
@@ -1691,29 +1720,6 @@ article.session {
 
 .baloon {
   display: none;
-}
-
-.user-count-number {
-  .border-radius(5px);
-  .center;
-  border:1px solid #555;
-  background:white;
-  padding:0 10px;
-  height:47px;
-  .absolute;
-  font-size:16px;
-  line-height:40px;
-  right:0;
-  top:0;
-  color:#555;
-  span {
-    .serif;
-    .italic;
-    .lowercase;
-    color:@red;
-    line-height:35px;
-    font-size:30px;
-  }
 }
 
 #block-block-1 {
