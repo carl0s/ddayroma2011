@@ -18,7 +18,7 @@ function dday_preprocess_block(&$vars) {
     if (module_exists('drupalday_system_feature')) {
       $count_users_tot = drupalday_system_feature_user_count();
       // prepend user cached user count
-      $vars['content'] = '<span class="user_counter baloon"> '. $count_users_tot .' </span>' . $vars['content'];
+      $vars['content'] = '<div class="user-count-number"><div class="wrapper">'. $count_users_tot .'<br /><span>iscritti</span></div></div>' . $vars['content'];
     }
   }
 }
