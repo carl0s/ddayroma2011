@@ -170,6 +170,14 @@ function sponsor_image_default_styles() {
  */
 function sponsor_node_info() {
   $items = array(
+    'media_partner' => array(
+      'name' => t('Media partner'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'sponsor' => array(
       'name' => t('Sponsor'),
       'base' => 'node_content',
