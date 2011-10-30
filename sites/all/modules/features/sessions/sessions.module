@@ -133,7 +133,7 @@ function sessions_form_alter(&$form, &$form_state, $form_id) {
       
       $form['field_session_room']['#access'] = false;
       $form['field_session_timeslot']['#access'] = false;
-      $form['field_session_track']['#access'] = false;
+      //$form['field_session_track']['#access'] = false;
       
       // sesssion status (force to Proposed for authenticated users)
       // multilanguage fields alter: http://timonweb.com/how-remove-format-options-guideliness-comments-textarea-drupal-7#comment-4611
