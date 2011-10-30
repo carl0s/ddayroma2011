@@ -1,4 +1,3 @@
-<?php kpr($node); ?>
 <article id="sponsor" class="clearfix">
   <aside class="grid-8 alpha">
     <figure>
