@@ -167,3 +167,43 @@ function sessions_preprocess_node(&$vars) {
  }
 }
 
+
+/*
+* Conditional check for node session and filter tracks (?track=)
+*/ 
+function _session_conditional_check($node = null) {
+  global $language;
+  $tracks = drupal_map_assoc(array('code', 'biz', 'pa'));
+  // change logo if ?track is enabled
+  $node_track = ($node && $node->type == SESSIONS_CTYPE && $node->field_session_track[$language->language][0]['value'] ? 
+                 $node->field_session_track[$language->language][0]['value'] : '');  
+  // check track paramenter
+  $filter = (isset($_GET['track']) ? $_GET['track'] : $node_track); 
+  if (($filter && $tracks[$filter]))  {
+    return $filter;
+  }
+}
+
+
+/*
+* Implementation of hook_preprocess_page()
+*/
+function sessions_preprocess_page(&$vars) {
+  $node = &$vars['node'];
+  if ($filter = _session_conditional_check($node)) {
+    $vars['logo'] = url(drupal_get_path('theme', 'dday').'/images/logo_'.$filter.'.png', array('absolute' => true));
+  } 
+}
+
+/**
+ * Implementation of hook_preprocess_block()
+ */
+function sessions_preprocess_block(&$vars) {
+  $block = $vars['block'];
+  if ($block->module == 'block' && $block->bid == 'block-1') {
+    $node = menu_get_object();
+    if ($filter = _session_conditional_check($node)) {
+      $vars['classes_array'][] = 'block_session_logotipo_'.$filter;
+    }
+  }
+}
