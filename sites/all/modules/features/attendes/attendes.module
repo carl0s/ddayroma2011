@@ -5,3 +5,15 @@
  */
 
 include_once('attendes.features.inc');
+
+/**
+ *  Implements hook_form_alter()
+ */
+function attendes_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'user_profile_form') {
+    // hide some fields for authenticated users
+    if (!user_access('administer content')) {
+      $form['field_session_attendee']['#access'] = false;
+    }
+  }
+}
