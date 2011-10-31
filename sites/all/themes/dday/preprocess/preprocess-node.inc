@@ -6,6 +6,7 @@ function dday_alpha_preprocess_node_session(&$vars) {
   if (isset($content['field_session_experience_level'][0]['#markup'])) {
     $vars['experience_class'] = drupal_html_id($content['field_session_experience_level'][0]['#markup']);
   }
+  $vars['account'] = user_load($node->uid);
 }
 
 function dday_alpha_preprocess_node(&$vars) {
