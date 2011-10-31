@@ -49,8 +49,9 @@ function sessions_menu() {
 
 function sessions_alias_redirect($alias = null) {
   // redirect $_GET parameter to the aliased path
-  $tracks = drupal_map_assoc(array('code', 'biz', 'pa'));
+  $tracks = drupal_map_assoc(array('code', 'biz', 'pa', 'All'));
   if ($track = $_GET['track']) {
+    if ($track == 'All') drupal_goto('sessioni');
     if ($tracks[$track]) {
       drupal_goto('sessioni/'.$_GET['track']);
     }
