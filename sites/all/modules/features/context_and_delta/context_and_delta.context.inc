@@ -272,10 +272,16 @@ function context_and_delta_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
+        'views-press_releases-press_release' => array(
+          'module' => 'views',
+          'delta' => 'press_releases-press_release',
+          'region' => 'postscript_second',
+          'weight' => '-10',
+        ),
       ),
     ),
     'delta' => array(
-      'delta_template' => 'pagina_track',
+      'delta_template' => 'press',
     ),
   );
   $context->condition_mode = 0;
@@ -300,6 +306,7 @@ function context_and_delta_context_default_contexts() {
         '~sessioni_code' => '~sessioni_code',
         '~sessioni_biz' => '~sessioni_biz',
         '~sessioni_pa' => '~sessioni_pa',
+        '~press' => '~press',
       ),
     ),
     'sitewide' => array(
