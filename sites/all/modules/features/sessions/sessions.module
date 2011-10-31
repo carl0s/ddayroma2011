@@ -204,6 +204,7 @@ function sessions_preprocess_block(&$vars) {
     $node = menu_get_object();
     if ($filter = _session_conditional_check($node)) {
       $vars['classes_array'][] = 'block_session_logotipo_'.$filter;
+      unset($vars['content']);
     }
     else {
       $vars['classes_array'][] = 'block_session_logotipo_standard';
