@@ -210,4 +210,11 @@ function sessions_preprocess_block(&$vars) {
       $vars['classes_array'][] = 'block_session_logotipo_standard';
     }
   }
+  if ($block->module == 'boxes' && $block->bid == 'boxes-join_button') {
+    $node = menu_get_object();
+    if ($filter = _session_conditional_check($node)) {
+      unset($vars['block']);
+      unset($vars['content']); 
+    }
+  }
 }
