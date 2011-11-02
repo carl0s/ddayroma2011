@@ -155,7 +155,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = 0;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = 1;
   $handler->display->display_options['fields']['name']['alter']['path'] = 'partecipanti/[uid]';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['name']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['name']['alter']['external'] = 0;
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = 0;
@@ -171,7 +170,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['name']['hide_empty'] = 0;
   $handler->display->display_options['fields']['name']['empty_zero'] = 0;
   $handler->display->display_options['fields']['name']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['name']['link_to_user'] = 1;
+  $handler->display->display_options['fields']['name']['link_to_user'] = 0;
   $handler->display->display_options['fields']['name']['overwrite_anonymous'] = 0;
   /* Campo: Utente: Twitter */
   $handler->display->display_options['fields']['field_user_twitter']['id'] = 'field_user_twitter';
@@ -700,10 +699,7 @@ function attendes_views_default_views() {
     t('Bio'),
     t('Tutti'),
     t('Partecipanti'),
-<<<<<<< HEAD
     t('partecipanti/[uid]'),
-=======
->>>>>>> attendees: link al profilo. menu link disabled
     t('<div class="wrapper-attendees grid-11">
 <div class="field-picture grid-1 alpha"> [picture] </div>
 <div class="field-name-twitter grid-3">
