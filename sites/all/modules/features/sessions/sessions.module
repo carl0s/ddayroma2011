@@ -69,6 +69,19 @@ function sessions_alias_redirect($alias = null) {
 //  drupal_goto(url('sessioni', array('query' => array('track' => $alias), 'absolute' => true)));
 }
 
+/* Implementation of hook_views_post_build() 
+# This is fine without using the _menu hack above
+function sessions_views_pre_build(&$view) {
+  if ($view->name == 'sessions_schedule') {
+    $input = $view->get_exposed_input();
+    if (arg(1)) {
+      $title = 'Sessioni &raquo; ' . arg(1);
+      $view->display_handler->set_option('title', $title);
+    }
+  }
+}
+*/
+
 /**
  * Implements of hook_menu_alter()
  */
@@ -102,6 +115,7 @@ function sessions_access($uid) {
   $account = user_load($uid);
   return user_edit_access($account);
 }
+
 
 function sessions_theme($existing, $type, $theme, $path) {
   $items['views_view_unformatted__sessions_schedule'] = array(
