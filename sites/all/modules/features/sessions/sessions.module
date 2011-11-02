@@ -39,7 +39,8 @@ function sessions_menu() {
       'page callback' => 'sessions_alias_redirect',
       'page arguments' =>  array(1),
       'type' => MENU_CALLBACK,
-      'access arguments' => array('access content')
+      'access arguments' => array('access content'),
+      'title' => t('Sessioni')
     );
   }  
   return $items;
@@ -58,11 +59,13 @@ function sessions_alias_redirect($alias = null) {
   }
   if ($alias) {
     $_GET['track'] = $alias;
+    drupal_set_title("Sessioni » " . $alias);
   }
+  
   $view_name = 'sessions_schedule'; //name of view
   $view = views_get_view($view_name);
   $view->set_display('page');
-  return $view->render();
+  return $view->preview();
 //  drupal_goto(url('sessioni', array('query' => array('track' => $alias), 'absolute' => true)));
 }
 
@@ -99,18 +102,6 @@ function sessions_access($uid) {
   $account = user_load($uid);
   return user_edit_access($account);
 }
-
-/* Implementation of hook_views_post_build() */
-function sessions_views_pre_build(&$view) {
-  if ($view->name == 'sessions_schedule') {
-    $input = $view->get_exposed_input();
-    if ($input && $input['track']) {
-      $title = 'Sessioni &raquo; ' . $input['track'];
-      $view->display_handler->set_option('title', $title);
-    }
-  }
-}
-
 
 function sessions_theme($existing, $type, $theme, $path) {
   $items['views_view_unformatted__sessions_schedule'] = array(
