@@ -36,6 +36,21 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
+  $box->delta = 'join_button';
+  $box->plugin_key = 'simple';
+  $box->title = '';
+  $box->description = 'Big join button';
+  $box->options = array(
+    'body' => array(
+      'value' => '<a class="button bigjoin red" href="/user/register">PARTECIPA</a>',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['join_button'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
   $box->delta = 'mydrupalday';
   $box->plugin_key = 'simple';
   $box->title = '';
@@ -47,6 +62,26 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
     ),
   );
   $export['mydrupalday'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
+  $box->delta = 'social_block';
+  $box->plugin_key = 'simple';
+  $box->title = 'Seguici';
+  $box->description = 'Seguici sui social network';
+  $box->options = array(
+    'body' => array(
+      'value' => '<ul class="social-icons">
+  <li class="facebook"><a href="http://www.facebook.com/drupalday" title="Facebook page"></a></li>
+  <li class="twitter"><a href="http://www.twitter.com/drupalday" title="Twitter handle"></a></li>
+  <li class="flickr"><a href="http://www.flickr.com/photos/drupalday" title="Flickr page"></a></li>
+  <li class="youtube"><a href="http://www.youtube.com/user/DrupalDay" title="YouTube channel"></a></li>
+</ul>',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['social_block'] = $box;
 
   return $export;
 }

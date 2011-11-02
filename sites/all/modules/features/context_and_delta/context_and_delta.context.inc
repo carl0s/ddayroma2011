@@ -300,6 +300,7 @@ function context_and_delta_context_default_contexts() {
         '~sessioni_code' => '~sessioni_code',
         '~sessioni_biz' => '~sessioni_biz',
         '~sessioni_pa' => '~sessioni_pa',
+        '~attendees' => '~attendees',
       ),
     ),
     'sitewide' => array(
