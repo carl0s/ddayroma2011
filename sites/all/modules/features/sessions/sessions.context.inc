@@ -23,6 +23,11 @@ function sessions_context_default_contexts() {
         'q=sessioni' => 'q=sessioni',
       ),
     ),
+    'path' => array(
+      'values' => array(
+        'sessioni/biz' => 'sessioni/biz',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
@@ -126,6 +131,11 @@ function sessions_context_default_contexts() {
       'values' => array(
         'track=code' => 'track=code',
         'q=sessioni' => 'q=sessioni',
+      ),
+    ),
+    'path' => array(
+      'values' => array(
+        'sessioni/code' => 'sessioni/code',
       ),
     ),
   );
@@ -237,6 +247,11 @@ function sessions_context_default_contexts() {
       'values' => array(
         'track=pa' => 'track=pa',
         'q=sessioni' => 'q=sessioni',
+      ),
+    ),
+    'path' => array(
+      'values' => array(
+        'sessioni/pa' => 'sessioni/pa',
       ),
     ),
   );
