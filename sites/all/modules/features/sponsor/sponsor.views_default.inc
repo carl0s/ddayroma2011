@@ -771,7 +771,14 @@ function sponsor_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'media_partner' => 'media_partner',
+    'sponsor' => 'sponsor',
+  );
+  /* Criterio del filtro: Contenuto: Sponsor Category (field_sponsor_category) */
+  $handler->display->display_options['filters']['field_sponsor_category_value']['id'] = 'field_sponsor_category_value';
+  $handler->display->display_options['filters']['field_sponsor_category_value']['table'] = 'field_data_field_sponsor_category';
+  $handler->display->display_options['filters']['field_sponsor_category_value']['field'] = 'field_sponsor_category_value';
+  $handler->display->display_options['filters']['field_sponsor_category_value']['value'] = array(
+    'media' => 'media',
   );
   $handler->display->display_options['block_description'] = 'Media partner';
 
@@ -785,7 +792,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_grid_alpha_omega';
   $handler->display->display_options['style_options']['total_columns'] = '16';
-  $handler->display->display_options['style_options']['grid_width'] = '1';
+  $handler->display->display_options['style_options']['grid_width'] = '3';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -843,7 +850,14 @@ function sponsor_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'media_partner' => 'media_partner',
+    'sponsor' => 'sponsor',
+  );
+  /* Criterio del filtro: Contenuto: Sponsor Category (field_sponsor_category) */
+  $handler->display->display_options['filters']['field_sponsor_category_value']['id'] = 'field_sponsor_category_value';
+  $handler->display->display_options['filters']['field_sponsor_category_value']['table'] = 'field_data_field_sponsor_category';
+  $handler->display->display_options['filters']['field_sponsor_category_value']['field'] = 'field_sponsor_category_value';
+  $handler->display->display_options['filters']['field_sponsor_category_value']['value'] = array(
+    'media' => 'media',
   );
   $handler->display->display_options['displays'] = array(
     'page' => 'page',
