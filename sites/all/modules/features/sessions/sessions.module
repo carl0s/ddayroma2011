@@ -47,7 +47,9 @@ function sessions_menu() {
 }
 
 
-
+/**
+ *  This is a super hack around views + exposed form + menu + url 
+ */
 function sessions_alias_redirect($alias = null) {
   // redirect $_GET parameter to the aliased path
   $tracks = drupal_map_assoc(array('code', 'biz', 'pa', 'All'));
@@ -56,8 +58,13 @@ function sessions_alias_redirect($alias = null) {
     if ($tracks[$track]) {
       drupal_goto('sessioni/'.$track);
     }
+    // redirect with for unknown parameters
+    else {
+      drupal_goto('sessioni');
+    }
   }
-  if ($alias) {
+  
+  if ($alias && $tracks[$alias]) {
     $_GET['track'] = $alias;
     drupal_set_title("Sessioni » " . $alias);
   }
