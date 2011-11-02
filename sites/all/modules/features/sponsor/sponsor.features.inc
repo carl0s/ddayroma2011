@@ -34,32 +34,32 @@ function sponsor_image_default_styles() {
   $styles['sponsor_bronze'] = array(
     'name' => 'sponsor_bronze',
     'effects' => array(
-      7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+      15 => array(
+        'label' => 'Scala',
+        'help' => 'La trasformazione in scala mantiene il rapporto delle dimensioni dell\'immagine originale. Se viene impostata una sola dimensione, l\'altra sarà calcolata di conseguenza.',
         'effect callback' => 'image_scale_effect',
         'form callback' => 'image_scale_form',
         'summary theme' => 'image_scale_summary',
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => '60',
+          'width' => '90',
           'height' => '',
           'upscale' => 0,
         ),
         'weight' => '1',
       ),
-      8 => array(
-        'label' => 'Crop',
-        'help' => 'Cropping will remove portions of an image to make it the specified dimensions.',
+      16 => array(
+        'label' => 'Ritaglia',
+        'help' => 'Il ritaglio rimuove porzioni dell\'immagine in modo da portarla alle dimensioni desiderate.',
         'effect callback' => 'image_crop_effect',
         'form callback' => 'image_crop_form',
         'summary theme' => 'image_crop_summary',
         'module' => 'image',
         'name' => 'image_crop',
         'data' => array(
-          'width' => '60',
-          'height' => '40',
+          'width' => '90',
+          'height' => '60',
           'anchor' => 'left-top',
         ),
         'weight' => '2',
@@ -175,7 +175,7 @@ function sponsor_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titolo'),
       'help' => '',
     ),
     'sponsor' => array(

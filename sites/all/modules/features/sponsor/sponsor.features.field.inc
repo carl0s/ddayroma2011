@@ -289,6 +289,7 @@ function sponsor_field_default_fields() {
           'gold' => 'gold',
           'platinum' => 'platinum',
           'silver' => 'silver',
+          'media' => 'Media Partner',
         ),
         'allowed_values_function' => '',
       ),
@@ -453,7 +454,6 @@ function sponsor_field_default_fields() {
         'allowed_values' => array(
           'fake' => 'Fake',
           'real' => 'Real',
-          'media' => 'Media Partner',
         ),
         'allowed_values_function' => '',
       ),
