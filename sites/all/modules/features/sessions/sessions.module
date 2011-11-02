@@ -101,7 +101,7 @@ function sessions_menu_alter(&$items) {
   $items['node/add/session']['page callback'] = 'session_node_add';
   unset($items['node/add/session']['file']);   unset($items['node/add/session']['module']);
   
-  // sessioni redirect
+  // sessioni redirect (menu hack (see sessions_views_pre_build() doc)
   $items['sessioni']['page callback'] = 'sessions_alias_redirect';
   $items['sessioni']['page arguments'] = array();
 }
