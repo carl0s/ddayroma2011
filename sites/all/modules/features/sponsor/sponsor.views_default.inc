@@ -650,13 +650,38 @@ function sponsor_views_default_views() {
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['header']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Website */
+  $handler->display->display_options['fields']['field_sponsor_website']['id'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['table'] = 'field_data_field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['field'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_sponsor_website']['field_api_classes'] = 0;
   /* Campo: Contenuto: Logo */
   $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['field'] = 'field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['label'] = '';
-  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['path'] = '[field_sponsor_website]';
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['replace_spaces'] = 0;
@@ -675,7 +700,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
     'image_style' => 'sponsor_bronze',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_sponsor_logo']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -809,13 +834,38 @@ function sponsor_views_default_views() {
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['header']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Contenuto: Website */
+  $handler->display->display_options['fields']['field_sponsor_website']['id'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['table'] = 'field_data_field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['field'] = 'field_sponsor_website';
+  $handler->display->display_options['fields']['field_sponsor_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_website']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_sponsor_website']['field_api_classes'] = 0;
   /* Campo: Contenuto: Logo */
   $handler->display->display_options['fields']['field_sponsor_logo']['id'] = 'field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['table'] = 'field_data_field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['field'] = 'field_sponsor_logo';
   $handler->display->display_options['fields']['field_sponsor_logo']['label'] = '';
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['make_link'] = 1;
+  $handler->display->display_options['fields']['field_sponsor_logo']['alter']['path'] = '[field_sponsor_website]';
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_sponsor_logo']['alter']['replace_spaces'] = 0;
@@ -834,7 +884,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
     'image_style' => 'sponsor_silver',
-    'image_link' => 'content',
+    'image_link' => '',
   );
   $handler->display->display_options['fields']['field_sponsor_logo']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -894,6 +944,8 @@ function sponsor_views_default_views() {
     t('<h3> Silver </h3>'),
     t('Allegato Sponsor Bronze'),
     t('<h3> Bronze </h3>'),
+    t('Website'),
+    t('[field_sponsor_website]'),
     t('Block Media partner'),
     t('Media partner'),
     t('Allegato Media partner'),
