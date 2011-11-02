@@ -153,12 +153,9 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = 0;
-<<<<<<< HEAD
   $handler->display->display_options['fields']['name']['alter']['make_link'] = 1;
   $handler->display->display_options['fields']['name']['alter']['path'] = 'partecipanti/[uid]';
-=======
   $handler->display->display_options['fields']['name']['alter']['make_link'] = 0;
->>>>>>> attendees: link al profilo. menu link disabled
   $handler->display->display_options['fields']['name']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['name']['alter']['external'] = 0;
   $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = 0;
