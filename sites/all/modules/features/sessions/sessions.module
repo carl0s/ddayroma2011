@@ -62,7 +62,7 @@ function sessions_alias_redirect($alias = null) {
     drupal_set_title("Sessioni » " . $alias);
   }
   
-  $view_name = 'sessions_schedule'; //name of view
+  $view_name = 'sessions_schedule'; 
   $view = views_get_view($view_name);
   $view->set_display('page');
   return $view->preview();
