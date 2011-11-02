@@ -41,6 +41,11 @@ function attendes_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Scostamento';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Piè di pagina: Globale: Area di testo */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['empty'] = FALSE;
   /* Relazione: Utente: Sessioni Drupal Day 2011 di interesse (field_session_attendee) */
   $handler->display->display_options['relationships']['field_session_attendee_nid']['id'] = 'field_session_attendee_nid';
   $handler->display->display_options['relationships']['field_session_attendee_nid']['table'] = 'field_data_field_session_attendee';
@@ -295,6 +300,15 @@ function attendes_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = 0;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Scostamento';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Piè di pagina: Globale: Area di testo */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['empty'] = FALSE;
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/partecipanti">Guarda tutti</a>';
+  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['footer']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Utente: Uid */
@@ -708,6 +722,7 @@ function attendes_views_default_views() {
 <div class="field-interests grid-3 omega"><p class="label">Interessi: </p>[field_user_interest]</div> 
 </div>'),
     t('Attendees Block Home'),
+    t('<a href="/partecipanti">Guarda tutti</a>'),
     t('<front>'),
     t('Attendees details'),
     t('[field_user_firstname] [field_user_lastname]'),
