@@ -306,7 +306,7 @@ function attendes_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['empty'] = FALSE;
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/partecipanti">Guarda tutti</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/partecipanti">Vedi tutti</a>';
   $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
   $handler->display->display_options['footer']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -722,7 +722,7 @@ function attendes_views_default_views() {
 <div class="field-interests grid-3 omega"><p class="label">Interessi: </p>[field_user_interest]</div> 
 </div>'),
     t('Attendees Block Home'),
-    t('<a href="/partecipanti">Guarda tutti</a>'),
+    t('<a href="/partecipanti">Vedi tutti</a>'),
     t('<front>'),
     t('Attendees details'),
     t('[field_user_firstname] [field_user_lastname]'),
