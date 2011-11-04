@@ -47,10 +47,6 @@
      _submenu('#block-menu-block-6', '#partecipamenu');
      
 	function _submenu(menu, parent) {
-		var position = $(parent).position();
-		if(position) {
-			$(menu).css('left', position.left);
-		}
 	     
 		$(parent).attr('href', 'javascript:void(0)');
 	     
