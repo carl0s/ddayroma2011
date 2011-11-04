@@ -730,6 +730,424 @@ function attendes_views_default_views() {
   $export['attendees'] = $view;
 
   $view = new view;
+  $view->name = 'skills';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'Skills';
+  $view->core = 7;
+  $view->api_version = '3.0-alpha1';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Skills';
+  $handler->display->display_options['use_more_text'] = 'altro';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Ripristina';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Ordina per';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Disc';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Voci per pagina';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Tutto -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Scostamento';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Campo: Utente: Nome */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['name']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['name']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['name']['link_to_user'] = 1;
+  $handler->display->display_options['fields']['name']['overwrite_anonymous'] = 0;
+  /* Campo: Utente: Interessi */
+  $handler->display->display_options['fields']['field_user_interest']['id'] = 'field_user_interest';
+  $handler->display->display_options['fields']['field_user_interest']['table'] = 'field_data_field_user_interest';
+  $handler->display->display_options['fields']['field_user_interest']['field'] = 'field_user_interest';
+  $handler->display->display_options['fields']['field_user_interest']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_interest']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['field_api_classes'] = 0;
+  /* Campo: Utente: Ritratto */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['picture']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['picture']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['picture']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['picture']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['picture']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['picture']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['picture']['hide_alter_empty'] = 0;
+  /* Campo: Utente: Skills */
+  $handler->display->display_options['fields']['field_user_skills']['id'] = 'field_user_skills';
+  $handler->display->display_options['fields']['field_user_skills']['table'] = 'field_data_field_user_skills';
+  $handler->display->display_options['fields']['field_user_skills']['field'] = 'field_user_skills';
+  $handler->display->display_options['fields']['field_user_skills']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_skills']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['field_api_classes'] = 0;
+  /* Campo: Utente: Twitter */
+  $handler->display->display_options['fields']['field_user_twitter']['id'] = 'field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['table'] = 'field_data_field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['field'] = 'field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_user_twitter']['field_api_classes'] = 0;
+  /* Campo: Utente: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['uid']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['uid']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['uid']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['uid']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['uid']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['uid']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = 1;
+  /* Campo: Globale: Testo personalizzato */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  /* Criterio di ordinamento: Utente: Data creazione */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filtro contestuale: Utente: Skills (field_user_skills) */
+  $handler->display->display_options['arguments']['field_user_skills_tid']['id'] = 'field_user_skills_tid';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['table'] = 'field_data_field_user_skills';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['field'] = 'field_user_skills_tid';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['summary']['format'] = 'default_summary';
+  /* Criterio del filtro: Utente: Attivo */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Campo: Utente: Nome */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['name']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['name']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['name']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['name']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['name']['link_to_user'] = 1;
+  $handler->display->display_options['fields']['name']['overwrite_anonymous'] = 0;
+  /* Campo: Utente: Interessi */
+  $handler->display->display_options['fields']['field_user_interest']['id'] = 'field_user_interest';
+  $handler->display->display_options['fields']['field_user_interest']['table'] = 'field_data_field_user_interest';
+  $handler->display->display_options['fields']['field_user_interest']['field'] = 'field_user_interest';
+  $handler->display->display_options['fields']['field_user_interest']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_user_interest']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_interest']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_user_interest']['field_api_classes'] = 0;
+  /* Campo: Utente: Ritratto */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['picture']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['picture']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['picture']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['picture']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['picture']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['picture']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['picture']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['picture']['hide_alter_empty'] = 0;
+  /* Campo: Utente: Skills */
+  $handler->display->display_options['fields']['field_user_skills']['id'] = 'field_user_skills';
+  $handler->display->display_options['fields']['field_user_skills']['table'] = 'field_data_field_user_skills';
+  $handler->display->display_options['fields']['field_user_skills']['field'] = 'field_user_skills';
+  $handler->display->display_options['fields']['field_user_skills']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_user_skills']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_skills']['delta_reversed'] = 0;
+  $handler->display->display_options['fields']['field_user_skills']['field_api_classes'] = 0;
+  /* Campo: Utente: Twitter */
+  $handler->display->display_options['fields']['field_user_twitter']['id'] = 'field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['table'] = 'field_data_field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['field'] = 'field_user_twitter';
+  $handler->display->display_options['fields']['field_user_twitter']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_user_twitter']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_user_twitter']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_user_twitter']['field_api_classes'] = 0;
+  /* Campo: Utente: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['uid']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['uid']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['uid']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['uid']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['uid']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['uid']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['uid']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = 1;
+  /* Campo: Globale: Testo personalizzato */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="wrapper-attendees grid-11">
+<div class="field-picture grid-1 alpha"> [picture] </div>
+<div class="field-name-twitter grid-3">
+<span class="field-name">[name]</span>
+<span class="field-twitter">[field_user_twitter]</span>
+</div>
+<div class="field-skills grid-4"><p class="label">Skills: </p>[field_user_skills]</div> 
+<div class="field-interests grid-3 omega"><p class="label">Interessi: </p>[field_user_interest]</div> 
+</div>';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Filtro contestuale: Utente: Skills (field_user_skills) */
+  $handler->display->display_options['arguments']['field_user_skills_tid']['id'] = 'field_user_skills_tid';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['table'] = 'field_data_field_user_skills';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['field'] = 'field_user_skills_tid';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['title_enable'] = 1;
+  $handler->display->display_options['arguments']['field_user_skills_tid']['title'] = '%1';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['field_user_skills_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_user_skills_tid']['break_phrase'] = 0;
+  $handler->display->display_options['arguments']['field_user_skills_tid']['not'] = 0;
+  $handler->display->display_options['path'] = 'taxonomy/term/%';
+  $translatables['skills'] = array(
+    t('Master'),
+    t('Skills'),
+    t('altro'),
+    t('Applica'),
+    t('Ripristina'),
+    t('Ordina per'),
+    t('Asc'),
+    t('Disc'),
+    t('Voci per pagina'),
+    t('- Tutto -'),
+    t('Scostamento'),
+    t('Interessi'),
+    t('Ritratto'),
+    t('Twitter'),
+    t('Uid'),
+    t('Testo personalizzato'),
+    t('Tutti'),
+    t('Page'),
+    t('<div class="wrapper-attendees grid-11">
+<div class="field-picture grid-1 alpha"> [picture] </div>
+<div class="field-name-twitter grid-3">
+<span class="field-name">[name]</span>
+<span class="field-twitter">[field_user_twitter]</span>
+</div>
+<div class="field-skills grid-4"><p class="label">Skills: </p>[field_user_skills]</div> 
+<div class="field-interests grid-3 omega"><p class="label">Interessi: </p>[field_user_interest]</div> 
+</div>'),
+    t('%1'),
+  );
+  $export['skills'] = $view;
+
+  $view = new view;
   $view->name = 'user_profile';
   $view->description = '';
   $view->tag = 'default';
