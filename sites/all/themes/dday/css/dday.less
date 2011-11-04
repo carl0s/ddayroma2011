@@ -284,13 +284,10 @@ h2.node-title {
           &:hover {
             color:@light-blue;
           }
-          &.active {
+          &.active-trail {
             color:@red;
           }
           
-          &#mydrupalday {
-            color:@light-blue;
-          }
           
           &#partecipa {
             color:@light-blue;
@@ -546,7 +543,6 @@ background:transparent url("{@base-url}/bg_header.gif") repeat-x top left;
 
 article {
   border-bottom:1px solid @mid-grey!important;
-  padding:20px 0!important;
   h2.node-title {
   .serif;
   font-size: 16px;
@@ -562,7 +558,6 @@ article {
       margin-left:10px;
   }
   .content {
-      padding-top:20px;
     .field-items{
         h1 {
         font-size:16px;
@@ -570,16 +565,12 @@ article {
         .fancy;
         .uppercase;
         }
-        p{
-        margin-left:10px;
-        }
     }
   }
 }
 
 #region-sidebar-first {
     h2.block-title {
-        .margin-20
     }
     
     article.news {
@@ -767,13 +758,19 @@ article {
 	                    }
 	                    .views-field-field-sponsor-logo {
 	                        .field-content {
-	                            width:190px!important;
+	                            width:auto;
+	                            margin-right: 77px!important;
+	                            margin-left: 0!important;
 	                        }
 	                    }
 	                }
 	            }
 	    }
     }
+}
+
+#block-views-sponsor-block-2 .content {
+	margin-left: 10px;
 }
 
 #block-views-attendees-block {
@@ -819,6 +816,9 @@ article {
       float:left;
     }
   .view-footer {
+  	clear: both;
+  	padding-right: 30px;
+  
     p {
       text-align:right;
       a {
@@ -834,6 +834,21 @@ article {
   }
   
   
+}
+
+#block-views-news-block {
+	.view-footer {
+    p {
+      text-align:right;
+      a {
+        .button;
+        .no-decoration;
+        &:after {
+          content: ' »';
+        }
+      }
+    }
+  }
 }
 
 #block-boxes-call-for-paper {
@@ -973,7 +988,7 @@ form{
         width:700px;
         li {
           float:left;
-          width:200px;
+          width:120px;
           margin-right:20px;
           line-height:20px;
           .no-style;
@@ -1072,7 +1087,7 @@ form{
     }
     #edit-track-wrapper {
       float:left;
-      width:650px;
+      width:575px;
       input {
         visibility:hidden;
       }
@@ -1080,7 +1095,7 @@ form{
         float:left;
         font-size:16px;
         line-height:40px;
-        width:120px;
+        width:62px;
         .serif;
         .italic;
         color:@mid-grey;
@@ -1091,12 +1106,12 @@ form{
         padding-left:20px;
         border:1px solid @mid-grey;
         border-bottom:0;
-        -webkit-border-top-right-radius: 3px; 
-        -webkit-border-top-left-radius: 3px;
-        -moz-border-radius-topright: 3px; 
-        -moz-border-radius-topleft: 3px;
-        border-top-right-radius:3px;
-        border-top-left-radius: 3px;
+        -webkit-border-top-right-radius: 6px; 
+        -webkit-border-top-left-radius: 6px;
+        -moz-border-radius-topright: 6px; 
+        -moz-border-radius-topleft: 6px;
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
         width:100px;
         height:40px;
         line-height:40px;
@@ -1129,7 +1144,6 @@ form{
     margin-top:-7px;
     background:white;
     border:1px solid @mid-grey;
-    .border-radius(5px);
     padding:20px 0 7px 0;
     text-align:center;
   }
@@ -1137,7 +1151,6 @@ form{
     margin-top:-7px;
     background:white;
     border:1px solid @mid-grey;
-    .border-radius(5px);
     table {
       background:none;
       border:none;
@@ -1206,7 +1219,7 @@ form{
         }
 
         &.views-field-ops {
-          width:210px;
+          width:230px;
           span.flag-wrapper {
             a.flag {
               padding:5px 10px;
@@ -1364,11 +1377,11 @@ article.session {
   }
   
   ul.tracks {
-    width:940px;
+    width:660px;
     height:120px;
     clear:both;
     margin:0;
-    margin-left:140px;
+    margin-left:30px;
     margin-bottom:40px;
     padding:0;
     li {
@@ -1497,15 +1510,14 @@ article.session {
   margin: 10px 0px 0px 0px;
 }
 
-#block-boxes-join-button {
-  position:relative;
+
   .user-count-number {
     width:80px;
     background:url("{@base-url}/bubble_count.png") center left no-repeat;
     height:47px;
     .absolute;
-    right:0;
-    top:2px;
+    right:185px;
+    top:-12px;
     .wrapper {
       margin-top:8px;
       margin-left:12px;
@@ -1524,11 +1536,61 @@ article.session {
         .base-family;
       }
     }
-  }
-  
 }
 
+.menu-435 {
+	margin-right: 90px !important;
+}
 
+#block-menu-block-1 h2,
+#block-menu-block-2 h2,
+#block-menu-block-3 h2,
+#block-menu-block-4 h2,
+#block-menu-block-5 h2,
+#block-menu-block-6 h2 {
+	display:none;
+}
+
+#block-menu-block-1,
+#block-menu-block-2,
+#block-menu-block-3,
+#block-menu-block-4,
+#block-menu-block-5,
+#block-menu-block-6
+ {
+	display:none;
+	width:259px;
+	padding: 10px;
+    position: absolute;
+    width: 180px;
+	left: 560px;
+	top: 39px;
+	z-index: 100;
+	background-color: #e6e6e6;
+	border-bottom: 1px solid #707070; 
+	li {
+		list-style: none;
+	} 
+}
+
+.block-menu-block {
+	a {
+		margin-bottom: 3px;
+		color: #434343;
+	    display: inline-block;
+	    font-family: "MuseoSlab700",serif;
+	    font-size: 12px;
+	    &:link {
+			text-decoration: none;
+		}
+		&:hover {
+			text-decoration: none;
+		}
+		&:visited {
+			text-decoration: none;
+		}
+	}
+}
 
 #edit-submitted-tipo-sponsorship {
   label {
@@ -1736,7 +1798,7 @@ article.session {
     /* required settings */
   .relative;
   overflow:hidden;
-  width: 940px;
+  width: 660px;
   height:402px;
   border:1px solid @dark-grey;
   .items {
@@ -1781,4 +1843,14 @@ article.session {
        }
    }
 }
+
+#views-exposed-form-sessions-schedule-page {
+	margin:0;
+}
+
+.view-sessions-schedule .view-empty {
+	border-radius: none;
+}
+
+
 
