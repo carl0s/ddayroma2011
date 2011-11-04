@@ -159,12 +159,6 @@ function context_and_delta_context_default_contexts() {
           'region' => 'user_third',
           'weight' => '0',
         ),
-        'boxes-join_button' => array(
-          'module' => 'boxes',
-          'delta' => 'join_button',
-          'region' => 'branding',
-          'weight' => '0',
-        ),
         'views-news-block' => array(
           'module' => 'views',
           'delta' => 'news-block',
@@ -336,15 +330,15 @@ function context_and_delta_context_default_contexts() {
           'region' => 'user_third',
           'weight' => '0',
         ),
-        'boxes-join_button' => array(
-          'module' => 'boxes',
-          'delta' => 'join_button',
-          'region' => 'branding',
-          'weight' => '0',
+        'menu-menu-my-drupal-day' => array(
+          'module' => 'menu',
+          'delta' => 'menu-my-drupal-day',
+          'region' => 'menu',
+          'weight' => '-10',
         ),
-        'system-main-menu' => array(
-          'module' => 'system',
-          'delta' => 'main-menu',
+        'views-sponsor-block_2' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_2',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
@@ -359,12 +353,6 @@ function context_and_delta_context_default_contexts() {
           'delta' => 'sponsor-block_1',
           'region' => 'header_first',
           'weight' => '1',
-        ),
-        'views-sponsor-block_2' => array(
-          'module' => 'views',
-          'delta' => 'sponsor-block_2',
-          'region' => 'preface_fourth',
-          'weight' => '-10',
         ),
         'views-sponsor-block_3' => array(
           'module' => 'views',

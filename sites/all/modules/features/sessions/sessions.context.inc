@@ -56,23 +56,11 @@ function sessions_context_default_contexts() {
           'region' => 'user_third',
           'weight' => '-10',
         ),
-        'boxes-biz_block' => array(
-          'module' => 'boxes',
-          'delta' => 'biz_block',
-          'region' => 'sidebar_first',
-          'weight' => '-32',
-        ),
         'views-sponsor-block_2' => array(
           'module' => 'views',
           'delta' => 'sponsor-block_2',
           'region' => 'sidebar_first',
           'weight' => '-31',
-        ),
-        'views-sponsor-block_3' => array(
-          'module' => 'views',
-          'delta' => 'sponsor-block_3',
-          'region' => 'sidebar_first',
-          'weight' => '-30',
         ),
         'block-1' => array(
           'module' => 'block',
@@ -85,6 +73,12 @@ function sessions_context_default_contexts() {
           'delta' => 'sponsor-block_1',
           'region' => 'header_first',
           'weight' => '-33',
+        ),
+        'views-sponsor-block_3' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_3',
+          'region' => 'postscript_first',
+          'weight' => '-10',
         ),
         'menu-menu-footer-menu' => array(
           'module' => 'menu',
@@ -172,23 +166,11 @@ function sessions_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
-        'boxes-code_block' => array(
-          'module' => 'boxes',
-          'delta' => 'code_block',
-          'region' => 'sidebar_first',
-          'weight' => '-32',
-        ),
         'views-sponsor-block_2' => array(
           'module' => 'views',
           'delta' => 'sponsor-block_2',
           'region' => 'sidebar_first',
           'weight' => '-31',
-        ),
-        'views-sponsor-block_3' => array(
-          'module' => 'views',
-          'delta' => 'sponsor-block_3',
-          'region' => 'sidebar_first',
-          'weight' => '-30',
         ),
         'block-1' => array(
           'module' => 'block',
@@ -201,6 +183,18 @@ function sessions_context_default_contexts() {
           'delta' => 'sponsor-block_1',
           'region' => 'header_first',
           'weight' => '-35',
+        ),
+        'views-sponsor-block_3' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_3',
+          'region' => 'postscript_first',
+          'weight' => '-10',
+        ),
+        'views-owner-block' => array(
+          'module' => 'views',
+          'delta' => 'owner-block',
+          'region' => 'postscript_second',
+          'weight' => '-10',
         ),
         'menu-menu-footer-menu' => array(
           'module' => 'menu',
@@ -288,23 +282,11 @@ function sessions_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-10',
         ),
-        'boxes-pa_block' => array(
-          'module' => 'boxes',
-          'delta' => 'pa_block',
-          'region' => 'sidebar_first',
-          'weight' => '-34',
-        ),
         'views-sponsor-block_2' => array(
           'module' => 'views',
           'delta' => 'sponsor-block_2',
           'region' => 'sidebar_first',
           'weight' => '-33',
-        ),
-        'views-sponsor-block_3' => array(
-          'module' => 'views',
-          'delta' => 'sponsor-block_3',
-          'region' => 'sidebar_first',
-          'weight' => '-32',
         ),
         'block-1' => array(
           'module' => 'block',
@@ -317,6 +299,18 @@ function sessions_context_default_contexts() {
           'delta' => 'sponsor-block_1',
           'region' => 'header_first',
           'weight' => '-33',
+        ),
+        'views-sponsor-block_3' => array(
+          'module' => 'views',
+          'delta' => 'sponsor-block_3',
+          'region' => 'postscript_first',
+          'weight' => '-10',
+        ),
+        'views-owner-block' => array(
+          'module' => 'views',
+          'delta' => 'owner-block',
+          'region' => 'postscript_second',
+          'weight' => '-10',
         ),
         'menu-menu-footer-menu' => array(
           'module' => 'menu',

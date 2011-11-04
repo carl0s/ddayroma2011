@@ -4,9 +4,12 @@ core = 7.x
 engine = phptemplate
 screenshot = screenshot.png
 base theme = omega
+
+stylesheets[all][] = css/slides.css
 stylesheets[all][] = css/dday.less
 
 ; OPTIONAL SCRIPTS
+scripts[] = js/slides.min.jquery.js
 scripts[] = js/custom.js
 
 ; IMPORTANT: DELETE THESE TWO LINES IN YOUR SUBTHEME
