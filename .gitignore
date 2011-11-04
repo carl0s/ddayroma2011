@@ -5,6 +5,8 @@ includes/deploy
 sites/default
 config
 .project
+sites/roma
+sites/roma/*
 
 # Ignore paths that contain user-generated content.
 sites/*/files
