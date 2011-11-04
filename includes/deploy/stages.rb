@@ -1,10 +1,10 @@
 desc "deploy to production environment"
 task :development do
   set :stage_name, "development"
-  set :application, "roma2011.drupalday.it"
+  set :application, "dev.drupalday.it"
   set :deploy_to,  "/var/apps/#{application}"
   set :repository,  "git@github.com:twinbit/ddayroma2011.git"
-  set :branch, "master"
+  set :branch, "dev"
   
   role :web, "188.40.59.145:8888", :primary => true
   role :db, "188.40.59.145:8888", :primary => true, :no_release => true
