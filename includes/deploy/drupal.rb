@@ -19,8 +19,6 @@ namespace :drupal do
         run "ln -nfs #{release_path}/sites/#{domain}/settings.#{stage_name}.php #{release_path}/sites/#{domain}/settings.php"
      end
   end
-  
-
 
   desc "Remove git repository"
   task :remove_git_directories, :roles => [:web] do
