@@ -15,18 +15,18 @@ function drupalday_system_feature_menu_default_menu_links() {
     'menu_name' => 'main-menu',
     'link_path' => 'user',
     'router_path' => 'user',
-    'link_title' => 'My drupalday',
+    'link_title' => 'Il mio programma',
     'options' => array(
-      'attributes' => array(
-        'id' => 'mydrupalday',
-      ),
+      'attributes' => array(),
+      'fragment' => 'schedule',
     ),
     'module' => 'menu',
     'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-42',
+    'weight' => '-49',
+    'parent_path' => 'user',
   );
   // Exported menu link: menu-footer-menu:evento
   $menu_links['menu-footer-menu:evento'] = array(
@@ -208,9 +208,9 @@ function drupalday_system_feature_menu_default_menu_links() {
   t('Contatti');
   t('Diventa sponsor');
   t('Gli organizzatori');
+  t('Il mio programma');
   t('L\'evento');
   t('La location');
-  t('My drupalday');
   t('Partecipa');
   t('Press office');
   t('Proponi un talk');
