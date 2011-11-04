@@ -43,3 +43,11 @@ function dday_preprocess_links(&$vars) {// kpr($vars);
     }
   }
 }
+
+function dday_views_pre_render(&$view) {
+  if($view->name == 'skills') {
+    $term = taxonomy_term_load($view->args[0]);
+    drupal_set_title('Skill: ' . $term->name);
+  } 
+}
+
