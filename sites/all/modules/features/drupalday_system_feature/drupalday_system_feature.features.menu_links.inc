@@ -76,40 +76,6 @@ function drupalday_system_feature_menu_default_menu_links() {
     'weight' => '-47',
     'parent_path' => 'node/72',
   );
-  // Exported menu link: main-menu:node/116
-  $menu_links['main-menu:node/116'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/116',
-    'router_path' => 'node/%',
-    'link_title' => 'Accomodation',
-    'options' => array(
-      'attributes' => array(),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-47',
-    'parent_path' => 'evento',
-  );
-  // Exported menu link: main-menu:node/117
-  $menu_links['main-menu:node/117'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => 'node/117',
-    'router_path' => 'node/%',
-    'link_title' => 'Perchè sponsorizzare il DrupalDay 2011',
-    'options' => array(
-      'attributes' => array(),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-50',
-    'parent_path' => 'sponsor',
-  );
   // Exported menu link: main-menu:node/59
   $menu_links['main-menu:node/59'] = array(
     'menu_name' => 'main-menu',
@@ -160,14 +126,14 @@ function drupalday_system_feature_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '1',
     'expanded' => '0',
-    'weight' => '-41',
+    'weight' => '-44',
   );
   // Exported menu link: main-menu:node/83
   $menu_links['main-menu:node/83'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'node/83',
     'router_path' => 'node/%',
-    'link_title' => 'Spread the world',
+    'link_title' => 'Spread the word',
     'options' => array(
       'attributes' => array(),
     ),
@@ -227,7 +193,7 @@ function drupalday_system_feature_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-48',
+    'weight' => '-50',
     'parent_path' => 'user',
   );
   // Exported menu link: main-menu:partecipanti
@@ -242,7 +208,7 @@ function drupalday_system_feature_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-40',
+    'weight' => '-43',
   );
   // Exported menu link: main-menu:sessioni
   $menu_links['main-menu:sessioni'] = array(
@@ -260,7 +226,7 @@ function drupalday_system_feature_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '1',
     'expanded' => '0',
-    'weight' => '-46',
+    'weight' => '-48',
   );
   // Exported menu link: main-menu:sessioni/biz
   $menu_links['main-menu:sessioni/biz'] = array(
@@ -329,7 +295,7 @@ function drupalday_system_feature_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '1',
     'expanded' => '0',
-    'weight' => '-45',
+    'weight' => '-47',
   );
   // Exported menu link: main-menu:user
   $menu_links['main-menu:user'] = array(
@@ -343,11 +309,11 @@ function drupalday_system_feature_menu_default_menu_links() {
       ),
     ),
     'module' => 'menu',
-    'hidden' => '1',
+    'hidden' => '0',
     'external' => '0',
-    'has_children' => '0',
+    'has_children' => '1',
     'expanded' => '0',
-    'weight' => '-41',
+    'weight' => '-45',
   );
   // Exported menu link: main-menu:user/logout
   $menu_links['main-menu:user/logout'] = array(
@@ -363,7 +329,7 @@ function drupalday_system_feature_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-45',
+    'weight' => '-47',
     'parent_path' => 'user',
   );
   // Exported menu link: main-menu:user/register
@@ -382,24 +348,6 @@ function drupalday_system_feature_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '-47',
     'parent_path' => '<front>',
-  );
-  // Exported menu link: menu-footer-menu:evento
-  $menu_links['menu-footer-menu:evento'] = array(
-    'menu_name' => 'menu-footer-menu',
-    'link_path' => 'evento',
-    'router_path' => 'evento',
-    'link_title' => 'Gli organizzatori',
-    'options' => array(
-      'attributes' => array(),
-      'fragment' => 'owner',
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-48',
-    'parent_path' => 'node/60',
   );
   // Exported menu link: menu-footer-menu:node/104
   $menu_links['menu-footer-menu:node/104'] = array(
@@ -560,7 +508,6 @@ function drupalday_system_feature_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Accomodation');
   t('Business');
   t('Code');
   t('Contatti');
@@ -578,7 +525,6 @@ function drupalday_system_feature_menu_default_menu_links() {
   t('PA');
   t('Partecipa');
   t('Partecipanti');
-  t('Perchè sponsorizzare il DrupalDay 2011');
   t('Press');
   t('Press office');
   t('Proponi un talk');
@@ -586,7 +532,6 @@ function drupalday_system_feature_menu_default_menu_links() {
   t('Sessioni');
   t('Sponsor');
   t('Spread the word');
-  t('Spread the world');
 
 
   return $menu_links;
