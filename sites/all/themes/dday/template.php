@@ -26,13 +26,13 @@ function dday_preprocess_block(&$vars) {
 function dday_preprocess_links(&$vars) {// kpr($vars);
   global $user;
 
-  if (isset($vars['links']['menu-435']) || isset($vars['links']['menu-435 active-trail'])) {
+  if (isset($vars['links']['menu-1315']) || isset($vars['links']['menu-1315 active-trail'])) {
     if ($user -> uid > 0) {
-      unset($vars['links']['menu-435']);
-      unset($vars['links']['menu-435 active-trail']);
+      unset($vars['links']['menu-1315']);
+      unset($vars['links']['menu-1315 active-trail']);
     } else {
-      $vars['links']['menu-435']['title'] .= theme('render_drupalday_system_feature_user_count');
-      $vars['links']['menu-435']['html'] = true;
+      $vars['links']['menu-1315']['title'] .= theme('render_drupalday_system_feature_user_count');
+      $vars['links']['menu-1315']['html'] = true;
     }
   }
 
