@@ -1100,20 +1100,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Filtro contestuale: Utente: Skills (field_user_skills) */
-  $handler->display->display_options['arguments']['field_user_skills_tid']['id'] = 'field_user_skills_tid';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['table'] = 'field_data_field_user_skills';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['field'] = 'field_user_skills_tid';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['title_enable'] = 1;
-  $handler->display->display_options['arguments']['field_user_skills_tid']['title'] = '%1';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['default_argument_skip_url'] = 0;
-  $handler->display->display_options['arguments']['field_user_skills_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_user_skills_tid']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['field_user_skills_tid']['not'] = 0;
   $handler->display->display_options['path'] = 'taxonomy/term/%';
   $translatables['skills'] = array(
     t('Master'),
@@ -1143,7 +1129,6 @@ function attendes_views_default_views() {
 <div class="field-skills grid-4"><p class="label">Skills: </p>[field_user_skills]</div> 
 <div class="field-interests grid-3 omega"><p class="label">Interessi: </p>[field_user_interest]</div> 
 </div>'),
-    t('%1'),
   );
   $export['skills'] = $view;
 
