@@ -23,7 +23,7 @@ task :development do
   set :default_domain, "roma"
   
   # create virtual host symlinks
-  set :virtual_host, ["roma2011.drupalday.it"]
+  set :virtual_host, ["dev.drupalday.it"]
 end
 
 desc "deploy to production environment"
