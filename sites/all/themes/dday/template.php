@@ -44,3 +44,8 @@ function dday_preprocess_links(&$vars) {// kpr($vars);
   }
 }
 
+function dday_preprocess_views_exposed_form(&$vars) {
+  $text = $vars['widgets']['filter-field_session_track_value']->widget;
+  $vars['widgets']['filter-field_session_track_value']->widget = str_replace('Tutti', 'Tutte', $text);
+}
+
