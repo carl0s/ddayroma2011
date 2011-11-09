@@ -1009,7 +1009,7 @@ function context_and_delta_delta_default_templates() {
       'alpha_region_content_force' => 1,
       'alpha_region_content_zone' => 'content',
       'alpha_region_content_prefix' => '0',
-      'alpha_region_content_columns' => '16',
+      'alpha_region_content_columns' => '12',
       'alpha_region_content_suffix' => '0',
       'alpha_region_content_weight' => '2',
       'alpha_region_content_position' => '0',

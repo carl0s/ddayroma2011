@@ -23,26 +23,6 @@ function dday_preprocess_block(&$vars) {
   }
 }
 
-function dday_preprocess_links(&$vars) {// kpr($vars);
-  global $user;
-
-  if (isset($vars['links']['menu-1315']) || isset($vars['links']['menu-1315 active-trail'])) {
-    if ($user -> uid > 0) {
-      unset($vars['links']['menu-1315']);
-      unset($vars['links']['menu-1315 active-trail']);
-    } else {
-      $vars['links']['menu-1315']['title'] .= theme('render_drupalday_system_feature_user_count');
-      $vars['links']['menu-1315']['html'] = true;
-    }
-  }
-
-  if (isset($vars['links']['menu-1286']) || isset($vars['links']['menu-1286 active-trail'])) {
-    if ($user -> uid == 0) {
-      unset($vars['links']['menu-1286']);
-      unset($vars['links']['menu-1286 active-trail']);
-    }
-  }
-}
 
 function dday_preprocess_views_exposed_form(&$vars) {
   $text = $vars['widgets']['filter-field_session_track_value']->widget;

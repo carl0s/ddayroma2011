@@ -68,6 +68,7 @@
 			$(menu).hide();
 		});
 	}
+
      
      $(function(){
 			$('#slides').slides({
