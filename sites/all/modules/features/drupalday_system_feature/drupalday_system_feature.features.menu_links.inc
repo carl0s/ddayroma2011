@@ -13,12 +13,25 @@ function drupalday_system_feature_menu_default_menu_links() {
   // Exported menu link: main-menu:<front>
   $menu_links['main-menu:<front>'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'user',
-    'router_path' => 'user',
-    'link_title' => 'Il mio programma',
+    'link_path' => '<front>',
+    'router_path' => '',
+    'link_title' => 'Home',
+    'options' => array(),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '1',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-50',
+  );
+  // Exported menu link: main-menu:evento
+  $menu_links['main-menu:evento'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'evento',
+    'router_path' => 'evento',
+    'link_title' => 'L\'evento',
     'options' => array(
       'attributes' => array(),
-      'fragment' => 'schedule',
     ),
     'module' => 'menu',
     'hidden' => '0',
@@ -26,7 +39,6 @@ function drupalday_system_feature_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-49',
-    'parent_path' => 'user',
   );
   // Exported menu link: main-menu:node/72
   $menu_links['main-menu:node/72'] = array(
@@ -80,15 +92,13 @@ function drupalday_system_feature_menu_default_menu_links() {
     'link_path' => 'sessioni',
     'router_path' => 'sessioni',
     'link_title' => 'Sessioni',
-    'options' => array(
-      'attributes' => array(),
-    ),
+    'options' => array(),
     'module' => 'system',
     'hidden' => '0',
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-48',
+    'weight' => '-10',
   );
   // Exported menu link: main-menu:sponsor
   $menu_links['main-menu:sponsor'] = array(
@@ -267,8 +277,7 @@ function drupalday_system_feature_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Contatti');
   t('Diventa sponsor');
-  t('Gli organizzatori');
-  t('Il mio programma');
+  t('Home');
   t('L\'evento');
   t('La location');
   t('Partecipa');
