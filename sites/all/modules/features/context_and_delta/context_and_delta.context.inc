@@ -195,40 +195,10 @@ function context_and_delta_context_default_contexts() {
           'region' => 'user_third',
           'weight' => '0',
         ),
-        'menu_block-1' => array(
-          'module' => 'menu_block',
-          'delta' => 1,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-2' => array(
-          'module' => 'menu_block',
-          'delta' => 2,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-3' => array(
-          'module' => 'menu_block',
-          'delta' => 3,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-4' => array(
-          'module' => 'menu_block',
-          'delta' => 4,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-5' => array(
-          'module' => 'menu_block',
-          'delta' => 5,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-6' => array(
-          'module' => 'menu_block',
-          'delta' => 6,
-          'region' => 'menu',
+        'boxes-join_button' => array(
+          'module' => 'boxes',
+          'delta' => 'join_button',
+          'region' => 'branding',
           'weight' => '-10',
         ),
         'views-news-block' => array(
@@ -437,48 +407,6 @@ function context_and_delta_context_default_contexts() {
           'delta' => 'menu-menu-pa',
           'region' => 'user_third',
           'weight' => '0',
-        ),
-        'menu_block-1' => array(
-          'module' => 'menu_block',
-          'delta' => 1,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-2' => array(
-          'module' => 'menu_block',
-          'delta' => 2,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-3' => array(
-          'module' => 'menu_block',
-          'delta' => 3,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-4' => array(
-          'module' => 'menu_block',
-          'delta' => 4,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-5' => array(
-          'module' => 'menu_block',
-          'delta' => 5,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'menu_block-6' => array(
-          'module' => 'menu_block',
-          'delta' => 6,
-          'region' => 'menu',
-          'weight' => '-10',
-        ),
-        'views-sponsor-block_2' => array(
-          'module' => 'views',
-          'delta' => 'sponsor-block_2',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
         ),
         'block-1' => array(
           'module' => 'block',

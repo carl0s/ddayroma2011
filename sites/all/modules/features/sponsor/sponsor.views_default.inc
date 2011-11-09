@@ -24,7 +24,7 @@ function sponsor_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Sponsor';
   $handler->display->display_options['use_more_text'] = 'altro';
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
@@ -633,7 +633,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'views_grid_alpha_omega';
   $handler->display->display_options['style_options']['total_columns'] = '16';
-  $handler->display->display_options['style_options']['grid_width'] = '1';
+  $handler->display->display_options['style_options']['grid_width'] = '2';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';

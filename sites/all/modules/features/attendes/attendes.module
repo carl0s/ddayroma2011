@@ -4,7 +4,7 @@
  * Code for the Attendes feature.
  */
 
-include_once('attendes.features.inc');
+include_once ('attendes.features.inc');
 
 /**
  *  Implements hook_form_alter()
@@ -14,6 +14,30 @@ function attendes_form_alter(&$form, &$form_state, $form_id) {
     // hide some fields for authenticated users
     if (!user_access('administer content')) {
       $form['field_session_attendee']['#access'] = false;
+    }
+  }
+}
+
+function attendes_views_pre_render(&$view) {
+  if ($view -> name == 'skills') {
+    $term = taxonomy_term_load($view -> args[0]);
+    $voc = taxonomy_vocabulary_load($term -> vid);
+
+    drupal_set_title(t($voc -> name) . ': ' . $term -> name);
+  }
+}
+
+function attendes_views_query_alter(&$view, &$query) {
+  if ($view -> name == 'skills') {
+    $tid = arg(2);
+    $term = taxonomy_term_load($tid);
+    //kpr($term);
+    if ($term -> vid == 2) { //skills
+      $view -> query -> add_table('field_data_field_user_skills');
+      $view -> query -> add_where('field_data_field_user_skills', "field_data_field_user_skills.field_user_skills_tid", $tid);
+    } else if ($term -> vid == 3) { //interest
+      $view -> query -> add_table('field_data_field_user_interest');
+      $view -> query -> add_where('field_data_field_user_interest', "field_data_field_user_interest.field_user_interest_tid", $tid);
     }
   }
 }
