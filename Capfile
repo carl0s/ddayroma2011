@@ -10,7 +10,7 @@ load 'includes/deploy/drush'
 # SCM Stuff configure to taste, just remember the repository
 set :scm, :git
 set :scm_command, "/usr/bin/git"
-set :local_scm_command, "/usr/local/bin/git"
+set :local_scm_command, "/usr/bin/git"
 set :use_sudo, false
 set :git_enable_submodules, true
 set :repository,  ""
