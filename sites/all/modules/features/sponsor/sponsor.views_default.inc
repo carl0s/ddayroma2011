@@ -282,7 +282,7 @@ function sponsor_views_default_views() {
   $handler->display->display_options['fields']['field_sponsor_logo']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_sponsor_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_sponsor_logo']['settings'] = array(
-    'image_style' => 'gold_preface',
+    'image_style' => 'sponsor_gold',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_sponsor_logo']['field_api_classes'] = 0;
