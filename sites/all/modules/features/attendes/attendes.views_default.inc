@@ -46,10 +46,6 @@ function attendes_views_default_views() {
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['empty'] = FALSE;
-  /* Relazione: Utente: Sessioni Drupal Day 2011 di interesse (field_session_attendee) */
-  $handler->display->display_options['relationships']['field_session_attendee_nid']['id'] = 'field_session_attendee_nid';
-  $handler->display->display_options['relationships']['field_session_attendee_nid']['table'] = 'field_data_field_session_attendee';
-  $handler->display->display_options['relationships']['field_session_attendee_nid']['field'] = 'field_session_attendee_nid';
   /* Campo: Utente: Nome */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -701,7 +697,6 @@ function attendes_views_default_views() {
     t('Voci per pagina'),
     t('- Tutto -'),
     t('Scostamento'),
-    t('field_session_attendee'),
     t('Ritratto'),
     t('Twitter'),
     t('Bio'),
@@ -725,6 +720,7 @@ function attendes_views_default_views() {
     t('my interests'),
     t('Attendees details attachment'),
     t('Il mio programma'),
+    t('field_session_attendee'),
     t('di'),
   );
   $export['attendees'] = $view;

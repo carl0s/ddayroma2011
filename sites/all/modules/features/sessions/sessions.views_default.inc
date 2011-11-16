@@ -431,10 +431,17 @@ function sessions_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = FALSE;
-  $handler->display->display_options['header']['area']['content'] = 'Below are all sessions that <a href="/frontpage">DrupalDay Rome 2011</a> offers. You can <a href="/user/register/">sign up </a>  to create your own sessions schedule.';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  $handler->display->display_options['header']['area']['tokenize'] = 1;
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'Il <strong>Call For Paper</strong> è ancora aperta <strong>fino al 19 novembre</strong>.
+
+Aiutaci a dare un taglio diverso e <em>open</em> a questa giornata proponendo talk che favoriscano il dialogo tra le diverse aree professionali, tra sviluppatori, business manager e comunicatori per sottolineare la versatilità di Drupal.
+
+La submission delle proposte è semplice, compila il form nella sezione "Proponi un talk" e allega l\'eventuale documentazione aggiuntiva.
+
+<em><strong>A partire dal 21 novembre potrai trovare qui tutte le sessioni scelte per il Drupal Day Roma 2011.</em></strong>
+';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = 0;
   /* Comportamento se non ci sono risultati: Globale: Area di testo */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -606,17 +613,6 @@ function sessions_views_default_views() {
       ),
     ),
   );
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Intestazione: Globale: Area di testo */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. 
-Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/session">proporre una tua sessione</a> e creare il tuo <a href="/user"> programma personalizzato.</a>
-';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  $handler->display->display_options['header']['area']['tokenize'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Campo: Timeslot */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -1848,7 +1844,14 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
     t('Ordina per'),
     t('Asc'),
     t('Disc'),
-    t('Below are all sessions that <a href="/frontpage">DrupalDay Rome 2011</a> offers. You can <a href="/user/register/">sign up </a>  to create your own sessions schedule.'),
+    t('Il <strong>Call For Paper</strong> è ancora aperta <strong>fino al 19 novembre</strong>.
+
+Aiutaci a dare un taglio diverso e <em>open</em> a questa giornata proponendo talk che favoriscano il dialogo tra le diverse aree professionali, tra sviluppatori, business manager e comunicatori per sottolineare la versatilità di Drupal.
+
+La submission delle proposte è semplice, compila il form nella sezione "Proponi un talk" e allega l\'eventuale documentazione aggiuntiva.
+
+<em><strong>A partire dal 21 novembre potrai trovare qui tutte le sessioni scelte per il Drupal Day Roma 2011.</em></strong>
+'),
     t('Non ci sono ancora sessioni in questa track. <a href="/node/add/session" class="button">proponi una sessione</a>'),
     t('field_session_timeslot'),
     t('flag'),
@@ -1856,9 +1859,6 @@ Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/sessi
     t('Room'),
     t('All Sessions'),
     t('Sessioni'),
-    t('Qui puoi trovare tutte le sessioni del <span class="uppercase fancy">DrupalDay Roma 2011</span>. 
-Puoi <a href="/user">registrarti o loggarti qui</a> per <a href="/node/add/session">proporre una tua sessione</a> e creare il tuo <a href="/user"> programma personalizzato.</a>
-'),
     t('<span>[title_1]</span>'),
     t('di [field_session_presenters] '),
     t('Traccia'),

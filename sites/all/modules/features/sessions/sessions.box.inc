@@ -132,17 +132,16 @@ Drupal è uno strumento efficace e scalabile per offrire soluzioni a problemi ge
   $box->description = 'Blocco descrizioni sessioni';
   $box->options = array(
     'body' => array(
-      'value' => 'L\'approccio preferito sarà business oriented per presentare nuove soluzioni a problemi comuni all\'interno dei 3 percorsi: Code, Business, PA.
-Una commissione di esperti che vede coinvolta l’Associazione Drupal Italia sceglierà tra le proposte 12 talk - 4 per percorso tematico - che saranno presentati durante la giornata di sabato, 3 dicembre.
-Ogni percorso tematico sarà inoltre inaugurato da un keynote tenuto da alcuni dei maggiori esponenti del settore.
+      'value' => '<em><strong>Stiamo cercando te!</strong></em>
+
+Fino al <strong>19 novembre</strong> è possibile proporre talk attinenti ad uno dei 3 filoni tematici: Code, Business, PA & Istituzioni.
+
+<p>Il Drupal Day Roma 2011 vuole dare spazio a <strong>proposte concrete che mirano al miglioramento delle pratiche lavorative</strong> di Imprese, Pubbliche Amministrazioni e Sviluppatori Informatici. Ti invitiamo quindi di proporre argomenti dei paper legati allo sviluppo, al design, alla comunicazione, e al project management. 
+
+L\'approccio preferito sarà business oriented per presentare nuove soluzioni a problemi comuni all\'interno dei 3 percorsi: Code, Business, PA.
+
+Una commissione di esperti che vede coinvolta l’Associazione Drupal Italia sceglierà tra le proposte 12 talk - 4 per percorso tematico - che saranno presentati durante la giornata di sabato, 3 dicembre.</p>
 	       
-<p>Il Drupal Day Roma 2011 vuole dare spazio a proposte concrete che mirano al miglioramento delle pratiche lavorative di Imprese, Pubbliche Amministrazioni e Sviluppatori Informatici.
-
-Sono aperte le iscrizioni per proporre argomenti dei paper legati allo sviluppo, al design, alla comunicazione, al project management e al business. 
-
-<p>L\'approccio preferito sarà business oriented per presentare nuove soluzioni a problemi comuni all\'interno dei 3 percorsi: Code, Business, PA.
-Una commissione di esperti che vede coinvolta l’Associazione Drupal Italia sceglierà tra le proposte 12 talk - 4 per percorso tematico - che saranno presentati durante la giornata di sabato, 3 dicembre.
-Ogni percorso tematico sarà inoltre inaugurato da un keynote tenuto da alcuni dei maggiori esponenti del settore.<p>
 ',
       'format' => 'full_html',
     ),

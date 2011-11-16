@@ -147,7 +147,7 @@ function drupalday_system_feature_menu_default_menu_links() {
     'external' => '0',
     'has_children' => '0',
     'expanded' => '0',
-    'weight' => '-49',
+    'weight' => '-50',
     'parent_path' => 'node/60',
   );
   // Exported menu link: menu-footer-menu:node/add/session
