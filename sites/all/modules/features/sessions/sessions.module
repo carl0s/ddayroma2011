@@ -178,7 +178,7 @@ function sessions_form_alter(&$form, &$form_state, $form_id) {
     $form['field_session_presenters']['und'][0]['uid']['#default_value'] = $user->uid;
   }
   if ($form_id == 'views_exposed_form' && $form['#id'] == 'views-exposed-form-sessions-schedule-page') {
-    $form['track']['#options']['All'] = t('All');
+    $form['track']['#options']['All'] = 'Tutte';
     $form['track']['#theme'] = array('sessions_select_as_radios');
   }
 }
