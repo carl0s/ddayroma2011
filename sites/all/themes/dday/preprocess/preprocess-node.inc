@@ -3,6 +3,8 @@
 function dday_alpha_preprocess_node_session(&$vars) {
   $node = &$vars['node'];
   $content = &$vars['content'];
+  $page = $vars['page'];
+  
   if (isset($content['field_session_experience_level'][0]['#markup'])) {
     $vars['experience_class'] = drupal_html_id($content['field_session_experience_level'][0]['#markup']);
   }
