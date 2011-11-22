@@ -939,7 +939,7 @@ function sessions_field_default_fields() {
   $fields['node-session-field_session_track'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_session_track',
