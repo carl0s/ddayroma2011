@@ -387,6 +387,8 @@ function sessions_views_default_views() {
     'field_session_presenters' => 'title',
     'field_session_room' => 'field_session_room',
     'field_session_track' => 'field_session_track',
+    'nothing' => 'nothing',
+    'nothing_1' => 'title_1',
     'ops' => 'ops',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
@@ -419,6 +421,14 @@ function sessions_views_default_views() {
       'align' => '',
       'separator' => '',
     ),
+    'nothing' => array(
+      'align' => '',
+      'separator' => '',
+    ),
+    'nothing_1' => array(
+      'align' => '',
+      'separator' => '',
+    ),
     'ops' => array(
       'align' => '',
       'separator' => '',
@@ -432,14 +442,6 @@ function sessions_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Il <strong>Call For Paper</strong> è ancora aperta <strong>fino al 19 novembre</strong>.
-
-Aiutaci a dare un taglio diverso e <em>open</em> a questa giornata proponendo talk che favoriscano il dialogo tra le diverse aree professionali, tra sviluppatori, business manager e comunicatori per sottolineare la versatilità di Drupal.
-
-La submission delle proposte è semplice, compila il form nella sezione "Proponi un talk" e allega l\'eventuale documentazione aggiuntiva.
-
-<em><strong>A partire dal 21 novembre potrai trovare qui tutte le sessioni scelte per il Drupal Day Roma 2011.</em></strong>
-';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = 0;
   /* Comportamento se non ci sono risultati: Globale: Area di testo */
@@ -621,6 +623,7 @@ La submission delle proposte è semplice, compila il form nella sezione "Proponi
   $handler->display->display_options['fields']['title_1']['relationship'] = 'field_session_timeslot_nid';
   $handler->display->display_options['fields']['title_1']['ui_name'] = 'Timeslot';
   $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_1']['alter']['alter_text'] = 1;
   $handler->display->display_options['fields']['title_1']['alter']['text'] = '<span>[title_1]</span>';
   $handler->display->display_options['fields']['title_1']['alter']['make_link'] = 0;
@@ -640,6 +643,53 @@ La submission delle proposte è semplice, compila il form nella sezione "Proponi
   $handler->display->display_options['fields']['title_1']['empty_zero'] = 0;
   $handler->display->display_options['fields']['title_1']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['title_1']['link_to_node'] = 0;
+  /* Campo: Contenuto: Traccia */
+  $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['table'] = 'field_data_field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['field'] = 'field_session_track';
+  $handler->display->display_options['fields']['field_session_track']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_track']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_session_track']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_session_track']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['element_label_colon'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_session_track']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_track']['field_api_classes'] = 0;
+  /* Campo: Timeslot + traccia */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Timeslot + traccia';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[title_1] <br />
+<span class="traccia [field_session_track]">[field_session_track]</span>';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['nothing_1']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['nothing_1']['hide_alter_empty'] = 0;
   /* Campo: Contenuto: Titolo */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -689,6 +739,7 @@ La submission delle proposte è semplice, compila il form nella sezione "Proponi
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
+  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;
@@ -717,29 +768,6 @@ La submission delle proposte è semplice, compila il form nella sezione "Proponi
   $handler->display->display_options['fields']['field_session_room']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_room']['type'] = 'node_reference_plain';
   $handler->display->display_options['fields']['field_session_room']['field_api_classes'] = 0;
-  /* Campo: Contenuto: Traccia */
-  $handler->display->display_options['fields']['field_session_track']['id'] = 'field_session_track';
-  $handler->display->display_options['fields']['field_session_track']['table'] = 'field_data_field_session_track';
-  $handler->display->display_options['fields']['field_session_track']['field'] = 'field_session_track';
-  $handler->display->display_options['fields']['field_session_track']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_session_track']['alter']['alter_text'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['make_link'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['absolute'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['external'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['replace_spaces'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['trim_whitespace'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['nl2br'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['word_boundary'] = 1;
-  $handler->display->display_options['fields']['field_session_track']['alter']['ellipsis'] = 1;
-  $handler->display->display_options['fields']['field_session_track']['alter']['strip_tags'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['trim'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['alter']['html'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['element_label_colon'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['element_default_classes'] = 1;
-  $handler->display->display_options['fields']['field_session_track']['hide_empty'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['empty_zero'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['hide_alter_empty'] = 0;
-  $handler->display->display_options['fields']['field_session_track']['field_api_classes'] = 0;
   /* Campo: Globale: Testo personalizzato */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -1843,14 +1871,6 @@ La submission delle proposte è semplice, compila il form nella sezione "Proponi
     t('Ordina per'),
     t('Asc'),
     t('Disc'),
-    t('Il <strong>Call For Paper</strong> è ancora aperta <strong>fino al 19 novembre</strong>.
-
-Aiutaci a dare un taglio diverso e <em>open</em> a questa giornata proponendo talk che favoriscano il dialogo tra le diverse aree professionali, tra sviluppatori, business manager e comunicatori per sottolineare la versatilità di Drupal.
-
-La submission delle proposte è semplice, compila il form nella sezione "Proponi un talk" e allega l\'eventuale documentazione aggiuntiva.
-
-<em><strong>A partire dal 21 novembre potrai trovare qui tutte le sessioni scelte per il Drupal Day Roma 2011.</em></strong>
-'),
     t('Non ci sono ancora sessioni in questa track. <a href="/node/add/session" class="button">proponi una sessione</a>'),
     t('field_session_timeslot'),
     t('flag'),
@@ -1859,8 +1879,10 @@ La submission delle proposte è semplice, compila il form nella sezione "Proponi
     t('All Sessions'),
     t('Sessioni'),
     t('<span>[title_1]</span>'),
-    t('di [field_session_presenters] '),
     t('Traccia'),
+    t('[title_1] <br />
+<span class="traccia [field_session_track]">[field_session_track]</span>'),
+    t('di [field_session_presenters] '),
     t('<div class="session">
   <h2>[title]</h2>
   <h3>di [field_session_presenters] - [field_session_room]</h3>

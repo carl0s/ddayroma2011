@@ -60,13 +60,17 @@ function sessions_flag_default_flags() {
     'roles' => array(
       'flag' => array(
         0 => '2',
+        1 => '3',
+        2 => '4',
       ),
       'unflag' => array(
         0 => '2',
+        1 => '3',
+        2 => '4',
       ),
     ),
     'show_on_page' => 1,
-    'show_on_teaser' => 1,
+    'show_on_teaser' => 0,
     'show_on_form' => 0,
     'access_author' => '',
     'i18n' => 0,
