@@ -577,6 +577,10 @@ function sessions_views_default_views() {
   $handler->display->display_options['sorts']['field_slot_date_value']['table'] = 'field_data_field_slot_date';
   $handler->display->display_options['sorts']['field_slot_date_value']['field'] = 'field_slot_date_value';
   $handler->display->display_options['sorts']['field_slot_date_value']['relationship'] = 'field_session_timeslot_nid';
+  /* Criterio di ordinamento: Contenuto: Traccia (field_session_track) */
+  $handler->display->display_options['sorts']['field_session_track_value']['id'] = 'field_session_track_value';
+  $handler->display->display_options['sorts']['field_session_track_value']['table'] = 'field_data_field_session_track';
+  $handler->display->display_options['sorts']['field_session_track_value']['field'] = 'field_session_track_value';
   /* Criterio del filtro: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
