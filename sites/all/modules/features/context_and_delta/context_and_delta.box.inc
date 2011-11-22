@@ -36,6 +36,21 @@ L\'approccio preferito per i paper è business oriented per dare spazio a nuove 
   $box = new stdClass;
   $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
   $box->api_version = 1;
+  $box->delta = 'join_button';
+  $box->plugin_key = 'simple';
+  $box->title = '';
+  $box->description = 'Big join button';
+  $box->options = array(
+    'body' => array(
+      'value' => '<a class="button bigjoin red" href="/user/register">PARTECIPA</a>',
+      'format' => 'filtered_html',
+    ),
+  );
+  $export['join_button'] = $box;
+
+  $box = new stdClass;
+  $box->disabled = FALSE; /* Edit this to true to make a default box disabled initially */
+  $box->api_version = 1;
   $box->delta = 'mydrupalday';
   $box->plugin_key = 'simple';
   $box->title = '';

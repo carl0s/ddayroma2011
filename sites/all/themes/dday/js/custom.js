@@ -39,12 +39,12 @@
         }
      )
      
-     _submenu('#block-menu-block-2', '#eventomenu');
+     /*_submenu('#block-menu-block-2', '#eventomenu');
      _submenu('#block-menu-block-4', '#sessionimenu');
      _submenu('#block-menu-block-5', '#sponsormenu');
      _submenu('#block-menu-block-3', '#mydrupalday');
      _submenu('#block-menu-block-1', '#contattimenu');
-     _submenu('#block-menu-block-6', '#partecipamenu');
+     _submenu('#block-menu-block-6', '#partecipamenu');*/
      
 	function _submenu(menu, parent) {
 	     
@@ -68,6 +68,7 @@
 			$(menu).hide();
 		});
 	}
+
      
      $(function(){
 			$('#slides').slides({

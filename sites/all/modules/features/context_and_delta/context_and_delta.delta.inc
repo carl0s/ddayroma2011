@@ -755,6 +755,7 @@ function context_and_delta_delta_default_templates() {
         'modules/search/search.css' => 0,
         'modules/user/user.css' => 0,
         'sites/all/modules/contrib/views/css/views.css' => 0,
+        'sites/all/themes/dday/css/slides.css' => 0,
         'sites/all/themes/dday/css/dday.less' => 0,
         'misc/vertical-tabs.css' => 0,
         'modules/aggregator/aggregator.css' => 0,

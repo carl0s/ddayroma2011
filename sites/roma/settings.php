@@ -183,8 +183,8 @@ $databases = array (
     'default' => 
     array (
       'database' => 'ddayroma2011',
-      'username' => 'dday',
-      'password' => 'yOTc3xolMM',
+      'username' => 'root',
+      'password' => 'root',
       'host' => 'localhost',
       'port' => '',
       'driver' => 'mysql',
