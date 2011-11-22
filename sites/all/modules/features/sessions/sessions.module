@@ -73,21 +73,8 @@ function sessions_alias_redirect($alias = null) {
   $view = views_get_view($view_name);
   $view->set_display('page');
   return $view->preview();
-//  drupal_goto(url('sessioni', array('query' => array('track' => $alias), 'absolute' => true)));
 }
 
-/* Implementation of hook_views_post_build() 
-# This is fine without using the _menu hack above
-function sessions_views_pre_build(&$view) {
-  if ($view->name == 'sessions_schedule') {
-    $input = $view->get_exposed_input();
-    if (arg(1)) {
-      $title = 'Sessioni &raquo; ' . arg(1);
-      $view->display_handler->set_option('title', $title);
-    }
-  }
-}
-*/
 
 /**
  * Implements of hook_menu_alter()
