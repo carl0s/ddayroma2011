@@ -689,7 +689,6 @@ La submission delle proposte è semplice, compila il form nella sezione "Proponi
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
-  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;

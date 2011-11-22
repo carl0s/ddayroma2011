@@ -375,7 +375,7 @@ function sessions_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'user_reference',
           'settings' => array(),
           'type' => 'user_reference_default',

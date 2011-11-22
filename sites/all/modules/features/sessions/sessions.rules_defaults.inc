@@ -12,6 +12,7 @@ function sessions_default_rules_configuration() {
   $items['rules_approve_session'] = entity_import('rules_config', '{ "rules_approve_session" : {
       "LABEL" : "Approve Session",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : [ "flag_flagged_sessions_schedule_approve" ],
       "IF" : [
@@ -30,6 +31,7 @@ function sessions_default_rules_configuration() {
   $items['rules_defer_session'] = entity_import('rules_config', '{ "rules_defer_session" : {
       "LABEL" : "Defer Session",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "REQUIRES" : [ "rules", "flag" ],
       "ON" : [ "flag_unflagged_sessions_schedule_approve" ],
       "IF" : [
