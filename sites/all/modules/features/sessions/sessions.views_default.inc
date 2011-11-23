@@ -743,7 +743,6 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_session_presenters']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['group_rows'] = 1;
-  $handler->display->display_options['fields']['field_session_presenters']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_session_presenters']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_session_presenters']['delta_reversed'] = 0;
   $handler->display->display_options['fields']['field_session_presenters']['field_api_classes'] = 0;
@@ -820,6 +819,29 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['ops']['hide_empty'] = 0;
   $handler->display->display_options['fields']['ops']['empty_zero'] = 0;
   $handler->display->display_options['fields']['ops']['hide_alter_empty'] = 0;
+  /* Campo: Contenuto: Sponsor */
+  $handler->display->display_options['fields']['field_session_sponsor']['id'] = 'field_session_sponsor';
+  $handler->display->display_options['fields']['field_session_sponsor']['table'] = 'field_data_field_session_sponsor';
+  $handler->display->display_options['fields']['field_session_sponsor']['field'] = 'field_session_sponsor';
+  $handler->display->display_options['fields']['field_session_sponsor']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['make_link'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['absolute'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['external'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['replace_spaces'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['nl2br'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['word_boundary'] = 1;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['strip_tags'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['trim'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['alter']['html'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['element_label_colon'] = 1;
+  $handler->display->display_options['fields']['field_session_sponsor']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_session_sponsor']['hide_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['empty_zero'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['hide_alter_empty'] = 0;
+  $handler->display->display_options['fields']['field_session_sponsor']['field_api_classes'] = 0;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Criterio del filtro: Contenuto: Pubblicato */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -1891,6 +1913,7 @@ function sessions_views_default_views() {
   <h2>[title]</h2>
   <h3>di [field_session_presenters] - [field_session_room]</h3>
 </div>'),
+    t('Sponsor'),
     t('Tracce'),
     t('2 Luglio'),
     t('Sessioni Lunedi 2 Luglio'),
