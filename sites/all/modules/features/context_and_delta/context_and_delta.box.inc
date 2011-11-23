@@ -20,7 +20,7 @@ function context_and_delta_default_box() {
   $box->options = array(
     'body' => array(
       'value' => '<div class="cfp">
-<a href="/seminario-formativo" class="button" title="Iscriviti al Seminario formativo su Drupal">Iscriviti</a>
+#link_to_preprocess
 <div class="inner">
 Il <span class="fancy uppercase">DrupalDay</span> organizza un Seminario formativo su Drupal per il giorno 2 dicembre, il giorno prima dell\'evento! E\' un momento importante per tutti quelli che vogliono conoscere meglio il CMS Drupal e acquisire know-how sul prodotto. <br />
 Tecnici e formatori delle aziende organizzatrici del Drupal Day aspettano tutti coloro i quali saranno interessati, dalle ore 14.00 alle ore 18.00 nell\'Aula 1 del Dipartimento di Scienze Odontostomatologiche dell\'Università La Sapienza, situato in via Caserta 6.<br />
