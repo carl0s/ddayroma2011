@@ -33,7 +33,7 @@
     
     <div class="session-content">
       <?php print render($content['body']); ?>
-      <?php if ($sponsor) : ?> 
+      <?php if ($sponsor_logo) : ?> 
         <div class="session-sponsor-logo">
           <?php print $sponsor_url; ?>
           <?php print render($sponsor_logo) ?>
