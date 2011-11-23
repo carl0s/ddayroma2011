@@ -424,6 +424,105 @@ function sponsor_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-sponsor-field_sponsor_sessione'
+  $fields['node-sponsor-field_sponsor_sessione'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sponsor_sessione',
+      'foreign keys' => array(
+        'nid' => array(
+          'columns' => array(
+            'nid' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'nid' => array(
+          0 => 'nid',
+        ),
+      ),
+      'module' => 'node_reference',
+      'settings' => array(
+        'referenceable_types' => array(
+          'article' => 0,
+          'attendees' => 0,
+          'media_partner' => 0,
+          'news' => 0,
+          'owner' => 0,
+          'page' => 0,
+          'panel' => 0,
+          'room' => 0,
+          'session' => 'session',
+          'sponsor' => 0,
+          'time_slot' => 0,
+          'webform' => 0,
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
+        ),
+      ),
+      'translatable' => '1',
+      'type' => 'node_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'sponsor',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'node_reference',
+          'settings' => array(),
+          'type' => 'node_reference_default',
+          'weight' => 7,
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_sponsor_sessione',
+      'label' => 'Sessione',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'node_reference',
+        'settings' => array(
+          'autocomplete_match' => 'contains',
+          'autocomplete_path' => 'node_reference/autocomplete',
+          'size' => '60',
+        ),
+        'type' => 'node_reference_autocomplete',
+        'weight' => '9',
+      ),
+    ),
+  );
+
   // Exported field: 'node-sponsor-field_sponsor_twitter'
   $fields['node-sponsor-field_sponsor_twitter'] = array(
     'field_config' => array(
@@ -610,6 +709,7 @@ function sponsor_field_default_fields() {
   t('Facebook');
   t('Fake/Real');
   t('Logo');
+  t('Sessione');
   t('Sponsor Category');
   t('Twitter');
   t('Website');
