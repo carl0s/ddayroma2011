@@ -33,6 +33,11 @@
     
     <div class="session-content">
       <?php print render($content['body']); ?>
+      <?php if ($sponsor_logo) : ?> 
+        <div class="session-sponsor-logo">
+          <?php print render($sponsor_logo) ?>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 </article>
