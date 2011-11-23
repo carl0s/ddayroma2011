@@ -41,3 +41,20 @@ function attendes_views_query_alter(&$view, &$query) {
     }
   }
 }
+
+/**
+ * Implementation of hook_block()
+ */
+function attendes_preprocess_block(&$vars) {
+  $block = $vars['block'];
+  global $user;
+  //  block_id_1 = logo block
+  if ($block->module && $block->bid == 'boxes-call_for_paper') {
+    $url = 'user/register';
+    if ($user->uid) {
+      $url = 'user/'.$user->uid.'/edit';
+    }
+    $link = l('Iscriviti', $url, array('attributes' => array('class' => 'button', 'title' => 'Iscriviti al Seminario formativo su Drupal')));
+  }
+  $vars['content'] = str_replace('#link_to_preprocess', $link, $vars['content']);
+}

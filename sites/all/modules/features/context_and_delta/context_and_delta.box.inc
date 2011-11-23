@@ -15,17 +15,16 @@ function context_and_delta_default_box() {
   $box->api_version = 1;
   $box->delta = 'call_for_paper';
   $box->plugin_key = 'simple';
-  $box->title = 'ROMA2011: Call for paper';
-  $box->description = 'DrupalDay 2011: Call for paper';
+  $box->title = 'DrupalDay 2011: Seminario formativo';
+  $box->description = 'DrupalDay 2011: Seminario formativo';
   $box->options = array(
     'body' => array(
       'value' => '<div class="cfp">
-<a href="node/add/session" class="button" title="inviaci la tua proposta di talk">fai una proposta</a>
+<a href="/seminario-formativo" class="button" title="Iscriviti al Seminario formativo su Drupal">Iscriviti</a>
 <div class="inner">
-Il <span class="fancy uppercase">DrupalDay</span> è un evento itinerante che sceglie Roma come location per il 2011.
-L’evento è stato ideato per far confluire le esigenze tecniche e necessità di business di imprenditori, manager, sviluppatori, art director e decision maker.
-Il Drupal Day Roma 2011 vuole dare spazio a proposte concrete che mirano al miglioramento delle pratiche lavorative di Imprese, Pubbliche Amministrazioni, Istituzioni e Web Developer.
-L\'approccio preferito per i paper è business oriented per dare spazio a nuove soluzioni a problemi comuni all\'interno dei 3 percorsi: Code, Business, PA.
+Il <span class="fancy uppercase">DrupalDay</span> organizza un Seminario formativo su Drupal per il giorno 2 dicembre, il giorno prima dell\'evento! E\' un momento importante per tutti quelli che vogliono conoscere meglio il CMS Drupal e acquisire know-how sul prodotto. <br />
+Tecnici e formatori delle aziende organizzatrici del Drupal Day aspettano tutti coloro i quali saranno interessati, dalle ore 14.00 alle ore 18.00 nell\'Aula 1 del Dipartimento di Scienze Odontostomatologiche dell\'Università La Sapienza, situato in via Caserta 6.<br />
+Iscritivi, i posti sono limitati!
 </div>
 </div>',
       'format' => 'full_html',
