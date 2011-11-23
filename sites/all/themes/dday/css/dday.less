@@ -1737,7 +1737,7 @@ article.session {
             margin:0;
         }
          a {
-             font-size:10px;
+                font-size:10px;
                 background:@dark-grey;
                 .border-radius(5px);
                 padding:2px 5px;
@@ -1749,7 +1749,7 @@ article.session {
                 &:hover {
                      background:@light-blue;
                 }
-            }
+         }
     }
 }
 
@@ -1856,3 +1856,68 @@ article.session {
   }
 }
 
+// sessions
+
+article {
+    &.session {
+        display: inline-block;
+        padding-top: 30px;
+        position: relative;
+        .speakers{
+            .field-label{display:inline;float:left;}
+            .field-item {
+                 display:inline;
+                .serif;
+                .bold;
+                margin:0 5px;
+                a {
+                    .no-decoration;
+                    color:@light-blue;
+                    .italic;
+                }
+            }
+        }
+        .tags {
+            margin:5px 0 20px 0;
+            .field-item{
+                margin:0 2px;
+                display:inline;
+                a {
+                    font-size:10px;
+                    background:@dark-grey;
+                    .border-radius(5px);
+                    padding:2px 5px;
+                    color:white;
+                    .fancy;
+                    .normal;
+                    .no-decoration;
+                    white-space: nowrap;
+                    &:hover {
+                         background:@light-blue;
+                    }
+                }
+            }
+
+        }
+        .links {
+                position:absolute;
+                top:0;
+                right:0;
+                span.flag-wrapper {
+                    a.flag {
+                        padding:5px 10px;
+                        .fancy;
+                        .uppercase;
+                        .no-decoration;
+                        .border-radius(5px);
+                        color:white;
+                        background:@light-blue;
+                        &:hover {
+                            background:@red;
+                        }
+                    }
+                }
+            }
+    }
+
+}
