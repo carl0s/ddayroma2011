@@ -13,6 +13,7 @@ function dday_alpha_preprocess_node_session(&$vars) {
       $langcode = $GLOBALS['language_content']->language;
       $sponsor = node_load($content['field_session_sponsor']['#items'][0]['nid']);
       node_build_content($sponsor, 'full',  $langcode);
+      $vars['sponsor_url'] = l($sponsor->title, "node/{$sponsor->nid}");
       $vars['sponsor_logo'] = $sponsor->content['field_sponsor_logo'];
     }
   }
