@@ -3,7 +3,7 @@
     <figure>
       <?php print drupal_render($content['field_sponsor_logo']); ?>
     </figure>
-    <?php if (isset($content['field_sponsor_sessione'])) ?> 
+    <?php if (isset($content['field_sponsor_sessione'])) : ?> 
       <?php print drupal_render($content['field_sponsor_sessione']); ?>
     <?php endif; ?>
   </aside>
