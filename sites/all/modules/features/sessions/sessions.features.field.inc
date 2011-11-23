@@ -594,6 +594,105 @@ function sessions_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-session-field_session_sponsor'
+  $fields['node-session-field_session_sponsor'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_sponsor',
+      'foreign keys' => array(
+        'nid' => array(
+          'columns' => array(
+            'nid' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'nid' => array(
+          0 => 'nid',
+        ),
+      ),
+      'module' => 'node_reference',
+      'settings' => array(
+        'referenceable_types' => array(
+          'article' => 0,
+          'attendees' => 0,
+          'media_partner' => 0,
+          'news' => 0,
+          'owner' => 0,
+          'page' => 0,
+          'panel' => 0,
+          'room' => 0,
+          'session' => 0,
+          'sponsor' => 'sponsor',
+          'time_slot' => 0,
+          'webform' => 0,
+        ),
+        'view' => array(
+          'args' => array(),
+          'display_name' => '',
+          'view_name' => '',
+        ),
+      ),
+      'translatable' => '1',
+      'type' => 'node_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'node_reference',
+          'settings' => array(),
+          'type' => 'node_reference_default',
+          'weight' => 11,
+        ),
+        'listing' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'news' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_sponsor',
+      'label' => 'Sponsor',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'node_reference',
+        'settings' => array(
+          'autocomplete_match' => 'contains',
+          'autocomplete_path' => 'node_reference/autocomplete',
+          'size' => '60',
+        ),
+        'type' => 'node_reference_autocomplete',
+        'weight' => '9',
+      ),
+    ),
+  );
+
   // Exported field: 'node-session-field_session_status'
   $fields['node-session-field_session_status'] = array(
     'field_config' => array(
@@ -1124,6 +1223,7 @@ function sessions_field_default_fields() {
   t('Room');
   t('Slides');
   t('Speaker(s)');
+  t('Sponsor');
   t('Status');
   t('Tags');
   t('Time Slot');
