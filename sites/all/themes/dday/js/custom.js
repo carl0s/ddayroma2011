@@ -11,6 +11,10 @@
         $(this).addClass('selected');
       });
       
+      $('#views-exposed-form-sessions-schedule-page input[type=radio]').click(function (){
+	    $('#views-exposed-form-sessions-schedule-page').submit();
+	  });
+      
      // $('.scrollable').scrollable({ circular:true, speed: 800 }).autoscroll(13000).navigator();
      $('#region-user-first ul.menu li a').hover(
         function() {
