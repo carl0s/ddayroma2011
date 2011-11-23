@@ -193,8 +193,7 @@ function _session_conditional_check($node = null) {
   global $language;
   $tracks = drupal_map_assoc(array('code', 'biz', 'pa'));
   // change logo if ?track is enabled
-  $node_track = ($node && $node->type == SESSIONS_CTYPE && $node->field_session_track[$language->language][0]['value'] ? 
-                 $node->field_session_track[$language->language][0]['value'] : '');  
+  $node_track = ($node && $node->type == SESSIONS_CTYPE && $node->field_session_track[$language->language][0]['value'] ? $node->field_session_track[$language->language][0]['value'] : '');  
   // check track paramenter
   $filter = (isset($_GET['track']) ? $_GET['track'] : $node_track); 
   if (($filter && $tracks[$filter]))  {
