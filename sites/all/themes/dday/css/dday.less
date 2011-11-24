@@ -1960,16 +1960,18 @@ font-weight:normal;
     table {
         tr{
             &.sponsor {
-            border-width:2px 0;
+            border-width:10px 0;
             border-style:solid;
-            border-color:@light-blue;
+            border-color:@light-grey;
             position:relative;
             display:table-row;
               height:150px;
-              background: transparent url("{@base-url}/spin.png") repeat left top!important;
+              background: transparent url("{@base-url}/bg-big.gif") no-repeat left top!important;
               td {
                    background:none;
                    display:table-cell;
+                   background-repeat:no-repeat;
+                   vertical-align:top;
 
                 }
             }
