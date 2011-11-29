@@ -17,9 +17,9 @@ function template_preprocess_my_dday(&$vars) {
   $object = new stdClass();
   $object->picture = $user->picture;
   $object->uid = $user->uid;
-  $vars['avatar'] = theme('avatar', $object, 'avatar_big');
-	
-  drupal_add_js(drupal_get_path('module', 'drupalday_system_feature').'/theme/js/my_dday.js');
+  $vars['avatar'] = theme('user_picture', array('account' => $user));//theme('avatar', $object, 'avatar_big');
+  
+  drupal_add_js(drupal_get_path('module', 'drupalday_system_feature').'/theme/js/my_dday.js',array('scope' => 'footer', 'weight' => 500));
   drupal_add_css(drupal_get_path('module', 'drupalday_system_feature').'/theme/css/my_dday.css');
 	
 }

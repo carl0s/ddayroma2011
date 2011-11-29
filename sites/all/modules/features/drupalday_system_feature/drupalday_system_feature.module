@@ -69,3 +69,35 @@ function theme_avatar($object, $imagecache = 'avatar_medium') {
   /*@TODO: Insert default image avatar in case picture = 0*/
   return $picture;
 }
+
+
+function drupalday_system_feature_block_info() {
+
+  $blocks['my_dday'] = array(
+  'info' => t('DrupalDay 2011: My DrupalDay'),
+  'cache' => DRUPAL_NO_CACHE,
+  );
+	
+  return $blocks;	
+}
+
+
+function drupalday_system_feature_block_view($delta = '') {
+  global $user;
+  $block = array();	
+  switch ($delta) {
+
+	case 'my_dday':
+      $content = theme('my_dday');
+			
+      $block = array(
+        'subject' => '',
+        'content' => $content,
+      );
+     
+      break;
+		
+  }
+  
+  return $block;
+}

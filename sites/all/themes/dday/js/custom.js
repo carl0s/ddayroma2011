@@ -111,7 +111,42 @@
 				}
 			});
 		});
+		
+		
+		
+		/**
+		 * This function attaches the behavior for the my drupal day block
+		 */
+		 
+		/* Initially hidden */
+		$('.my-dday-container').hide();
+		
+		/* Clicking on objects with the class my-dday-opener it displays the block*/
+		$(".my-dday-opener").mouseover(
+			function (){
+				$('#my-dday-container').show();
+			}
+		);
+		
+		$(".my-dday-container").click(
+			function (){
+				$('.my-dday-container').show();
+			}
+		);
+		
+		/* It hides the block on mouse out*/
+		$('*').click(
+			function (){
+				$('.my-dday-container').hide();
+			}
+		);
+		
+		$('.my-dday-container').css('top',0);
+		$('.my-dday-container').css('right',0);
+		
 
     }
+    
+    
   };
 })(jQuery);

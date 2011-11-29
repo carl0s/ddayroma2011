@@ -3,7 +3,7 @@
   
   //kpr($user);
 ?>
-<div class="my-dday-container clearfix">
+<div id="my-dday-container" class="my-dday-container clearfix">
 	<div class="my-dday-top clearfix">
 		<div class="picture"><?php print $avatar;?></div>
 
@@ -16,10 +16,10 @@
 	<div class="my-dday-bottom">
 		<ul class="my-dday-menu">
 			<li>
-				<a href="/user">Il Tuo Profilo</a>
+				<a href="/user">Il Mio Profilo</a>
 			</li>
 			<li>
-				<a href="/node/add/session">Proponi un talk</a>
+				<a href="/user/<?php print $user->uid; ?>/schedule">Le Mie Sessioni</a>
 			</li>
 		</ul>
 	</div>
