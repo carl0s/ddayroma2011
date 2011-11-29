@@ -69,7 +69,7 @@ function attendes_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -129,7 +129,7 @@ function attendes_field_default_fields() {
           'rows' => '3',
         ),
         'type' => 'text_textarea',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -191,7 +191,7 @@ function attendes_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -262,7 +262,7 @@ function attendes_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -324,7 +324,7 @@ function attendes_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -386,7 +386,69 @@ function attendes_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '5',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_user_seminario'
+  $fields['user-user-field_user_seminario'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_seminario',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '1',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '<p>Trovi qui tutte le informazioni: <a href="http://roma2011.drupalday.it/drupalday-2011-seminario-formativo">http://roma2011.drupalday.it/drupalday-2011-seminario-formativo</a></p>',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 10,
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_user_seminario',
+      'label' => 'Voglio partecipare al seminario formativo gratuito (2 Dicembre)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 1,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => 0,
       ),
     ),
   );
@@ -457,13 +519,14 @@ function attendes_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<p>Trovi qui tutte le informazioni: <a href="http://roma2011.drupalday.it/drupalday-2011-seminario-formativo">http://roma2011.drupalday.it/drupalday-2011-seminario-formativo</a></p>');
   t('Azienda');
   t('Bio');
   t('Città');
@@ -479,6 +542,7 @@ function attendes_field_default_fields() {
   t('Seleziona gli eventi Drupal ai quali hai partecipato.
 ');
   t('Twitter');
+  t('Voglio partecipare al seminario formativo gratuito (2 Dicembre)');
 
   return $fields;
 }
