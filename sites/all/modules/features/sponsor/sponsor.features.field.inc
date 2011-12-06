@@ -111,11 +111,13 @@ function sponsor_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'bronze' => 'bronze',
-          'gold' => 'gold',
-          'platinum' => 'platinum',
-          'silver' => 'silver',
+          'platinum' => 'Platinum',
+          'gold' => 'Gold',
+          'silver' => 'Silver',
+          'bronze' => 'Bronze',
+          'contributor' => 'Contributor',
           'media' => 'Media Partner',
+          'community' => 'Community',
         ),
         'allowed_values_function' => '',
       ),

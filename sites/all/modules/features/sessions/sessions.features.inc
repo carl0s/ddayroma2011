@@ -41,7 +41,7 @@ function sessions_views_api() {
  */
 function sessions_flag_default_flags() {
   $flags = array();
-  // Exported flag: "Pianifica".
+  // Exported flag: "Schedule".
   $flags['session_schedule'] = array(
     'content_type' => 'node',
     'title' => 'Schedule',

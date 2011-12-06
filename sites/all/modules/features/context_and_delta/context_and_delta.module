@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Context and Delta feature.
- */
-
-include_once('context_and_delta.features.inc');
