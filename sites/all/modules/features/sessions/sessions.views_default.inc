@@ -582,6 +582,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['title'] = 'Sessioni';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Timeslot */
   $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
@@ -860,6 +861,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['title'] = 'Sessioni Lunedi 2 Luglio';
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date and Time */
   $handler->display->display_options['fields']['field_slot_date']['id'] = 'field_slot_date';
@@ -1429,8 +1431,10 @@ function sessions_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Time Slot (field_session_timeslot) */
@@ -1560,6 +1564,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['title'] = 'Sessioni';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';

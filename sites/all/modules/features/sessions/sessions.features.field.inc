@@ -103,9 +103,9 @@ function sessions_field_default_fields() {
       'bundle' => 'session',
       'default_value' => array(
         0 => array(
-          'format' => 'filtered_html',
           'summary' => '',
-          'value' => 'massimo 800 caratteri',
+          'value' => 'massimo 500 caratteri',
+          'format' => 'filtered_html',
         ),
       ),
       'deleted' => '0',
@@ -142,7 +142,7 @@ function sessions_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'body',
-      'label' => 'Descrizione',
+      'label' => 'Abstract',
       'required' => 1,
       'settings' => array(
         'display_summary' => 1,
@@ -153,6 +153,10 @@ function sessions_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => '500',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
           'rows' => '5',
           'summary_rows' => 5,
         ),
@@ -162,14 +166,14 @@ function sessions_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-session-field_session_experience_level'
-  $fields['node-session-field_session_experience_level'] = array(
+  // Exported field: 'node-session-field_session_audience'
+  $fields['node-session-field_session_audience'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_session_experience_level',
+      'field_name' => 'field_session_audience',
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -179,14 +183,19 @@ function sessions_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => 'Beginner',
-          1 => 'Intermediate',
-          2 => 'Advanced',
+          'not_aware' => 'Not Aware',
+          'project_manager' => 'Project Manager',
+          'expert' => 'Expert',
+          'sys_admin' => 'System Administrator',
+          'developer' => 'Developer',
+          'cto' => 'Chief Technology Officer',
+          'power_user' => 'Power User',
+          'student' => 'Student',
         ),
         'allowed_values_function' => '',
       ),
-      'translatable' => '1',
-      'type' => 'list_integer',
+      'translatable' => '0',
+      'type' => 'list_text',
     ),
     'field_instance' => array(
       'bundle' => 'session',
@@ -195,35 +204,22 @@ function sessions_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => '8',
-        ),
-        'listing' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'news' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 14,
         ),
         'teaser' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => '2',
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'entity_type' => 'node',
-      'field_name' => 'field_session_experience_level',
-      'label' => 'Difficoltà',
+      'field_name' => 'field_session_audience',
+      'label' => 'Audience',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -232,8 +228,8 @@ function sessions_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '31',
+        'type' => 'options_buttons',
+        'weight' => '11',
       ),
     ),
   );
@@ -323,7 +319,335 @@ function sessions_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '8',
+        'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_language'
+  $fields['node-session-field_session_language'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_language',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'en' => 'English',
+          'it' => 'Italiano',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 18,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_language',
+      'label' => 'Language',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_needs'
+  $fields['node-session-field_session_needs'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_needs',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 16,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_needs',
+      'label' => 'Di cosa hai bisogno',
+      'required' => FALSE,
+      'settings' => array(
+        'text_processing' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 5,
+        ),
+        'type' => 'text_textarea',
+        'weight' => '13',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_notes'
+  $fields['node-session-field_session_notes'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_notes',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 17,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_notes',
+      'label' => 'Note',
+      'required' => FALSE,
+      'settings' => array(
+        'text_processing' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 5,
+        ),
+        'type' => 'text_textarea',
+        'weight' => '12',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_other'
+  $fields['node-session-field_session_other'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_other',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Please specify your session type',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 13,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_other',
+      'label' => 'Other type',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_other_aud'
+  $fields['node-session-field_session_other_aud'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_other_aud',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 15,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_other_aud',
+      'label' => 'Other audience type',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '12',
       ),
     ),
   );
@@ -589,7 +913,7 @@ function sessions_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '7',
+        'weight' => '9',
       ),
     ),
   );
@@ -688,7 +1012,7 @@ function sessions_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'node_reference_autocomplete',
-        'weight' => '9',
+        'weight' => '11',
       ),
     ),
   );
@@ -853,7 +1177,7 @@ function sessions_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '4',
+        'weight' => '7',
       ),
     ),
   );
@@ -1024,8 +1348,73 @@ function sessions_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_select',
-        'weight' => '3',
+        'type' => 'options_buttons',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-session-field_session_type'
+  $fields['node-session-field_session_type'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_session_type',
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'advanced_howot' => 'Advanced How To',
+          'techtalk' => 'Technical talk',
+          'seminar' => 'Seminar',
+          'tutorial' => 'Tutorial',
+          'techcasestudy' => 'Technical Case Study',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'session',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 12,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_session_type',
+      'label' => 'Tipo di sessione',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '5',
       ),
     ),
   );
@@ -1135,11 +1524,17 @@ function sessions_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Abstract');
+  t('Audience');
   t('Comment');
   t('Date and Time');
-  t('Descrizione');
-  t('Difficoltà');
+  t('Di cosa hai bisogno');
   t('Joind.in link');
+  t('Language');
+  t('Note');
+  t('Other audience type');
+  t('Other type');
+  t('Please specify your session type');
   t('Room');
   t('Slides');
   t('Speaker(s)');
@@ -1147,6 +1542,7 @@ function sessions_field_default_fields() {
   t('Status');
   t('Tags');
   t('Time Slot');
+  t('Tipo di sessione');
   t('Traccia');
 
   return $fields;
